@@ -25,7 +25,7 @@
 
 source /data/home/beidic/.bashrc
 source /data/home/beidic/anaconda3/etc/profile.d/conda.sh 
-conda activate hanshi 
+conda activate beidic
 
 cd /data/home/beidic/zhuoming/MagicPiG
 
