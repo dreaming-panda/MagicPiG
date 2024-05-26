@@ -3,7 +3,7 @@ import os
 from datetime import timedelta
 from pathlib import Path
 from typing import List, Literal, Optional, Tuple, Union
-from models.llama import LlamaForCausalLM
+
 import torch
 import torch.nn.functional as F
 import transformers
@@ -456,6 +456,7 @@ class XHFLM(TemplateLM):
         revision: Optional[str] = "main",
         dtype: Optional[Union[str, torch.dtype]] = "auto",
         sparse:float = 0.05,
+        topk = False,
         trust_remote_code: Optional[bool] = False,
         parallelize: Optional[bool] = False,
         device_map_option: Optional[str] = "auto",
@@ -479,14 +480,24 @@ class XHFLM(TemplateLM):
         HF's public interface relied on in this HFLM class)
         please consider subclassing HFLM and overriding this and other methods as needed.
         """
-         
-        self._model = LlamaForCausalLM.from_pretrained(
-            pretrained,
-         torch_dtype=get_dtype(dtype),
-         device_map=str(self.device),
-         _attn_implementation = "eager"
+        if not topk:
+            from models.llama import LlamaForCausalLM
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
 
-        )
+            )
+        else:
+            from models.llama_topk import LlamaForCausalLM
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
+
+            )
         self._model.eval()
         self._model.set_sparse_attn(sparse=sparse)
         return None
