@@ -1,0 +1,1160 @@
+/var/spool/slurmd/job2808785/slurm_script: line 27: /data/home/beidic/anaconda3/etc/profile.d/conda.sh: No such file or directory
+
+CondaError: Run 'conda init' before 'conda activate'
+
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `8`
+		More than one GPU was found, enabling multi-GPU training.
+		If this was unintended please pass in `--num_processes=1`.
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2024-05-26:19:03:19,754 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,754 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,755 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,755 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,755 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,755 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,755 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,755 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:28,591 INFO     [main.py:378] Selected Tasks: ['coqa']
+2024-05-26:19:03:28,591 INFO     [main.py:378] Selected Tasks: ['coqa']
+2024-05-26:19:03:28,592 INFO     [main.py:378] Selected Tasks: ['coqa']
+2024-05-26:19:03:28,592 INFO     [main.py:378] Selected Tasks: ['coqa']
+2024-05-26:19:03:28,592 INFO     [main.py:378] Selected Tasks: ['coqa']
+2024-05-26:19:03:28,592 INFO     [main.py:378] Selected Tasks: ['coqa']
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,609 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,620 INFO     [main.py:378] Selected Tasks: ['coqa']
+2024-05-26:19:03:28,626 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,626 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,645 INFO     [main.py:378] Selected Tasks: ['coqa']
+2024-05-26:19:03:28,650 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,650 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:17<00:53, 17.70s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:54, 18.32s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:55, 18.40s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:54, 18.32s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:54, 18.19s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:54, 18.30s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:54, 18.31s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:54, 18.27s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.98s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:34, 17.33s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:34, 17.34s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:34, 17.30s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:35<00:34, 17.36s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:34, 17.46s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:34, 17.34s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:34, 17.36s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:49<00:16, 16.24s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:50<00:16, 16.60s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:50<00:16, 16.54s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:50<00:16, 16.56s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:50<00:16, 16.68s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:50<00:16, 16.57s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:50<00:16, 16.54s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:50<00:16, 16.56s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:51<00:00, 10.56s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:51<00:00, 12.99s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 10.66s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 13.05s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 10.72s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 13.07s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 10.74s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 13.05s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 10.69s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 13.05s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 10.66s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 13.06s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 10.66s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 13.05s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 10.69s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:52<00:00, 13.05s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+2024-05-26:19:04:22,158 INFO     [xhuggingface.py:310] Using 8 devices with data parallelism
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+2024-05-26:19:04:24,335 INFO     [task.py:395] Building contexts for coqa on rank 3...
+2024-05-26:19:04:24,335 INFO     [task.py:395] Building contexts for coqa on rank 5...
+2024-05-26:19:04:24,335 INFO     [task.py:395] Building contexts for coqa on rank 0...
+2024-05-26:19:04:24,387 INFO     [task.py:395] Building contexts for coqa on rank 6...
+2024-05-26:19:04:24,449 INFO     [task.py:395] Building contexts for coqa on rank 7...
+  0%|          | 0/62 [00:00<?, ?it/s]  0%|          | 0/63 [00:00<?, ?it/s]  0%|          | 0/63 [00:00<?, ?it/s]100%|██████████| 62/62 [00:00<00:00, 52683.72it/s]
+100%|██████████| 63/63 [00:00<00:00, 59127.58it/s]
+100%|██████████| 63/63 [00:00<00:00, 52805.99it/s]
+2024-05-26:19:04:24,519 INFO     [task.py:395] Building contexts for coqa on rank 1...
+2024-05-26:19:04:24,534 INFO     [task.py:395] Building contexts for coqa on rank 4...
+  0%|          | 0/62 [00:00<?, ?it/s]100%|██████████| 62/62 [00:00<00:00, 48561.50it/s]
+  0%|          | 0/62 [00:00<?, ?it/s]100%|██████████| 62/62 [00:00<00:00, 51240.76it/s]
+2024-05-26:19:04:24,634 INFO     [task.py:395] Building contexts for coqa on rank 2...
+  0%|          | 0/63 [00:00<?, ?it/s]100%|██████████| 63/63 [00:00<00:00, 49678.73it/s]
+  0%|          | 0/62 [00:00<?, ?it/s]100%|██████████| 62/62 [00:00<00:00, 45960.91it/s]
+  0%|          | 0/63 [00:00<?, ?it/s]100%|██████████| 63/63 [00:00<00:00, 24959.02it/s]
+2024-05-26:19:04:35,083 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:35,083 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:35,083 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:35,083 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:35,083 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:35,083 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:35,083 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:35,083 INFO     [xevaluator.py:398] Running generate_until requests
+Running generate_until requests:   0%|          | 0/63 [00:00<?, ?it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+            cli_evaluate()        cli_evaluate()    cli_evaluate()
+cli_evaluate()cli_evaluate()
+cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+results = xevaluator.simple_evaluate(  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    results = xevaluator.simple_evaluate(    
+    results = xevaluator.simple_evaluate(      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+results = xevaluator.simple_evaluate(
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+cli_evaluate()
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+                return fn(*args, **kwargs)        return fn(*args, **kwargs)return fn(*args, **kwargs)return fn(*args, **kwargs)
+return fn(*args, **kwargs)return fn(*args, **kwargs)
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+        results = evaluate(        results = evaluate(
+results = evaluate(results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+          File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+resps = getattr(lm, reqtype)(cloned_reqs)resps = getattr(lm, reqtype)(cloned_reqs)
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+        return fn(*args, **kwargs)return fn(*args, **kwargs)
+    
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+return fn(*args, **kwargs)  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+      File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+                resps = getattr(lm, reqtype)(cloned_reqs)resps = getattr(lm, reqtype)(cloned_reqs)resps = getattr(lm, reqtype)(cloned_reqs)resps = getattr(lm, reqtype)(cloned_reqs)
+
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+                            cont = self._model_generate(cont = self._model_generate(cont = self._model_generate(cont = self._model_generate(cont = self._model_generate(cont = self._model_generate(cont = self._model_generate(
+
+
+
+
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    cont = self._model_generate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+        outputs = self.model.generate(                outputs = self.model.generate(
+outputs = self.model.generate(outputs = self.model.generate(outputs = self.model.generate(outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+
+
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+                return func(*args, **kwargs)    return func(*args, **kwargs)        return func(*args, **kwargs)return func(*args, **kwargs)
+return func(*args, **kwargs)
+return func(*args, **kwargs)return func(*args, **kwargs)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+                            return self.greedy_search(return self.greedy_search(return self.greedy_search(return self.greedy_search(return self.greedy_search(return self.greedy_search(return self.greedy_search(
+
+
+
+
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+                    outputs = self(    outputs = self(outputs = self(outputs = self(outputs = self(
+    outputs = self(
+
+
+
+outputs = self(  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+            return self._call_impl(*args, **kwargs)                return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+            return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+
+
+      File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+          File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+                    outputs = self.model(        outputs = self.model(outputs = self.model(outputs = self.model(outputs = self.model(
+outputs = self.model(outputs = self.model(
+
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+                return self._call_impl(*args, **kwargs)        return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+        return self._call_impl(*args, **kwargs)return forward_call(*args, **kwargs)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    return forward_call(*args, **kwargs)    
+return forward_call(*args, **kwargs)          File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    
+    return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+return forward_call(*args, **kwargs)
+
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+            layer_outputs = decoder_layer(        layer_outputs = decoder_layer(layer_outputs = decoder_layer(
+layer_outputs = decoder_layer(layer_outputs = decoder_layer(
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+        return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self._call_impl(*args, **kwargs)            
+return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+            return forward_call(*args, **kwargs)    return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+hidden_states, self_attn_weights, present_key_value = self.self_attn(
+
+      File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+hidden_states, self_attn_weights, present_key_value = self.self_attn(hidden_states, self_attn_weights, present_key_value = self.self_attn(  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(    
+return forward_call(*args, **kwargs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+        hidden_states, self_attn_weights, present_key_value = self.self_attn(hidden_states, self_attn_weights, present_key_value = self.self_attn(
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+            return self._call_impl(*args, **kwargs)    hidden_states, self_attn_weights, present_key_value = self.self_attn(return self._call_impl(*args, **kwargs)
+return self._call_impl(*args, **kwargs)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+        return self._call_impl(*args, **kwargs)        return self._call_impl(*args, **kwargs)
+return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+          File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)return self._call_impl(*args, **kwargs)return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    return forward_call(*args, **kwargs)
+      File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+return forward_call(*args, **kwargs)    
+return forward_call(*args, **kwargs)  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+                cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)        cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+        return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)        
+
+return self._call_impl(*args, **kwargs)    return self._call_impl(*args, **kwargs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+return self._call_impl(*args, **kwargs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+    return forward_call(*args, **kwargs)
+TypeError:     forward() missing 1 required positional argument: 'position_ids'return forward_call(*args, **kwargs)    
+
+return forward_call(*args, **kwargs)        
+TypeErrorreturn forward_call(*args, **kwargs)return forward_call(*args, **kwargs): TypeError
+
+forward() missing 1 required positional argument: 'position_ids': 
+forward() missing 1 required positional argument: 'position_ids'TypeError
+: forward() missing 1 required positional argument: 'position_ids'TypeError
+: forward() missing 1 required positional argument: 'position_ids'
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+Running generate_until requests:   0%|          | 0/63 [00:01<?, ?it/s]
+[2024-05-26 19:04:40,212] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 500965) of binary: /fsx-storygen/beidic/anaconda3/envs/beidic/bin/python3.9
+Traceback (most recent call last):
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/accelerate_cli.py", line 47, in main
+    args.func(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/launch.py", line 1014, in launch_command
+    multi_gpu_launcher(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/launch.py", line 672, in multi_gpu_launcher
+    distrib_run.run(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+main.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-05-26_19:04:40
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 500966)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2024-05-26_19:04:40
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 500967)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2024-05-26_19:04:40
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 500968)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2024-05-26_19:04:40
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 500969)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2024-05-26_19:04:40
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 500970)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2024-05-26_19:04:40
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 500971)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2024-05-26_19:04:40
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 500972)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-05-26_19:04:40
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 500965)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `8`
+		More than one GPU was found, enabling multi-GPU training.
+		If this was unintended please pass in `--num_processes=1`.
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2024-05-26:19:04:53,869 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:04:53,880 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:04:53,886 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:04:53,897 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:04:53,906 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:04:53,910 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:04:53,921 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:04:53,927 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:05:00,309 INFO     [main.py:378] Selected Tasks: ['truthfulqa_gen']
+2024-05-26:19:05:00,309 INFO     [main.py:378] Selected Tasks: ['truthfulqa_gen']
+2024-05-26:19:05:00,313 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:05:00,313 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:05:00,314 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:05:00,314 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:05:00,433 INFO     [main.py:378] Selected Tasks: ['truthfulqa_gen']
+2024-05-26:19:05:00,434 INFO     [main.py:378] Selected Tasks: ['truthfulqa_gen']
+2024-05-26:19:05:00,438 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:05:00,438 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:05:00,443 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:05:00,443 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:05:00,542 INFO     [main.py:378] Selected Tasks: ['truthfulqa_gen']
+2024-05-26:19:05:00,547 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:05:00,547 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:05:00,878 INFO     [main.py:378] Selected Tasks: ['truthfulqa_gen']
+2024-05-26:19:05:00,882 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:05:00,882 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]2024-05-26:19:05:01,066 INFO     [main.py:378] Selected Tasks: ['truthfulqa_gen']
+2024-05-26:19:05:01,071 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:05:01,071 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]2024-05-26:19:05:01,154 INFO     [main.py:378] Selected Tasks: ['truthfulqa_gen']
+2024-05-26:19:05:01,159 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:05:01,159 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.45s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.52s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.56s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.57s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.63s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.43s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.50s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.97s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:06,  3.48s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.50s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:06,  3.45s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:06,  3.49s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.52s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:06,  3.44s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.51s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.88s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.46s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.47s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.45s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.43s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.45s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.39s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.47s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.44s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.81s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.46s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.84s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.42s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.81s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.39s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.77s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.43s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.83s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+2024-05-26:19:05:12,717 INFO     [xhuggingface.py:310] Using 8 devices with data parallelism
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.69s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.99s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.45s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.83s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.95s/it]Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.74s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.17s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+2024-05-26:19:05:14,898 INFO     [task.py:395] Building contexts for truthfulqa_gen on rank 5...
+2024-05-26:19:05:14,932 INFO     [task.py:395] Building contexts for truthfulqa_gen on rank 1...
+2024-05-26:19:05:14,940 INFO     [task.py:395] Building contexts for truthfulqa_gen on rank 6...
+  0%|          | 0/102 [00:00<?, ?it/s]2024-05-26:19:05:14,956 INFO     [task.py:395] Building contexts for truthfulqa_gen on rank 3...
+2024-05-26:19:05:14,963 INFO     [task.py:395] Building contexts for truthfulqa_gen on rank 7...
+  0%|          | 0/102 [00:00<?, ?it/s]  0%|          | 0/102 [00:00<?, ?it/s]  0%|          | 0/102 [00:00<?, ?it/s]100%|██████████| 102/102 [00:00<00:00, 1468.67it/s]
+2024-05-26:19:05:15,023 INFO     [task.py:395] Building contexts for truthfulqa_gen on rank 0...
+  0%|          | 0/102 [00:00<?, ?it/s]100%|██████████| 102/102 [00:00<00:00, 1469.38it/s]
+100%|██████████| 102/102 [00:00<00:00, 1374.52it/s]
+100%|██████████| 102/102 [00:00<00:00, 1457.53it/s]
+  0%|          | 0/103 [00:00<?, ?it/s]2024-05-26:19:05:15,100 INFO     [task.py:395] Building contexts for truthfulqa_gen on rank 2...
+100%|██████████| 102/102 [00:00<00:00, 1104.29it/s]
+  0%|          | 0/102 [00:00<?, ?it/s]100%|██████████| 103/103 [00:00<00:00, 1459.71it/s]
+100%|██████████| 102/102 [00:00<00:00, 1461.04it/s]
+2024-05-26:19:05:15,586 INFO     [task.py:395] Building contexts for truthfulqa_gen on rank 4...
+  0%|          | 0/102 [00:00<?, ?it/s] 82%|████████▏ | 84/102 [00:00<00:00, 832.01it/s]100%|██████████| 102/102 [00:00<00:00, 835.46it/s]
+2024-05-26:19:05:24,019 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:05:24,019 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:05:24,019 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:05:24,019 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:05:24,019 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:05:24,019 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:05:24,019 INFO     [xevaluator.py:398] Running generate_until requests
+Running generate_until requests:   0%|          | 0/103 [00:00<?, ?it/s]2024-05-26:19:05:24,020 INFO     [xevaluator.py:398] Running generate_until requests
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    cont = self._model_generate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    cont = self._model_generate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    cont = self._model_generate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    cont = self._model_generate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+        results = xevaluator.simple_evaluate(return self._call_impl(*args, **kwargs)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+    return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    cont = self._model_generate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    cont = self._model_generate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+        results = xevaluator.simple_evaluate(results = evaluate(
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    results = evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    cont = self._model_generate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    cont = self._model_generate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    return self._call_impl(*args, **kwargs)    
+outputs = self.model(  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+Running generate_until requests:   0%|          | 0/103 [00:01<?, ?it/s]
+[2024-05-26 19:05:30,111] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 502035) of binary: /fsx-storygen/beidic/anaconda3/envs/beidic/bin/python3.9
+Traceback (most recent call last):
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/accelerate_cli.py", line 47, in main
+    args.func(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/launch.py", line 1014, in launch_command
+    multi_gpu_launcher(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/launch.py", line 672, in multi_gpu_launcher
+    distrib_run.run(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+main.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-05-26_19:05:30
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 502036)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2024-05-26_19:05:30
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 502037)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2024-05-26_19:05:30
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 502038)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2024-05-26_19:05:30
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 502039)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2024-05-26_19:05:30
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 502043)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2024-05-26_19:05:30
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 502054)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2024-05-26_19:05:30
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 502056)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-05-26_19:05:30
+  host      : a100-st-p4de24xlarge-284.fair-a100.hpcaas
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 502035)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

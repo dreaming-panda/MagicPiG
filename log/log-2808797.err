@@ -1,0 +1,1478 @@
+/var/spool/slurmd/job2808797/slurm_script: line 27: /data/home/beidic/anaconda3/etc/profile.d/conda.sh: No such file or directory
+
+CondaError: Run 'conda init' before 'conda activate'
+
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `8`
+		More than one GPU was found, enabling multi-GPU training.
+		If this was unintended please pass in `--num_processes=1`.
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2024-05-26:19:03:19,444 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,444 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,444 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,444 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,444 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,445 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,445 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,445 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:28,540 INFO     [main.py:378] Selected Tasks: ['mmlu_flan_cot_fewshot']
+2024-05-26:19:03:28,540 INFO     [main.py:378] Selected Tasks: ['mmlu_flan_cot_fewshot']
+2024-05-26:19:03:28,540 INFO     [main.py:378] Selected Tasks: ['mmlu_flan_cot_fewshot']
+2024-05-26:19:03:28,540 INFO     [main.py:378] Selected Tasks: ['mmlu_flan_cot_fewshot']
+2024-05-26:19:03:28,540 INFO     [main.py:378] Selected Tasks: ['mmlu_flan_cot_fewshot']
+2024-05-26:19:03:28,540 INFO     [main.py:378] Selected Tasks: ['mmlu_flan_cot_fewshot']
+2024-05-26:19:03:28,540 INFO     [main.py:378] Selected Tasks: ['mmlu_flan_cot_fewshot']
+2024-05-26:19:03:28,540 INFO     [main.py:378] Selected Tasks: ['mmlu_flan_cot_fewshot']
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,558 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:17<00:53, 17.90s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:55, 18.56s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.78s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.76s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.74s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.80s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.81s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.72s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:33<00:32, 16.17s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.75s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.83s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.86s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.85s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.84s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.88s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:34, 17.04s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:48<00:15, 15.59s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:49<00:15, 15.99s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:49<00:16, 16.03s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:49<00:16, 16.04s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:49<00:16, 16.02s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:49<00:16, 16.04s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:49<00:16, 16.04s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:49<00:16, 16.24s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 10.12s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.44s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 10.08s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 10.10s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 12.53s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 12.59s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 10.10s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 12.59s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 10.09s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 12.58s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 10.10s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 12.59s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 10.19s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 12.64s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+2024-05-26:19:04:20,223 INFO     [xhuggingface.py:310] Using 8 devices with data parallelism
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 10.32s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:50<00:00, 12.72s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+2024-05-26:19:04:36,618 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_us_history on rank 1...
+  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 379.40it/s]
+2024-05-26:19:04:39,532 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_us_history on rank 2...
+  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 377.08it/s]
+2024-05-26:19:04:39,683 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_us_history on rank 4...
+  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 376.42it/s]
+2024-05-26:19:04:39,718 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_us_history on rank 6...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 378.89it/s]
+2024-05-26:19:04:40,061 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_us_history on rank 0...
+  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 382.77it/s]
+2024-05-26:19:04:41,016 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_us_history on rank 5...
+  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 378.38it/s]
+2024-05-26:19:04:43,197 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_us_history on rank 7...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 324.25it/s]
+2024-05-26:19:04:45,264 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_us_history on rank 3...
+  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 225.58it/s]
+2024-05-26:19:04:54,232 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_prehistory on rank 7...
+2024-05-26:19:04:54,232 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_prehistory on rank 3...
+2024-05-26:19:04:54,232 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_prehistory on rank 0...
+2024-05-26:19:04:54,232 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_prehistory on rank 6...
+2024-05-26:19:04:54,232 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_prehistory on rank 5...
+2024-05-26:19:04:54,232 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_prehistory on rank 2...
+2024-05-26:19:04:54,233 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_prehistory on rank 1...
+2024-05-26:19:04:54,233 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_prehistory on rank 4...
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 505.12it/s]
+100%|██████████| 4/4 [00:00<00:00, 492.77it/s]
+100%|██████████| 4/4 [00:00<00:00, 436.96it/s]
+100%|██████████| 5/5 [00:00<00:00, 529.40it/s]
+100%|██████████| 5/5 [00:00<00:00, 474.16it/s]
+100%|██████████| 4/4 [00:00<00:00, 310.63it/s]
+100%|██████████| 4/4 [00:00<00:00, 359.62it/s]
+100%|██████████| 5/5 [00:00<00:00, 323.06it/s]
+2024-05-26:19:04:54,253 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_world_religions on rank 7...
+2024-05-26:19:04:54,253 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_world_religions on rank 0...
+2024-05-26:19:04:54,253 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_world_religions on rank 3...
+2024-05-26:19:04:54,253 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_world_religions on rank 5...
+2024-05-26:19:04:54,253 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_world_religions on rank 4...
+2024-05-26:19:04:54,253 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_world_religions on rank 1...
+2024-05-26:19:04:54,253 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_world_religions on rank 6...
+2024-05-26:19:04:54,253 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_world_religions on rank 2...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 637.72it/s]
+100%|██████████| 2/2 [00:00<00:00, 639.13it/s]
+100%|██████████| 2/2 [00:00<00:00, 629.54it/s]
+100%|██████████| 2/2 [00:00<00:00, 623.55it/s]
+100%|██████████| 3/3 [00:00<00:00, 648.54it/s]
+100%|██████████| 3/3 [00:00<00:00, 641.76it/s]
+100%|██████████| 2/2 [00:00<00:00, 379.95it/s]
+100%|██████████| 3/3 [00:00<00:00, 390.03it/s]
+2024-05-26:19:04:54,264 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_jurisprudence on rank 0...
+2024-05-26:19:04:54,264 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_jurisprudence on rank 5...
+2024-05-26:19:04:54,264 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_jurisprudence on rank 7...
+2024-05-26:19:04:54,264 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_jurisprudence on rank 3...
+2024-05-26:19:04:54,264 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_jurisprudence on rank 4...
+2024-05-26:19:04:54,264 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_jurisprudence on rank 1...
+2024-05-26:19:04:54,264 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_jurisprudence on rank 2...
+2024-05-26:19:04:54,264 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_jurisprudence on rank 6...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 573.23it/s]
+100%|██████████| 1/1 [00:00<00:00, 570.73it/s]100%|██████████| 1/1 [00:00<00:00, 575.98it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 553.56it/s]
+100%|██████████| 2/2 [00:00<00:00, 573.42it/s]100%|██████████| 1/1 [00:00<00:00, 344.84it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 564.28it/s]
+100%|██████████| 2/2 [00:00<00:00, 348.44it/s]
+2024-05-26:19:04:54,271 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_scenarios on rank 7...
+2024-05-26:19:04:54,271 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_scenarios on rank 3...
+2024-05-26:19:04:54,271 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_scenarios on rank 0...
+2024-05-26:19:04:54,271 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_scenarios on rank 5...
+2024-05-26:19:04:54,271 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_scenarios on rank 4...
+2024-05-26:19:04:54,271 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_scenarios on rank 2...
+2024-05-26:19:04:54,271 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_scenarios on rank 1...
+2024-05-26:19:04:54,271 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_scenarios on rank 6...
+  0%|          | 0/13 [00:00<?, ?it/s]  0%|          | 0/12 [00:00<?, ?it/s]  0%|          | 0/13 [00:00<?, ?it/s]  0%|          | 0/13 [00:00<?, ?it/s]  0%|          | 0/12 [00:00<?, ?it/s]  0%|          | 0/12 [00:00<?, ?it/s]  0%|          | 0/13 [00:00<?, ?it/s]  0%|          | 0/12 [00:00<?, ?it/s]100%|██████████| 12/12 [00:00<00:00, 603.65it/s]
+100%|██████████| 12/12 [00:00<00:00, 602.50it/s]
+100%|██████████| 12/12 [00:00<00:00, 592.33it/s]
+100%|██████████| 13/13 [00:00<00:00, 610.59it/s]
+100%|██████████| 13/13 [00:00<00:00, 604.41it/s]
+100%|██████████| 13/13 [00:00<00:00, 603.47it/s]
+100%|██████████| 12/12 [00:00<00:00, 353.61it/s]
+100%|██████████| 13/13 [00:00<00:00, 354.94it/s]
+2024-05-26:19:04:54,316 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_international_law on rank 0...
+2024-05-26:19:04:54,316 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_international_law on rank 3...
+2024-05-26:19:04:54,316 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_international_law on rank 7...
+2024-05-26:19:04:54,316 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_international_law on rank 1...
+2024-05-26:19:04:54,316 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_international_law on rank 5...
+2024-05-26:19:04:54,316 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_international_law on rank 4...
+2024-05-26:19:04:54,316 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_international_law on rank 6...
+2024-05-26:19:04:54,316 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_international_law on rank 2...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 543.73it/s]
+100%|██████████| 1/1 [00:00<00:00, 547.27it/s]
+100%|██████████| 2/2 [00:00<00:00, 570.03it/s]
+100%|██████████| 2/2 [00:00<00:00, 568.06it/s]
+100%|██████████| 2/2 [00:00<00:00, 562.88it/s]
+100%|██████████| 1/1 [00:00<00:00, 332.01it/s]
+100%|██████████| 2/2 [00:00<00:00, 553.41it/s]
+100%|██████████| 2/2 [00:00<00:00, 343.04it/s]
+2024-05-26:19:04:54,324 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_european_history on rank 0...
+2024-05-26:19:04:54,324 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_european_history on rank 7...
+2024-05-26:19:04:54,324 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_european_history on rank 3...
+2024-05-26:19:04:54,324 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_european_history on rank 5...
+2024-05-26:19:04:54,324 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_european_history on rank 1...
+2024-05-26:19:04:54,324 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_european_history on rank 2...
+2024-05-26:19:04:54,324 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_european_history on rank 6...
+2024-05-26:19:04:54,324 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_european_history on rank 4...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 345.17it/s]100%|██████████| 2/2 [00:00<00:00, 341.86it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 341.29it/s]
+100%|██████████| 2/2 [00:00<00:00, 327.94it/s]
+100%|██████████| 3/3 [00:00<00:00, 343.77it/s]
+100%|██████████| 3/3 [00:00<00:00, 341.08it/s]
+100%|██████████| 2/2 [00:00<00:00, 189.81it/s]
+100%|██████████| 2/2 [00:00<00:00, 189.39it/s]
+2024-05-26:19:04:54,338 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_law on rank 3...
+2024-05-26:19:04:54,338 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_law on rank 5...
+2024-05-26:19:04:54,338 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_law on rank 7...
+2024-05-26:19:04:54,338 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_law on rank 0...
+2024-05-26:19:04:54,338 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_law on rank 4...
+2024-05-26:19:04:54,338 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_law on rank 1...
+2024-05-26:19:04:54,338 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_law on rank 2...
+2024-05-26:19:04:54,338 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_law on rank 6...
+  0%|          | 0/22 [00:00<?, ?it/s]  0%|          | 0/22 [00:00<?, ?it/s]  0%|          | 0/21 [00:00<?, ?it/s]  0%|          | 0/21 [00:00<?, ?it/s]  0%|          | 0/21 [00:00<?, ?it/s]  0%|          | 0/21 [00:00<?, ?it/s]  0%|          | 0/21 [00:00<?, ?it/s]  0%|          | 0/21 [00:00<?, ?it/s]100%|██████████| 21/21 [00:00<00:00, 478.91it/s]
+100%|██████████| 21/21 [00:00<00:00, 475.66it/s]
+100%|██████████| 21/21 [00:00<00:00, 475.82it/s]
+100%|██████████| 21/21 [00:00<00:00, 470.88it/s]
+100%|██████████| 22/22 [00:00<00:00, 480.51it/s]
+100%|██████████| 22/22 [00:00<00:00, 475.61it/s]
+100%|██████████| 21/21 [00:00<00:00, 274.63it/s]
+100%|██████████| 21/21 [00:00<00:00, 273.56it/s]
+2024-05-26:19:04:54,436 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_formal_logic on rank 3...
+2024-05-26:19:04:54,436 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_formal_logic on rank 7...
+2024-05-26:19:04:54,436 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_formal_logic on rank 6...
+2024-05-26:19:04:54,436 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_formal_logic on rank 0...
+2024-05-26:19:04:54,436 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_formal_logic on rank 5...
+2024-05-26:19:04:54,436 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_formal_logic on rank 1...
+2024-05-26:19:04:54,436 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_formal_logic on rank 4...
+2024-05-26:19:04:54,436 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_formal_logic on rank 2...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 514.45it/s]
+100%|██████████| 2/2 [00:00<00:00, 535.19it/s]
+100%|██████████| 2/2 [00:00<00:00, 529.05it/s]100%|██████████| 2/2 [00:00<00:00, 540.43it/s]
+100%|██████████| 1/1 [00:00<00:00, 307.52it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 534.03it/s]100%|██████████| 2/2 [00:00<00:00, 522.17it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 314.12it/s]
+2024-05-26:19:04:54,444 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_disputes on rank 7...
+2024-05-26:19:04:54,444 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_disputes on rank 0...
+2024-05-26:19:04:54,444 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_disputes on rank 3...
+2024-05-26:19:04:54,444 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_disputes on rank 5...
+2024-05-26:19:04:54,444 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_disputes on rank 1...
+2024-05-26:19:04:54,444 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_disputes on rank 2...
+2024-05-26:19:04:54,444 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_disputes on rank 6...
+2024-05-26:19:04:54,445 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_moral_disputes on rank 4...
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 591.79it/s]
+100%|██████████| 5/5 [00:00<00:00, 596.77it/s]
+100%|██████████| 5/5 [00:00<00:00, 588.34it/s]100%|██████████| 5/5 [00:00<00:00, 592.53it/s]
+
+100%|██████████| 5/5 [00:00<00:00, 581.85it/s]
+100%|██████████| 5/5 [00:00<00:00, 580.69it/s]
+100%|██████████| 4/4 [00:00<00:00, 344.05it/s]
+100%|██████████| 5/5 [00:00<00:00, 348.55it/s]
+2024-05-26:19:04:54,462 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_philosophy on rank 3...
+2024-05-26:19:04:54,462 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_philosophy on rank 7...
+2024-05-26:19:04:54,462 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_philosophy on rank 1...
+2024-05-26:19:04:54,462 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_philosophy on rank 5...
+2024-05-26:19:04:54,462 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_philosophy on rank 0...
+2024-05-26:19:04:54,462 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_philosophy on rank 4...
+2024-05-26:19:04:54,462 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_philosophy on rank 2...
+2024-05-26:19:04:54,462 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_philosophy on rank 6...
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 622.51it/s]
+100%|██████████| 4/4 [00:00<00:00, 617.74it/s]100%|██████████| 4/4 [00:00<00:00, 614.01it/s]
+
+100%|██████████| 4/4 [00:00<00:00, 613.67it/s]
+100%|██████████| 5/5 [00:00<00:00, 627.29it/s]
+100%|██████████| 5/5 [00:00<00:00, 621.62it/s]
+100%|██████████| 4/4 [00:00<00:00, 361.91it/s]100%|██████████| 4/4 [00:00<00:00, 362.43it/s]
+
+2024-05-26:19:04:54,477 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_world_history on rank 3...
+2024-05-26:19:04:54,477 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_world_history on rank 0...
+2024-05-26:19:04:54,477 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_world_history on rank 7...
+2024-05-26:19:04:54,477 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_world_history on rank 5...
+2024-05-26:19:04:54,477 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_world_history on rank 4...
+2024-05-26:19:04:54,477 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_world_history on rank 1...
+2024-05-26:19:04:54,477 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_world_history on rank 6...
+2024-05-26:19:04:54,477 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_world_history on rank 2...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 478.47it/s]
+100%|██████████| 3/3 [00:00<00:00, 475.58it/s]100%|██████████| 3/3 [00:00<00:00, 471.04it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 460.52it/s]
+100%|██████████| 4/4 [00:00<00:00, 480.12it/s]100%|██████████| 4/4 [00:00<00:00, 477.66it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 270.29it/s]100%|██████████| 3/3 [00:00<00:00, 269.12it/s]
+
+2024-05-26:19:04:54,492 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_logical_fallacies on rank 7...
+2024-05-26:19:04:54,492 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_logical_fallacies on rank 3...
+2024-05-26:19:04:54,492 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_logical_fallacies on rank 5...
+2024-05-26:19:04:54,492 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_logical_fallacies on rank 0...
+2024-05-26:19:04:54,492 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_logical_fallacies on rank 1...
+2024-05-26:19:04:54,492 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_logical_fallacies on rank 4...
+2024-05-26:19:04:54,492 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_logical_fallacies on rank 6...
+2024-05-26:19:04:54,492 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_logical_fallacies on rank 2...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 593.09it/s]
+100%|██████████| 2/2 [00:00<00:00, 597.27it/s]
+100%|██████████| 2/2 [00:00<00:00, 595.40it/s]
+100%|██████████| 2/2 [00:00<00:00, 584.37it/s]
+100%|██████████| 3/3 [00:00<00:00, 601.82it/s]
+100%|██████████| 3/3 [00:00<00:00, 593.51it/s]
+100%|██████████| 2/2 [00:00<00:00, 351.08it/s]100%|██████████| 2/2 [00:00<00:00, 351.38it/s]
+
+2024-05-26:19:04:54,500 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_us_foreign_policy on rank 7...
+2024-05-26:19:04:54,500 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_us_foreign_policy on rank 0...
+2024-05-26:19:04:54,500 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_us_foreign_policy on rank 1...
+2024-05-26:19:04:54,500 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_us_foreign_policy on rank 5...
+2024-05-26:19:04:54,500 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_us_foreign_policy on rank 4...
+2024-05-26:19:04:54,500 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_us_foreign_policy on rank 3...
+2024-05-26:19:04:54,500 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_us_foreign_policy on rank 6...
+2024-05-26:19:04:54,500 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_us_foreign_policy on rank 2...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 580.29it/s]
+100%|██████████| 1/1 [00:00<00:00, 578.21it/s]
+100%|██████████| 1/1 [00:00<00:00, 577.17it/s]
+100%|██████████| 1/1 [00:00<00:00, 555.46it/s]
+100%|██████████| 2/2 [00:00<00:00, 592.42it/s]
+100%|██████████| 1/1 [00:00<00:00, 354.97it/s]
+100%|██████████| 2/2 [00:00<00:00, 581.37it/s]
+100%|██████████| 2/2 [00:00<00:00, 365.93it/s]
+2024-05-26:19:04:54,507 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_government_and_politics on rank 7...
+2024-05-26:19:04:54,507 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_government_and_politics on rank 3...
+2024-05-26:19:04:54,507 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_government_and_politics on rank 5...
+2024-05-26:19:04:54,507 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_government_and_politics on rank 0...
+2024-05-26:19:04:54,507 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_government_and_politics on rank 1...
+2024-05-26:19:04:54,507 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_government_and_politics on rank 4...
+2024-05-26:19:04:54,507 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_government_and_politics on rank 6...
+2024-05-26:19:04:54,507 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_government_and_politics on rank 2...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 595.11it/s]
+100%|██████████| 2/2 [00:00<00:00, 595.32it/s]
+100%|██████████| 3/3 [00:00<00:00, 606.20it/s]100%|██████████| 3/3 [00:00<00:00, 599.04it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 597.11it/s]
+100%|██████████| 3/3 [00:00<00:00, 588.67it/s]
+100%|██████████| 2/2 [00:00<00:00, 353.77it/s]
+100%|██████████| 3/3 [00:00<00:00, 353.75it/s]
+2024-05-26:19:04:54,518 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_macroeconomics on rank 0...
+2024-05-26:19:04:54,518 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_macroeconomics on rank 3...
+2024-05-26:19:04:54,518 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_macroeconomics on rank 7...
+2024-05-26:19:04:54,518 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_macroeconomics on rank 5...
+2024-05-26:19:04:54,518 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_macroeconomics on rank 1...
+2024-05-26:19:04:54,518 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_macroeconomics on rank 4...
+2024-05-26:19:04:54,518 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_macroeconomics on rank 2...
+2024-05-26:19:04:54,518 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_macroeconomics on rank 6...
+  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/6 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/6 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/6 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 620.24it/s]
+100%|██████████| 5/5 [00:00<00:00, 620.35it/s]
+100%|██████████| 5/5 [00:00<00:00, 617.66it/s]
+100%|██████████| 5/5 [00:00<00:00, 611.72it/s]
+100%|██████████| 6/6 [00:00<00:00, 628.39it/s]
+100%|██████████| 6/6 [00:00<00:00, 622.67it/s]
+100%|██████████| 5/5 [00:00<00:00, 391.50it/s]
+100%|██████████| 6/6 [00:00<00:00, 420.55it/s]
+2024-05-26:19:04:54,537 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_econometrics on rank 7...
+2024-05-26:19:04:54,537 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_econometrics on rank 6...
+2024-05-26:19:04:54,537 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_econometrics on rank 2...
+2024-05-26:19:04:54,537 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_econometrics on rank 0...
+2024-05-26:19:04:54,537 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_econometrics on rank 3...
+2024-05-26:19:04:54,537 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_econometrics on rank 5...
+2024-05-26:19:04:54,537 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_econometrics on rank 4...
+2024-05-26:19:04:54,537 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_econometrics on rank 1...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 509.70it/s]
+100%|██████████| 1/1 [00:00<00:00, 513.13it/s]
+100%|██████████| 1/1 [00:00<00:00, 505.58it/s]
+100%|██████████| 1/1 [00:00<00:00, 474.90it/s]
+100%|██████████| 2/2 [00:00<00:00, 514.64it/s]100%|██████████| 2/2 [00:00<00:00, 517.05it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 516.00it/s]100%|██████████| 2/2 [00:00<00:00, 501.65it/s]
+
+2024-05-26:19:04:54,542 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_geography on rank 2...
+2024-05-26:19:04:54,542 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_geography on rank 3...
+2024-05-26:19:04:54,542 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_geography on rank 6...
+2024-05-26:19:04:54,542 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_geography on rank 5...
+2024-05-26:19:04:54,542 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_geography on rank 7...
+2024-05-26:19:04:54,542 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_geography on rank 0...
+2024-05-26:19:04:54,542 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_geography on rank 4...
+2024-05-26:19:04:54,542 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_geography on rank 1...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 605.50it/s]100%|██████████| 2/2 [00:00<00:00, 608.62it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 620.18it/s]
+100%|██████████| 3/3 [00:00<00:00, 608.02it/s]100%|██████████| 3/3 [00:00<00:00, 621.50it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 612.31it/s]100%|██████████| 3/3 [00:00<00:00, 603.73it/s]100%|██████████| 3/3 [00:00<00:00, 614.79it/s]
+
+
+2024-05-26:19:04:54,549 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_public_relations on rank 7...
+2024-05-26:19:04:54,549 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_public_relations on rank 5...
+2024-05-26:19:04:54,549 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_public_relations on rank 3...
+2024-05-26:19:04:54,549 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_public_relations on rank 6...
+2024-05-26:19:04:54,549 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_public_relations on rank 0...
+2024-05-26:19:04:54,549 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_public_relations on rank 2...
+2024-05-26:19:04:54,549 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_public_relations on rank 4...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]2024-05-26:19:04:54,550 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_public_relations on rank 1...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 596.88it/s]
+100%|██████████| 1/1 [00:00<00:00, 595.70it/s]
+100%|██████████| 1/1 [00:00<00:00, 594.52it/s]
+100%|██████████| 1/1 [00:00<00:00, 590.17it/s]
+100%|██████████| 2/2 [00:00<00:00, 615.54it/s]
+100%|██████████| 2/2 [00:00<00:00, 616.99it/s]
+100%|██████████| 2/2 [00:00<00:00, 606.42it/s]
+100%|██████████| 2/2 [00:00<00:00, 606.24it/s]
+2024-05-26:19:04:54,554 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_security_studies on rank 0...
+2024-05-26:19:04:54,554 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_security_studies on rank 7...
+2024-05-26:19:04:54,554 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_security_studies on rank 6...
+2024-05-26:19:04:54,554 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_security_studies on rank 5...
+2024-05-26:19:04:54,554 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_security_studies on rank 2...
+2024-05-26:19:04:54,554 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_security_studies on rank 3...
+2024-05-26:19:04:54,554 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_security_studies on rank 1...
+2024-05-26:19:04:54,554 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_security_studies on rank 4...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 504.28it/s]
+100%|██████████| 3/3 [00:00<00:00, 505.50it/s]
+100%|██████████| 3/3 [00:00<00:00, 502.37it/s]100%|██████████| 3/3 [00:00<00:00, 503.70it/s]
+100%|██████████| 3/3 [00:00<00:00, 504.59it/s]
+
+100%|██████████| 4/4 [00:00<00:00, 503.82it/s]
+100%|██████████| 4/4 [00:00<00:00, 458.32it/s]
+100%|██████████| 4/4 [00:00<00:00, 421.32it/s]
+2024-05-26:19:04:54,566 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_microeconomics on rank 7...
+2024-05-26:19:04:54,566 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_microeconomics on rank 0...
+2024-05-26:19:04:54,566 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_microeconomics on rank 3...
+2024-05-26:19:04:54,566 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_microeconomics on rank 1...
+2024-05-26:19:04:54,566 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_microeconomics on rank 2...
+2024-05-26:19:04:54,566 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_microeconomics on rank 6...
+2024-05-26:19:04:54,566 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_microeconomics on rank 5...
+2024-05-26:19:04:54,567 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_microeconomics on rank 4...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 608.40it/s]
+100%|██████████| 3/3 [00:00<00:00, 594.82it/s]
+100%|██████████| 3/3 [00:00<00:00, 597.03it/s]
+100%|██████████| 3/3 [00:00<00:00, 584.16it/s]100%|██████████| 3/3 [00:00<00:00, 593.37it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 509.88it/s]
+100%|██████████| 4/4 [00:00<00:00, 612.73it/s]
+100%|██████████| 4/4 [00:00<00:00, 607.08it/s]
+2024-05-26:19:04:54,575 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_psychology on rank 7...
+2024-05-26:19:04:54,575 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_psychology on rank 2...
+2024-05-26:19:04:54,575 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_psychology on rank 0...
+2024-05-26:19:04:54,575 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_psychology on rank 5...
+2024-05-26:19:04:54,575 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_psychology on rank 1...
+2024-05-26:19:04:54,575 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_psychology on rank 3...
+2024-05-26:19:04:54,575 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_psychology on rank 6...
+2024-05-26:19:04:54,575 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_psychology on rank 4...
+  0%|          | 0/8 [00:00<?, ?it/s]  0%|          | 0/8 [00:00<?, ?it/s]  0%|          | 0/9 [00:00<?, ?it/s]  0%|          | 0/9 [00:00<?, ?it/s]  0%|          | 0/9 [00:00<?, ?it/s]  0%|          | 0/9 [00:00<?, ?it/s]  0%|          | 0/9 [00:00<?, ?it/s]  0%|          | 0/8 [00:00<?, ?it/s]100%|██████████| 8/8 [00:00<00:00, 566.06it/s]
+100%|██████████| 8/8 [00:00<00:00, 562.02it/s]
+100%|██████████| 8/8 [00:00<00:00, 563.19it/s]
+100%|██████████| 9/9 [00:00<00:00, 568.62it/s]
+100%|██████████| 9/9 [00:00<00:00, 562.94it/s]100%|██████████| 9/9 [00:00<00:00, 563.29it/s]
+
+100%|██████████| 9/9 [00:00<00:00, 555.15it/s]
+100%|██████████| 9/9 [00:00<00:00, 540.25it/s]
+2024-05-26:19:04:54,595 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_sociology on rank 3...
+2024-05-26:19:04:54,595 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_sociology on rank 2...
+2024-05-26:19:04:54,595 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_sociology on rank 0...
+2024-05-26:19:04:54,595 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_sociology on rank 7...
+2024-05-26:19:04:54,595 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_sociology on rank 1...
+2024-05-26:19:04:54,595 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_sociology on rank 6...
+2024-05-26:19:04:54,595 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_sociology on rank 5...
+2024-05-26:19:04:54,595 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_sociology on rank 4...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 594.77it/s]
+100%|██████████| 2/2 [00:00<00:00, 590.12it/s]
+100%|██████████| 3/3 [00:00<00:00, 607.40it/s]
+100%|██████████| 3/3 [00:00<00:00, 604.11it/s]
+100%|██████████| 3/3 [00:00<00:00, 597.11it/s]
+100%|██████████| 3/3 [00:00<00:00, 594.60it/s]
+100%|██████████| 3/3 [00:00<00:00, 495.72it/s]
+100%|██████████| 3/3 [00:00<00:00, 439.13it/s]
+2024-05-26:19:04:54,604 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_sexuality on rank 2...
+2024-05-26:19:04:54,604 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_sexuality on rank 0...
+2024-05-26:19:04:54,604 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_sexuality on rank 3...
+2024-05-26:19:04:54,604 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_sexuality on rank 4...
+2024-05-26:19:04:54,604 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_sexuality on rank 7...
+2024-05-26:19:04:54,604 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_sexuality on rank 5...
+2024-05-26:19:04:54,604 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_sexuality on rank 1...
+2024-05-26:19:04:54,604 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_sexuality on rank 6...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 601.77it/s]100%|██████████| 1/1 [00:00<00:00, 600.56it/s]
+100%|██████████| 1/1 [00:00<00:00, 606.81it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 597.14it/s]
+100%|██████████| 2/2 [00:00<00:00, 629.21it/s]100%|██████████| 2/2 [00:00<00:00, 621.70it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 623.27it/s]
+100%|██████████| 2/2 [00:00<00:00, 624.15it/s]
+2024-05-26:19:04:54,609 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_psychology on rank 0...
+2024-05-26:19:04:54,609 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_psychology on rank 7...
+2024-05-26:19:04:54,609 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_psychology on rank 6...
+2024-05-26:19:04:54,609 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_psychology on rank 5...
+2024-05-26:19:04:54,609 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_psychology on rank 3...
+2024-05-26:19:04:54,609 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_psychology on rank 2...
+2024-05-26:19:04:54,609 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_psychology on rank 4...
+2024-05-26:19:04:54,609 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_psychology on rank 1...
+  0%|          | 0/7 [00:00<?, ?it/s]  0%|          | 0/7 [00:00<?, ?it/s]  0%|          | 0/8 [00:00<?, ?it/s]  0%|          | 0/7 [00:00<?, ?it/s]  0%|          | 0/8 [00:00<?, ?it/s]  0%|          | 0/8 [00:00<?, ?it/s]  0%|          | 0/8 [00:00<?, ?it/s]  0%|          | 0/7 [00:00<?, ?it/s]100%|██████████| 7/7 [00:00<00:00, 592.11it/s]
+100%|██████████| 7/7 [00:00<00:00, 590.96it/s]100%|██████████| 7/7 [00:00<00:00, 592.87it/s]
+
+100%|██████████| 7/7 [00:00<00:00, 591.12it/s]
+100%|██████████| 8/8 [00:00<00:00, 597.52it/s]100%|██████████| 8/8 [00:00<00:00, 599.43it/s]
+
+100%|██████████| 8/8 [00:00<00:00, 589.89it/s]
+100%|██████████| 8/8 [00:00<00:00, 588.08it/s]
+2024-05-26:19:04:54,626 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_clinical_knowledge on rank 2...
+2024-05-26:19:04:54,626 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_clinical_knowledge on rank 1...
+2024-05-26:19:04:54,626 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_clinical_knowledge on rank 0...
+2024-05-26:19:04:54,626 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_clinical_knowledge on rank 7...
+2024-05-26:19:04:54,626 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_clinical_knowledge on rank 3...
+2024-05-26:19:04:54,626 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_clinical_knowledge on rank 5...
+2024-05-26:19:04:54,626 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_clinical_knowledge on rank 4...
+2024-05-26:19:04:54,626 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_clinical_knowledge on rank 6...
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 624.31it/s]
+100%|██████████| 3/3 [00:00<00:00, 539.95it/s]
+100%|██████████| 3/3 [00:00<00:00, 540.18it/s]
+100%|██████████| 4/4 [00:00<00:00, 633.27it/s]100%|██████████| 4/4 [00:00<00:00, 626.62it/s]
+
+100%|██████████| 4/4 [00:00<00:00, 628.43it/s]100%|██████████| 4/4 [00:00<00:00, 626.48it/s]
+
+100%|██████████| 4/4 [00:00<00:00, 621.24it/s]
+2024-05-26:19:04:54,634 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_aging on rank 2...
+2024-05-26:19:04:54,634 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_aging on rank 0...
+2024-05-26:19:04:54,634 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_aging on rank 3...
+2024-05-26:19:04:54,634 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_aging on rank 7...
+2024-05-26:19:04:54,634 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_aging on rank 6...
+2024-05-26:19:04:54,634 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_aging on rank 5...
+2024-05-26:19:04:54,634 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_aging on rank 4...
+2024-05-26:19:04:54,634 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_human_aging on rank 1...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 637.87it/s]
+100%|██████████| 3/3 [00:00<00:00, 653.05it/s]
+100%|██████████| 3/3 [00:00<00:00, 643.59it/s]
+100%|██████████| 3/3 [00:00<00:00, 646.97it/s]100%|██████████| 3/3 [00:00<00:00, 638.40it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 642.41it/s]
+100%|██████████| 3/3 [00:00<00:00, 642.18it/s]
+100%|██████████| 3/3 [00:00<00:00, 636.79it/s]
+2024-05-26:19:04:54,640 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_medical_genetics on rank 6...
+2024-05-26:19:04:54,640 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_medical_genetics on rank 5...
+2024-05-26:19:04:54,640 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_medical_genetics on rank 7...
+2024-05-26:19:04:54,640 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_medical_genetics on rank 2...
+2024-05-26:19:04:54,640 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_medical_genetics on rank 0...
+2024-05-26:19:04:54,640 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_medical_genetics on rank 3...
+2024-05-26:19:04:54,640 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_medical_genetics on rank 1...
+2024-05-26:19:04:54,640 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_medical_genetics on rank 4...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 602.02it/s]100%|██████████| 1/1 [00:00<00:00, 605.41it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 612.75it/s]
+100%|██████████| 1/1 [00:00<00:00, 598.16it/s]
+100%|██████████| 2/2 [00:00<00:00, 621.56it/s]100%|██████████| 2/2 [00:00<00:00, 613.11it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 611.06it/s]
+100%|██████████| 1/1 [00:00<00:00, 434.19it/s]
+2024-05-26:19:04:54,646 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_virology on rank 3...
+2024-05-26:19:04:54,646 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_virology on rank 7...
+2024-05-26:19:04:54,646 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_virology on rank 0...
+2024-05-26:19:04:54,646 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_virology on rank 5...
+2024-05-26:19:04:54,646 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_virology on rank 2...
+2024-05-26:19:04:54,646 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_virology on rank 4...
+2024-05-26:19:04:54,646 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_virology on rank 1...
+2024-05-26:19:04:54,646 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_virology on rank 6...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 638.16it/s]
+100%|██████████| 2/2 [00:00<00:00, 627.37it/s]
+100%|██████████| 2/2 [00:00<00:00, 625.50it/s]100%|██████████| 2/2 [00:00<00:00, 625.92it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 603.15it/s]
+100%|██████████| 2/2 [00:00<00:00, 629.54it/s]
+100%|██████████| 3/3 [00:00<00:00, 639.54it/s]
+100%|██████████| 3/3 [00:00<00:00, 635.28it/s]
+2024-05-26:19:04:54,652 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_management on rank 6...
+2024-05-26:19:04:54,652 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_management on rank 7...
+2024-05-26:19:04:54,652 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_management on rank 0...
+2024-05-26:19:04:54,652 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_management on rank 1...
+2024-05-26:19:04:54,652 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_management on rank 3...
+2024-05-26:19:04:54,652 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_management on rank 5...
+2024-05-26:19:04:54,652 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_management on rank 2...
+2024-05-26:19:04:54,652 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_management on rank 4...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 601.94it/s]100%|██████████| 1/1 [00:00<00:00, 604.11it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 605.76it/s]
+100%|██████████| 1/1 [00:00<00:00, 593.42it/s]100%|██████████| 1/1 [00:00<00:00, 602.28it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 610.21it/s]
+100%|██████████| 2/2 [00:00<00:00, 620.05it/s]
+100%|██████████| 2/2 [00:00<00:00, 604.19it/s]
+2024-05-26:19:04:54,656 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_marketing on rank 3...
+2024-05-26:19:04:54,656 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_marketing on rank 6...
+2024-05-26:19:04:54,656 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_marketing on rank 2...
+2024-05-26:19:04:54,656 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_marketing on rank 5...
+2024-05-26:19:04:54,656 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_marketing on rank 7...
+2024-05-26:19:04:54,656 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_marketing on rank 0...
+2024-05-26:19:04:54,656 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_marketing on rank 1...
+2024-05-26:19:04:54,656 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_marketing on rank 4...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 617.08it/s]100%|██████████| 3/3 [00:00<00:00, 612.93it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 611.86it/s]
+100%|██████████| 3/3 [00:00<00:00, 603.87it/s]100%|██████████| 3/3 [00:00<00:00, 600.36it/s]
+100%|██████████| 3/3 [00:00<00:00, 606.26it/s]100%|██████████| 3/3 [00:00<00:00, 609.08it/s]
+
+
+100%|██████████| 4/4 [00:00<00:00, 620.87it/s]
+2024-05-26:19:04:54,665 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_global_facts on rank 7...
+2024-05-26:19:04:54,665 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_global_facts on rank 3...
+2024-05-26:19:04:54,665 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_global_facts on rank 0...
+2024-05-26:19:04:54,665 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_global_facts on rank 2...
+2024-05-26:19:04:54,665 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_global_facts on rank 6...
+2024-05-26:19:04:54,665 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_global_facts on rank 5...
+2024-05-26:19:04:54,665 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_global_facts on rank 1...
+2024-05-26:19:04:54,665 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_global_facts on rank 4...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 590.08it/s]100%|██████████| 1/1 [00:00<00:00, 594.85it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 587.52it/s]100%|██████████| 1/1 [00:00<00:00, 592.00it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 577.81it/s]100%|██████████| 1/1 [00:00<00:00, 548.13it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 609.42it/s]
+100%|██████████| 2/2 [00:00<00:00, 607.65it/s]
+2024-05-26:19:04:54,669 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_nutrition on rank 7...
+2024-05-26:19:04:54,669 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_nutrition on rank 0...
+2024-05-26:19:04:54,669 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_nutrition on rank 6...
+2024-05-26:19:04:54,669 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_nutrition on rank 2...
+2024-05-26:19:04:54,669 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_nutrition on rank 3...
+2024-05-26:19:04:54,669 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_nutrition on rank 5...
+2024-05-26:19:04:54,669 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_nutrition on rank 1...
+2024-05-26:19:04:54,669 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_nutrition on rank 4...
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 593.67it/s]
+100%|██████████| 4/4 [00:00<00:00, 596.91it/s]
+100%|██████████| 4/4 [00:00<00:00, 588.86it/s]100%|██████████| 4/4 [00:00<00:00, 590.89it/s]
+
+100%|██████████| 4/4 [00:00<00:00, 586.88it/s]
+100%|██████████| 4/4 [00:00<00:00, 586.74it/s]
+100%|██████████| 4/4 [00:00<00:00, 584.98it/s]
+100%|██████████| 5/5 [00:00<00:00, 595.61it/s]
+2024-05-26:19:04:54,679 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_medicine on rank 7...
+2024-05-26:19:04:54,679 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_medicine on rank 2...
+2024-05-26:19:04:54,679 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_medicine on rank 6...
+2024-05-26:19:04:54,679 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_medicine on rank 3...
+2024-05-26:19:04:54,679 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_medicine on rank 5...
+2024-05-26:19:04:54,679 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_medicine on rank 0...
+2024-05-26:19:04:54,679 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_medicine on rank 1...
+2024-05-26:19:04:54,679 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_medicine on rank 4...
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 534.24it/s]
+100%|██████████| 4/4 [00:00<00:00, 539.08it/s]100%|██████████| 4/4 [00:00<00:00, 537.54it/s]100%|██████████| 4/4 [00:00<00:00, 533.97it/s]
+
+
+100%|██████████| 4/4 [00:00<00:00, 533.85it/s]100%|██████████| 4/4 [00:00<00:00, 530.81it/s]
+
+100%|██████████| 4/4 [00:00<00:00, 525.32it/s]
+100%|██████████| 4/4 [00:00<00:00, 512.94it/s]
+2024-05-26:19:04:54,690 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_medicine on rank 3...
+2024-05-26:19:04:54,690 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_medicine on rank 5...
+2024-05-26:19:04:54,690 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_medicine on rank 4...
+2024-05-26:19:04:54,690 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_medicine on rank 1...
+2024-05-26:19:04:54,690 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_medicine on rank 0...
+2024-05-26:19:04:54,690 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_medicine on rank 2...
+2024-05-26:19:04:54,690 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_medicine on rank 7...
+2024-05-26:19:04:54,690 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_medicine on rank 6...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 546.06it/s]
+100%|██████████| 2/2 [00:00<00:00, 531.70it/s]
+100%|██████████| 3/3 [00:00<00:00, 551.47it/s]100%|██████████| 3/3 [00:00<00:00, 546.56it/s]100%|██████████| 3/3 [00:00<00:00, 541.55it/s]
+
+
+100%|██████████| 3/3 [00:00<00:00, 541.43it/s]100%|██████████| 3/3 [00:00<00:00, 541.78it/s]
+100%|██████████| 3/3 [00:00<00:00, 534.40it/s]
+
+2024-05-26:19:04:54,697 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_accounting on rank 7...
+2024-05-26:19:04:54,697 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_accounting on rank 3...
+2024-05-26:19:04:54,697 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_accounting on rank 5...
+2024-05-26:19:04:54,697 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_accounting on rank 2...
+2024-05-26:19:04:54,697 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_accounting on rank 0...
+2024-05-26:19:04:54,697 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_accounting on rank 6...
+2024-05-26:19:04:54,697 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_accounting on rank 1...
+2024-05-26:19:04:54,697 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_professional_accounting on rank 4...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 567.28it/s]
+100%|██████████| 4/4 [00:00<00:00, 572.86it/s]
+100%|██████████| 4/4 [00:00<00:00, 562.41it/s]100%|██████████| 4/4 [00:00<00:00, 563.03it/s]
+
+100%|██████████| 4/4 [00:00<00:00, 557.12it/s]
+100%|██████████| 4/4 [00:00<00:00, 559.28it/s]100%|██████████| 4/4 [00:00<00:00, 550.89it/s]100%|██████████| 4/4 [00:00<00:00, 556.99it/s]
+
+
+2024-05-26:19:04:54,707 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_business_ethics on rank 7...
+2024-05-26:19:04:54,707 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_business_ethics on rank 1...
+2024-05-26:19:04:54,707 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_business_ethics on rank 5...
+2024-05-26:19:04:54,707 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_business_ethics on rank 6...
+2024-05-26:19:04:54,707 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_business_ethics on rank 2...
+2024-05-26:19:04:54,707 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_business_ethics on rank 4...
+2024-05-26:19:04:54,707 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_business_ethics on rank 3...
+2024-05-26:19:04:54,707 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_business_ethics on rank 0...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 525.87it/s]
+100%|██████████| 1/1 [00:00<00:00, 519.35it/s]100%|██████████| 1/1 [00:00<00:00, 521.81it/s]
+100%|██████████| 1/1 [00:00<00:00, 527.65it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 508.96it/s]
+100%|██████████| 2/2 [00:00<00:00, 538.11it/s]
+100%|██████████| 2/2 [00:00<00:00, 539.74it/s]100%|██████████| 2/2 [00:00<00:00, 531.26it/s]
+
+2024-05-26:19:04:54,712 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_miscellaneous on rank 0...
+2024-05-26:19:04:54,712 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_miscellaneous on rank 7...
+2024-05-26:19:04:54,712 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_miscellaneous on rank 6...
+2024-05-26:19:04:54,712 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_miscellaneous on rank 3...
+2024-05-26:19:04:54,712 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_miscellaneous on rank 2...
+2024-05-26:19:04:54,712 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_miscellaneous on rank 5...
+2024-05-26:19:04:54,712 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_miscellaneous on rank 4...
+2024-05-26:19:04:54,712 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_miscellaneous on rank 1...
+  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/11 [00:00<?, ?it/s]  0%|          | 0/11 [00:00<?, ?it/s]  0%|          | 0/11 [00:00<?, ?it/s]  0%|          | 0/11 [00:00<?, ?it/s]  0%|          | 0/11 [00:00<?, ?it/s]  0%|          | 0/11 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 652.16it/s]100%|██████████| 10/10 [00:00<00:00, 651.02it/s]
+
+100%|██████████| 11/11 [00:00<00:00, 660.56it/s]
+100%|██████████| 11/11 [00:00<00:00, 660.25it/s]
+100%|██████████| 11/11 [00:00<00:00, 655.44it/s]
+100%|██████████| 11/11 [00:00<00:00, 648.36it/s]
+100%|██████████| 11/11 [00:00<00:00, 646.81it/s]
+100%|██████████| 11/11 [00:00<00:00, 647.16it/s]
+2024-05-26:19:04:54,733 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_computer_security on rank 2...
+2024-05-26:19:04:54,733 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_computer_security on rank 3...
+2024-05-26:19:04:54,733 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_computer_security on rank 5...
+2024-05-26:19:04:54,733 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_computer_security on rank 0...
+2024-05-26:19:04:54,733 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_computer_security on rank 7...
+2024-05-26:19:04:54,733 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_computer_security on rank 6...
+2024-05-26:19:04:54,733 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_computer_security on rank 4...
+2024-05-26:19:04:54,733 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_computer_security on rank 1...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 589.34it/s]
+100%|██████████| 1/1 [00:00<00:00, 581.57it/s]100%|██████████| 1/1 [00:00<00:00, 588.43it/s]
+100%|██████████| 1/1 [00:00<00:00, 585.63it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 570.42it/s]
+100%|██████████| 2/2 [00:00<00:00, 598.42it/s]
+100%|██████████| 2/2 [00:00<00:00, 602.20it/s]
+100%|██████████| 2/2 [00:00<00:00, 593.63it/s]
+2024-05-26:19:04:54,738 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_astronomy on rank 7...
+2024-05-26:19:04:54,738 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_astronomy on rank 2...
+2024-05-26:19:04:54,738 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_astronomy on rank 0...
+2024-05-26:19:04:54,738 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_astronomy on rank 3...
+2024-05-26:19:04:54,738 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_astronomy on rank 5...
+2024-05-26:19:04:54,738 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_astronomy on rank 6...
+2024-05-26:19:04:54,738 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_astronomy on rank 4...
+2024-05-26:19:04:54,738 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_astronomy on rank 1...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 537.83it/s]
+100%|██████████| 2/2 [00:00<00:00, 539.95it/s]
+100%|██████████| 2/2 [00:00<00:00, 540.68it/s]100%|██████████| 2/2 [00:00<00:00, 529.02it/s]
+100%|██████████| 2/2 [00:00<00:00, 528.18it/s]100%|██████████| 2/2 [00:00<00:00, 538.21it/s]
+
+
+100%|██████████| 2/2 [00:00<00:00, 518.17it/s]
+100%|██████████| 2/2 [00:00<00:00, 524.09it/s]
+2024-05-26:19:04:54,743 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_physics on rank 7...
+2024-05-26:19:04:54,743 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_physics on rank 5...
+2024-05-26:19:04:54,743 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_physics on rank 3...
+2024-05-26:19:04:54,743 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_physics on rank 6...
+2024-05-26:19:04:54,743 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_physics on rank 2...
+2024-05-26:19:04:54,743 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_physics on rank 0...
+2024-05-26:19:04:54,743 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_physics on rank 1...
+2024-05-26:19:04:54,743 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_physics on rank 4...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 588.59it/s]
+100%|██████████| 2/2 [00:00<00:00, 584.37it/s]
+100%|██████████| 2/2 [00:00<00:00, 581.45it/s]
+100%|██████████| 2/2 [00:00<00:00, 563.33it/s]100%|██████████| 2/2 [00:00<00:00, 577.73it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 572.48it/s]
+100%|██████████| 2/2 [00:00<00:00, 556.75it/s]
+100%|██████████| 3/3 [00:00<00:00, 594.71it/s]
+2024-05-26:19:04:54,749 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_biology on rank 7...
+2024-05-26:19:04:54,749 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_biology on rank 2...
+2024-05-26:19:04:54,749 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_biology on rank 6...
+2024-05-26:19:04:54,749 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_biology on rank 0...
+2024-05-26:19:04:54,749 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_biology on rank 3...
+2024-05-26:19:04:54,749 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_biology on rank 5...
+2024-05-26:19:04:54,749 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_biology on rank 4...
+2024-05-26:19:04:54,749 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_biology on rank 1...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 534.27it/s]
+100%|██████████| 2/2 [00:00<00:00, 529.62it/s]100%|██████████| 2/2 [00:00<00:00, 526.03it/s]100%|██████████| 2/2 [00:00<00:00, 531.80it/s]
+100%|██████████| 2/2 [00:00<00:00, 532.00it/s]
+
+
+100%|██████████| 2/2 [00:00<00:00, 521.32it/s]100%|██████████| 2/2 [00:00<00:00, 525.60it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 504.18it/s]
+2024-05-26:19:04:54,755 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_chemistry on rank 2...
+2024-05-26:19:04:54,755 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_chemistry on rank 0...
+2024-05-26:19:04:54,755 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_chemistry on rank 1...
+2024-05-26:19:04:54,755 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_chemistry on rank 3...
+2024-05-26:19:04:54,755 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_chemistry on rank 7...
+2024-05-26:19:04:54,755 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_chemistry on rank 5...
+2024-05-26:19:04:54,755 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_chemistry on rank 6...
+2024-05-26:19:04:54,755 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_chemistry on rank 4...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 578.13it/s]
+100%|██████████| 1/1 [00:00<00:00, 583.43it/s]100%|██████████| 1/1 [00:00<00:00, 577.49it/s]
+100%|██████████| 1/1 [00:00<00:00, 573.70it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 569.49it/s]100%|██████████| 1/1 [00:00<00:00, 566.42it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 570.11it/s]100%|██████████| 1/1 [00:00<00:00, 563.67it/s]
+
+2024-05-26:19:04:54,758 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_physics on rank 5...
+2024-05-26:19:04:54,758 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_physics on rank 2...
+2024-05-26:19:04:54,758 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_physics on rank 6...
+2024-05-26:19:04:54,758 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_physics on rank 7...
+2024-05-26:19:04:54,758 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_physics on rank 3...
+2024-05-26:19:04:54,758 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_physics on rank 0...
+2024-05-26:19:04:54,758 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_physics on rank 4...
+2024-05-26:19:04:54,758 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_physics on rank 1...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 591.16it/s]
+100%|██████████| 1/1 [00:00<00:00, 592.00it/s]100%|██████████| 1/1 [00:00<00:00, 584.57it/s]100%|██████████| 1/1 [00:00<00:00, 592.58it/s]
+
+
+100%|██████████| 1/1 [00:00<00:00, 573.70it/s]
+100%|██████████| 2/2 [00:00<00:00, 589.63it/s]
+100%|██████████| 2/2 [00:00<00:00, 597.86it/s]
+100%|██████████| 2/2 [00:00<00:00, 593.17it/s]
+2024-05-26:19:04:54,762 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_biology on rank 6...
+2024-05-26:19:04:54,762 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_biology on rank 2...
+2024-05-26:19:04:54,762 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_biology on rank 7...
+2024-05-26:19:04:54,762 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_biology on rank 0...
+2024-05-26:19:04:54,762 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_biology on rank 3...
+2024-05-26:19:04:54,762 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_biology on rank 1...
+2024-05-26:19:04:54,762 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_biology on rank 5...
+2024-05-26:19:04:54,762 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_biology on rank 4...
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 544.11it/s]100%|██████████| 4/4 [00:00<00:00, 545.42it/s]
+100%|██████████| 4/4 [00:00<00:00, 547.81it/s]
+100%|██████████| 4/4 [00:00<00:00, 538.25it/s]
+100%|██████████| 4/4 [00:00<00:00, 539.95it/s]100%|██████████| 4/4 [00:00<00:00, 545.62it/s]
+100%|██████████| 4/4 [00:00<00:00, 539.08it/s]
+
+
+100%|██████████| 4/4 [00:00<00:00, 535.14it/s]
+2024-05-26:19:04:54,772 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_elementary_mathematics on rank 3...
+2024-05-26:19:04:54,772 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_elementary_mathematics on rank 2...
+2024-05-26:19:04:54,772 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_elementary_mathematics on rank 6...
+2024-05-26:19:04:54,772 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_elementary_mathematics on rank 0...
+2024-05-26:19:04:54,772 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_elementary_mathematics on rank 4...
+2024-05-26:19:04:54,772 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_elementary_mathematics on rank 7...
+2024-05-26:19:04:54,772 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_elementary_mathematics on rank 5...
+2024-05-26:19:04:54,772 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_elementary_mathematics on rank 1...
+  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/6 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 609.16it/s]
+100%|██████████| 5/5 [00:00<00:00, 602.32it/s]100%|██████████| 5/5 [00:00<00:00, 604.84it/s]
+
+100%|██████████| 5/5 [00:00<00:00, 599.41it/s]100%|██████████| 5/5 [00:00<00:00, 590.88it/s]100%|██████████| 5/5 [00:00<00:00, 602.94it/s]
+
+
+100%|██████████| 5/5 [00:00<00:00, 537.69it/s]
+100%|██████████| 6/6 [00:00<00:00, 613.86it/s]
+2024-05-26:19:04:54,784 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_statistics on rank 2...
+2024-05-26:19:04:54,784 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_statistics on rank 4...
+2024-05-26:19:04:54,784 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_statistics on rank 3...
+2024-05-26:19:04:54,784 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_statistics on rank 5...
+2024-05-26:19:04:54,784 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_statistics on rank 7...
+2024-05-26:19:04:54,784 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_statistics on rank 0...
+2024-05-26:19:04:54,784 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_statistics on rank 6...
+2024-05-26:19:04:54,784 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_statistics on rank 1...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 562.01it/s]
+100%|██████████| 3/3 [00:00<00:00, 566.85it/s]
+100%|██████████| 3/3 [00:00<00:00, 567.95it/s]100%|██████████| 3/3 [00:00<00:00, 557.16it/s]100%|██████████| 3/3 [00:00<00:00, 561.11it/s]
+100%|██████████| 3/3 [00:00<00:00, 561.74it/s]
+
+
+100%|██████████| 3/3 [00:00<00:00, 559.84it/s]
+100%|██████████| 3/3 [00:00<00:00, 508.69it/s]
+2024-05-26:19:04:54,792 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_electrical_engineering on rank 3...
+2024-05-26:19:04:54,792 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_electrical_engineering on rank 7...
+2024-05-26:19:04:54,792 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_electrical_engineering on rank 6...
+2024-05-26:19:04:54,792 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_electrical_engineering on rank 0...
+2024-05-26:19:04:54,792 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_electrical_engineering on rank 5...
+2024-05-26:19:04:54,792 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_electrical_engineering on rank 4...
+2024-05-26:19:04:54,792 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_electrical_engineering on rank 1...
+2024-05-26:19:04:54,792 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_electrical_engineering on rank 2...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 599.06it/s]100%|██████████| 2/2 [00:00<00:00, 605.02it/s]100%|██████████| 2/2 [00:00<00:00, 589.38it/s]
+
+
+100%|██████████| 2/2 [00:00<00:00, 591.83it/s]100%|██████████| 2/2 [00:00<00:00, 579.28it/s]
+100%|██████████| 2/2 [00:00<00:00, 587.68it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 586.08it/s]
+100%|██████████| 2/2 [00:00<00:00, 562.84it/s]
+2024-05-26:19:04:54,797 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_conceptual_physics on rank 3...
+2024-05-26:19:04:54,797 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_conceptual_physics on rank 7...
+2024-05-26:19:04:54,797 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_conceptual_physics on rank 0...
+2024-05-26:19:04:54,797 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_conceptual_physics on rank 2...
+2024-05-26:19:04:54,797 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_conceptual_physics on rank 6...
+2024-05-26:19:04:54,797 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_conceptual_physics on rank 5...
+2024-05-26:19:04:54,797 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_conceptual_physics on rank 4...
+2024-05-26:19:04:54,797 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_conceptual_physics on rank 1...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 615.90it/s]
+100%|██████████| 3/3 [00:00<00:00, 611.62it/s]
+100%|██████████| 3/3 [00:00<00:00, 597.45it/s]
+100%|██████████| 3/3 [00:00<00:00, 598.22it/s]100%|██████████| 3/3 [00:00<00:00, 605.53it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 588.01it/s]
+100%|██████████| 4/4 [00:00<00:00, 618.31it/s]
+100%|██████████| 4/4 [00:00<00:00, 614.75it/s]
+2024-05-26:19:04:54,805 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_mathematics on rank 2...
+2024-05-26:19:04:54,805 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_mathematics on rank 7...
+2024-05-26:19:04:54,805 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_mathematics on rank 3...
+2024-05-26:19:04:54,805 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_mathematics on rank 0...
+2024-05-26:19:04:54,805 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_mathematics on rank 6...
+2024-05-26:19:04:54,805 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_mathematics on rank 5...
+2024-05-26:19:04:54,805 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_mathematics on rank 4...
+2024-05-26:19:04:54,805 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_mathematics on rank 1...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 551.88it/s]
+100%|██████████| 1/1 [00:00<00:00, 551.16it/s]
+100%|██████████| 1/1 [00:00<00:00, 548.13it/s]
+100%|██████████| 1/1 [00:00<00:00, 536.63it/s]100%|██████████| 1/1 [00:00<00:00, 540.64it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 545.32it/s]
+100%|██████████| 2/2 [00:00<00:00, 551.34it/s]
+100%|██████████| 2/2 [00:00<00:00, 546.35it/s]
+2024-05-26:19:04:54,810 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_abstract_algebra on rank 5...
+2024-05-26:19:04:54,810 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_abstract_algebra on rank 7...
+2024-05-26:19:04:54,810 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_abstract_algebra on rank 0...
+2024-05-26:19:04:54,810 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_abstract_algebra on rank 6...
+2024-05-26:19:04:54,810 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_abstract_algebra on rank 2...
+2024-05-26:19:04:54,810 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_abstract_algebra on rank 3...
+2024-05-26:19:04:54,810 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_abstract_algebra on rank 1...
+2024-05-26:19:04:54,810 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_abstract_algebra on rank 4...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 601.94it/s]
+100%|██████████| 1/1 [00:00<00:00, 584.65it/s]
+100%|██████████| 1/1 [00:00<00:00, 589.42it/s]100%|██████████| 1/1 [00:00<00:00, 599.27it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 591.83it/s]
+100%|██████████| 2/2 [00:00<00:00, 604.06it/s]
+100%|██████████| 2/2 [00:00<00:00, 596.97it/s]
+100%|██████████| 2/2 [00:00<00:00, 567.26it/s]
+2024-05-26:19:04:54,815 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_machine_learning on rank 2...
+2024-05-26:19:04:54,815 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_machine_learning on rank 0...
+2024-05-26:19:04:54,815 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_machine_learning on rank 3...
+2024-05-26:19:04:54,815 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_machine_learning on rank 6...
+2024-05-26:19:04:54,815 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_machine_learning on rank 7...
+2024-05-26:19:04:54,815 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_machine_learning on rank 1...
+2024-05-26:19:04:54,815 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_machine_learning on rank 5...
+2024-05-26:19:04:54,815 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_machine_learning on rank 4...
+  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 518.58it/s]
+100%|██████████| 1/1 [00:00<00:00, 513.13it/s]100%|██████████| 1/1 [00:00<00:00, 516.09it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 508.28it/s]
+100%|██████████| 1/1 [00:00<00:00, 508.83it/s]
+100%|██████████| 2/2 [00:00<00:00, 529.99it/s]
+100%|██████████| 2/2 [00:00<00:00, 530.89it/s]
+100%|██████████| 2/2 [00:00<00:00, 521.61it/s]
+2024-05-26:19:04:54,820 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_anatomy on rank 7...
+2024-05-26:19:04:54,820 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_anatomy on rank 0...
+2024-05-26:19:04:54,820 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_anatomy on rank 6...
+2024-05-26:19:04:54,820 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_anatomy on rank 2...
+2024-05-26:19:04:54,820 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_anatomy on rank 3...
+2024-05-26:19:04:54,820 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_anatomy on rank 5...
+2024-05-26:19:04:54,820 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_anatomy on rank 1...
+2024-05-26:19:04:54,820 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_anatomy on rank 4...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 520.00it/s]
+100%|██████████| 1/1 [00:00<00:00, 520.77it/s]
+100%|██████████| 2/2 [00:00<00:00, 535.81it/s]
+100%|██████████| 2/2 [00:00<00:00, 533.32it/s]100%|██████████| 2/2 [00:00<00:00, 530.39it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 531.70it/s]100%|██████████| 2/2 [00:00<00:00, 532.91it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 519.00it/s]
+2024-05-26:19:04:54,825 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_mathematics on rank 2...
+2024-05-26:19:04:54,825 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_mathematics on rank 7...
+2024-05-26:19:04:54,825 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_mathematics on rank 0...
+2024-05-26:19:04:54,825 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_mathematics on rank 3...
+2024-05-26:19:04:54,825 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_mathematics on rank 6...
+2024-05-26:19:04:54,825 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_mathematics on rank 5...
+2024-05-26:19:04:54,825 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_mathematics on rank 1...
+2024-05-26:19:04:54,825 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_mathematics on rank 4...
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 597.91it/s]
+100%|██████████| 3/3 [00:00<00:00, 596.01it/s]100%|██████████| 3/3 [00:00<00:00, 596.43it/s]
+
+100%|██████████| 4/4 [00:00<00:00, 598.59it/s]100%|██████████| 4/4 [00:00<00:00, 592.67it/s]
+
+100%|██████████| 4/4 [00:00<00:00, 590.12it/s]
+100%|██████████| 4/4 [00:00<00:00, 594.68it/s]
+100%|██████████| 4/4 [00:00<00:00, 590.98it/s]
+2024-05-26:19:04:54,834 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_chemistry on rank 3...
+2024-05-26:19:04:54,834 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_chemistry on rank 2...
+2024-05-26:19:04:54,834 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_chemistry on rank 1...
+2024-05-26:19:04:54,834 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_chemistry on rank 7...
+2024-05-26:19:04:54,834 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_chemistry on rank 4...
+2024-05-26:19:04:54,834 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_chemistry on rank 0...
+2024-05-26:19:04:54,834 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_chemistry on rank 5...
+2024-05-26:19:04:54,834 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_chemistry on rank 6...
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 570.46it/s]100%|██████████| 2/2 [00:00<00:00, 578.41it/s]
+
+100%|██████████| 3/3 [00:00<00:00, 587.03it/s]
+100%|██████████| 3/3 [00:00<00:00, 593.79it/s]
+100%|██████████| 3/3 [00:00<00:00, 577.86it/s]
+100%|██████████| 3/3 [00:00<00:00, 582.14it/s]100%|██████████| 3/3 [00:00<00:00, 577.20it/s]100%|██████████| 3/3 [00:00<00:00, 569.18it/s]
+
+
+2024-05-26:19:04:54,841 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_computer_science on rank 7...
+2024-05-26:19:04:54,841 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_computer_science on rank 6...
+2024-05-26:19:04:54,841 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_computer_science on rank 3...
+2024-05-26:19:04:54,841 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_computer_science on rank 0...
+2024-05-26:19:04:54,841 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_computer_science on rank 5...
+2024-05-26:19:04:54,841 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_computer_science on rank 2...
+2024-05-26:19:04:54,841 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_computer_science on rank 4...
+2024-05-26:19:04:54,841 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_college_computer_science on rank 1...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 505.16it/s]
+100%|██████████| 1/1 [00:00<00:00, 501.89it/s]100%|██████████| 1/1 [00:00<00:00, 507.66it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 496.90it/s]
+100%|██████████| 1/1 [00:00<00:00, 492.35it/s]
+100%|██████████| 2/2 [00:00<00:00, 514.76it/s]
+100%|██████████| 2/2 [00:00<00:00, 504.79it/s]100%|██████████| 2/2 [00:00<00:00, 509.91it/s]
+
+2024-05-26:19:04:54,846 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_computer_science on rank 2...
+2024-05-26:19:04:54,846 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_computer_science on rank 3...
+2024-05-26:19:04:54,846 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_computer_science on rank 0...
+2024-05-26:19:04:54,846 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_computer_science on rank 7...
+2024-05-26:19:04:54,846 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_computer_science on rank 5...
+2024-05-26:19:04:54,846 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_computer_science on rank 6...
+2024-05-26:19:04:54,846 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_computer_science on rank 4...
+2024-05-26:19:04:54,846 INFO     [task.py:395] Building contexts for mmlu_flan_cot_fewshot_high_school_computer_science on rank 1...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 493.27it/s]100%|██████████| 1/1 [00:00<00:00, 496.84it/s]
+
+100%|██████████| 1/1 [00:00<00:00, 486.18it/s]100%|██████████| 1/1 [00:00<00:00, 490.28it/s]100%|██████████| 1/1 [00:00<00:00, 493.80it/s]
+
+
+100%|██████████| 1/1 [00:00<00:00, 476.84it/s]100%|██████████| 1/1 [00:00<00:00, 472.23it/s]
+
+100%|██████████| 2/2 [00:00<00:00, 502.79it/s]
+2024-05-26:19:04:54,851 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:54,851 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:54,851 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:54,851 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:54,851 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:54,851 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:54,851 INFO     [xevaluator.py:398] Running generate_until requests
+2024-05-26:19:04:54,851 INFO     [xevaluator.py:398] Running generate_until requests
+Running generate_until requests:   0%|          | 0/219 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+            cli_evaluate()    cli_evaluate()    cli_evaluate()
+cli_evaluate()    
+cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+
+    cli_evaluate()  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+results = xevaluator.simple_evaluate(
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+        results = xevaluator.simple_evaluate(results = xevaluator.simple_evaluate(
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+        cli_evaluate()results = xevaluator.simple_evaluate(results = xevaluator.simple_evaluate(
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+            return fn(*args, **kwargs)        return fn(*args, **kwargs)return fn(*args, **kwargs)
+return fn(*args, **kwargs)return fn(*args, **kwargs)
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+
+    
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+return fn(*args, **kwargs)  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+        results = evaluate(return fn(*args, **kwargs)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 265, in simple_evaluate
+    results = evaluate(    
+results = evaluate(  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    results = evaluate(        
+    results = evaluate(results = evaluate(  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+results = evaluate(
+            
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+results = evaluate(resps = getattr(lm, reqtype)(cloned_reqs)resps = getattr(lm, reqtype)(cloned_reqs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+            return fn(*args, **kwargs)return fn(*args, **kwargs)return fn(*args, **kwargs)
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 410, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+        resps = getattr(lm, reqtype)(cloned_reqs)resps = getattr(lm, reqtype)(cloned_reqs)
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+    cont = self._model_generate(        
+        cont = self._model_generate(cont = self._model_generate(  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+cont = self._model_generate(cont = self._model_generate(
+
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 1144, in generate_until
+            cont = self._model_generate(outputs = self.model.generate(cont = self._model_generate(
+
+    
+      File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+          File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+outputs = self.model.generate(  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+outputs = self.model.generate(outputs = self.model.generate(outputs = self.model.generate(
+
+
+    
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+cont = self._model_generate(
+      File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xhuggingface.py", line 704, in _model_generate
+outputs = self.model.generate(
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    outputs = self.model.generate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+                return func(*args, **kwargs)        return func(*args, **kwargs)    return func(*args, **kwargs)return func(*args, **kwargs)
+return func(*args, **kwargs)return func(*args, **kwargs)
+return func(*args, **kwargs)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+    return func(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 1544, in generate
+                            return self.greedy_search(return self.greedy_search(return self.greedy_search(return self.greedy_search(return self.greedy_search(return self.greedy_search(return self.greedy_search(
+
+
+
+
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+return self.greedy_search(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+                        outputs = self(    outputs = self(outputs = self(outputs = self(outputs = self(outputs = self(
+outputs = self(
+
+
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    outputs = self(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+                            return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+
+
+
+
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+        return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+            return forward_call(*args, **kwargs)    return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+return forward_call(*args, **kwargs)
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+            outputs = self.model(outputs = self.model(    outputs = self.model(
+
+        outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+outputs = self.model(outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 523, in forward
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    outputs = self.model(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+        return self._call_impl(*args, **kwargs)        return self._call_impl(*args, **kwargs)
+return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+                return forward_call(*args, **kwargs)return self._call_impl(*args, **kwargs)return forward_call(*args, **kwargs)return self._call_impl(*args, **kwargs)
+
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+        return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    layer_outputs = decoder_layer(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 412, in forward
+            layer_outputs = decoder_layer(    layer_outputs = decoder_layer(layer_outputs = decoder_layer(
+layer_outputs = decoder_layer(
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+          File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+layer_outputs = decoder_layer(layer_outputs = decoder_layer(
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    layer_outputs = decoder_layer(    
+return forward_call(*args, **kwargs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+        return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+        return self._call_impl(*args, **kwargs)        return self._call_impl(*args, **kwargs)
+return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+            return forward_call(*args, **kwargs)    return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+return forward_call(*args, **kwargs)
+    
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+
+          File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+return forward_call(*args, **kwargs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 275, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+        hidden_states, self_attn_weights, present_key_value = self.self_attn(        hidden_states, self_attn_weights, present_key_value = self.self_attn(
+hidden_states, self_attn_weights, present_key_value = self.self_attn(hidden_states, self_attn_weights, present_key_value = self.self_attn(
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)hidden_states, self_attn_weights, present_key_value = self.self_attn(  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+        return self._call_impl(*args, **kwargs)        return forward_call(*args, **kwargs)
+return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+        return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)    
+
+return self._call_impl(*args, **kwargs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+                return forward_call(*args, **kwargs)return self._call_impl(*args, **kwargs)return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+
+
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+        return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)    
+
+return forward_call(*args, **kwargs)  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+TypeError
+:       File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+forward() missing 1 required positional argument: 'position_ids'cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/models/llama.py", line 134, in forward
+    return self._call_impl(*args, **kwargs)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+                cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+
+
+    
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+return forward_call(*args, **kwargs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+    cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+        return self._call_impl(*args, **kwargs)    return self._call_impl(*args, **kwargs)
+return self._call_impl(*args, **kwargs)
+          File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+return self._call_impl(*args, **kwargs)return self._call_impl(*args, **kwargs)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+        return forward_call(*args, **kwargs)    return self._call_impl(*args, **kwargs)
+return forward_call(*args, **kwargs)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+TypeErrorTypeError: : forward() missing 1 required positional argument: 'position_ids'forward() missing 1 required positional argument: 'position_ids'    
+    
+return forward_call(*args, **kwargs)return forward_call(*args, **kwargs)
+
+TypeErrorTypeError: :     forward() missing 1 required positional argument: 'position_ids'forward() missing 1 required positional argument: 'position_ids'return forward_call(*args, **kwargs)
+
+
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+    return forward_call(*args, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'position_ids'
+Running generate_until requests:   0%|          | 0/219 [00:01<?, ?it/s]
+[2024-05-26 19:05:00,247] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 2135078) of binary: /fsx-storygen/beidic/anaconda3/envs/beidic/bin/python3.9
+Traceback (most recent call last):
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/accelerate_cli.py", line 47, in main
+    args.func(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/launch.py", line 1014, in launch_command
+    multi_gpu_launcher(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/launch.py", line 672, in multi_gpu_launcher
+    distrib_run.run(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+main.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-05-26_19:05:00
+  host      : a100-st-p4de24xlarge-330.fair-a100.hpcaas
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 2135079)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2024-05-26_19:05:00
+  host      : a100-st-p4de24xlarge-330.fair-a100.hpcaas
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 2135080)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2024-05-26_19:05:00
+  host      : a100-st-p4de24xlarge-330.fair-a100.hpcaas
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 2135081)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2024-05-26_19:05:00
+  host      : a100-st-p4de24xlarge-330.fair-a100.hpcaas
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 2135082)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2024-05-26_19:05:00
+  host      : a100-st-p4de24xlarge-330.fair-a100.hpcaas
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 2135083)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2024-05-26_19:05:00
+  host      : a100-st-p4de24xlarge-330.fair-a100.hpcaas
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 2135084)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2024-05-26_19:05:00
+  host      : a100-st-p4de24xlarge-330.fair-a100.hpcaas
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 2135085)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-05-26_19:05:00
+  host      : a100-st-p4de24xlarge-330.fair-a100.hpcaas
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2135078)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

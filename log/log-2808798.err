@@ -1,0 +1,509 @@
+/var/spool/slurmd/job2808798/slurm_script: line 27: /data/home/beidic/anaconda3/etc/profile.d/conda.sh: No such file or directory
+
+CondaError: Run 'conda init' before 'conda activate'
+
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `8`
+		More than one GPU was found, enabling multi-GPU training.
+		If this was unintended please pass in `--num_processes=1`.
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2024-05-26:19:03:19,727 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,727 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,727 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,727 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,727 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,727 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,727 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:19,727 INFO     [main.py:288] Verbosity set to INFO
+2024-05-26:19:03:28,773 INFO     [main.py:378] Selected Tasks: ['ifeval']
+2024-05-26:19:03:28,773 INFO     [main.py:378] Selected Tasks: ['ifeval']
+2024-05-26:19:03:28,773 INFO     [main.py:378] Selected Tasks: ['ifeval']
+2024-05-26:19:03:28,773 INFO     [main.py:378] Selected Tasks: ['ifeval']
+2024-05-26:19:03:28,773 INFO     [main.py:378] Selected Tasks: ['ifeval']
+2024-05-26:19:03:28,773 INFO     [main.py:378] Selected Tasks: ['ifeval']
+2024-05-26:19:03:28,773 INFO     [main.py:378] Selected Tasks: ['ifeval']
+2024-05-26:19:03:28,773 INFO     [main.py:378] Selected Tasks: ['ifeval']
+2024-05-26:19:03:28,790 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,790 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,790 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,790 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:137] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-05-26:19:03:28,791 INFO     [xevaluator.py:187] Initializing xhf model, with arguments: {'pretrained': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:17<00:53, 17.74s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.83s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:55, 18.35s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.92s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.73s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.83s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.85s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:18<00:56, 18.89s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:32<00:32, 16.16s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.70s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.69s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:33<00:32, 16.50s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:33<00:33, 16.65s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.71s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.76s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:34<00:33, 16.74s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:47<00:15, 15.35s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:48<00:15, 15.82s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:48<00:15, 15.80s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:48<00:15, 15.73s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:48<00:15, 15.84s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:48<00:15, 15.85s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:48<00:16, 16.07s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:48<00:15, 15.86s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00,  9.97s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.38s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00,  9.95s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.45s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00,  9.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.32s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00,  9.95s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00,  9.96s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.45s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.44s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 10.08s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.42s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00,  9.94s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.42s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00,  9.96s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.47s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 221, in simple_evaluate
+    task_dict = get_task_dict(tasks, task_manager)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 420, in get_task_dict
+    task_name_from_string_dict = task_manager.load_task_or_group(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 270, in load_task_or_group
+    collections.ChainMap(*map(self._load_individual_task_or_group, task_list))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 160, in _load_individual_task_or_group
+    task_config = self._get_config(name_or_config)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 112, in _get_config
+    return utils.load_yaml_config(yaml_path, mode="full")
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 324, in load_yaml_config
+    yaml_config = yaml.full_load(file)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 105, in full_load
+    return load(stream, FullLoader)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 51, in get_single_data
+    return self.construct_document(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 60, in construct_document
+    for dummy in generator:
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 413, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 218, in construct_mapping
+    return super().construct_mapping(node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 143, in construct_mapping
+    value = self.construct_object(value_node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 100, in construct_object
+    data = constructor(self, node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 308, in import_function
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/utils.py", line 4, in <module>
+    from lm_eval.tasks.ifeval import instructions_registry
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions_registry.py", line 16, in <module>
+    from lm_eval.tasks.ifeval import instructions
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions.py", line 24, in <module>
+    import langdetect
+ModuleNotFoundError: No module named 'langdetect'
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+2024-05-26:19:04:19,864 INFO     [xhuggingface.py:310] Using 8 devices with data parallelism
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 221, in simple_evaluate
+    task_dict = get_task_dict(tasks, task_manager)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 420, in get_task_dict
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+    task_name_from_string_dict = task_manager.load_task_or_group(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 270, in load_task_or_group
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+    collections.ChainMap(*map(self._load_individual_task_or_group, task_list))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 160, in _load_individual_task_or_group
+    task_config = self._get_config(name_or_config)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 112, in _get_config
+    return utils.load_yaml_config(yaml_path, mode="full")
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 324, in load_yaml_config
+    yaml_config = yaml.full_load(file)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 105, in full_load
+    return load(stream, FullLoader)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    return loader.get_single_data()
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 51, in get_single_data
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    return self.construct_document(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 60, in construct_document
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    for dummy in generator:
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 413, in construct_yaml_map
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 221, in simple_evaluate
+    value = self.construct_mapping(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 218, in construct_mapping
+    task_dict = get_task_dict(tasks, task_manager)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 420, in get_task_dict
+    return super().construct_mapping(node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 143, in construct_mapping
+        value = self.construct_object(value_node, deep=deep)task_name_from_string_dict = task_manager.load_task_or_group(
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 100, in construct_object
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 270, in load_task_or_group
+    data = constructor(self, node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 308, in import_function
+    collections.ChainMap(*map(self._load_individual_task_or_group, task_list))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 160, in _load_individual_task_or_group
+    spec.loader.exec_module(module)    
+task_config = self._get_config(name_or_config)  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 112, in _get_config
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/utils.py", line 4, in <module>
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    return utils.load_yaml_config(yaml_path, mode="full")
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 324, in load_yaml_config
+    from lm_eval.tasks.ifeval import instructions_registry
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions_registry.py", line 16, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    yaml_config = yaml.full_load(file)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 105, in full_load
+    from lm_eval.tasks.ifeval import instructions
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions.py", line 24, in <module>
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return load(stream, FullLoader)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+    import langdetect
+ModuleNotFoundError: No module named 'langdetect'
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 221, in simple_evaluate
+    return loader.get_single_data()
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 51, in get_single_data
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    task_dict = get_task_dict(tasks, task_manager)    
+return self.construct_document(node)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 420, in get_task_dict
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 60, in construct_document
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+    for dummy in generator:
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 413, in construct_yaml_map
+    task_name_from_string_dict = task_manager.load_task_or_group(    
+cli_evaluate()  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 270, in load_task_or_group
+
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    value = self.construct_mapping(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 218, in construct_mapping
+    collections.ChainMap(*map(self._load_individual_task_or_group, task_list))    
+results = xevaluator.simple_evaluate(  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 160, in _load_individual_task_or_group
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    return super().construct_mapping(node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 143, in construct_mapping
+    task_config = self._get_config(name_or_config)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 112, in _get_config
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 221, in simple_evaluate
+    value = self.construct_object(value_node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 100, in construct_object
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    return utils.load_yaml_config(yaml_path, mode="full")
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 324, in load_yaml_config
+        task_dict = get_task_dict(tasks, task_manager)cli_evaluate()
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 420, in get_task_dict
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    data = constructor(self, node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 308, in import_function
+    yaml_config = yaml.full_load(file)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 105, in full_load
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+        task_name_from_string_dict = task_manager.load_task_or_group(spec.loader.exec_module(module)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 270, in load_task_or_group
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/utils.py", line 4, in <module>
+    return load(stream, FullLoader)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+        return fn(*args, **kwargs)    results = xevaluator.simple_evaluate(
+collections.ChainMap(*map(self._load_individual_task_or_group, task_list))
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 221, in simple_evaluate
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 160, in _load_individual_task_or_group
+    from lm_eval.tasks.ifeval import instructions_registry
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions_registry.py", line 16, in <module>
+    return loader.get_single_data()
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 51, in get_single_data
+    task_config = self._get_config(name_or_config)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 112, in _get_config
+        from lm_eval.tasks.ifeval import instructionsreturn fn(*args, **kwargs)
+
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions.py", line 24, in <module>
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 221, in simple_evaluate
+task_dict = get_task_dict(tasks, task_manager)    
+return self.construct_document(node)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 420, in get_task_dict
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 60, in construct_document
+    return utils.load_yaml_config(yaml_path, mode="full")
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 324, in load_yaml_config
+    import langdetect
+    ModuleNotFoundErrortask_dict = get_task_dict(tasks, task_manager): 
+No module named 'langdetect'  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 420, in get_task_dict
+
+    for dummy in generator:
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 413, in construct_yaml_map
+    task_name_from_string_dict = task_manager.load_task_or_group(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 270, in load_task_or_group
+    yaml_config = yaml.full_load(file)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 105, in full_load
+    task_name_from_string_dict = task_manager.load_task_or_group(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 270, in load_task_or_group
+    value = self.construct_mapping(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 218, in construct_mapping
+    collections.ChainMap(*map(self._load_individual_task_or_group, task_list))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 160, in _load_individual_task_or_group
+    collections.ChainMap(*map(self._load_individual_task_or_group, task_list))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 160, in _load_individual_task_or_group
+    return load(stream, FullLoader)    
+task_config = self._get_config(name_or_config)  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 112, in _get_config
+    return super().construct_mapping(node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 143, in construct_mapping
+    task_config = self._get_config(name_or_config)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 112, in _get_config
+    return utils.load_yaml_config(yaml_path, mode="full")
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 324, in load_yaml_config
+    return loader.get_single_data()
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 51, in get_single_data
+    return utils.load_yaml_config(yaml_path, mode="full")
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 324, in load_yaml_config
+    yaml_config = yaml.full_load(file)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 105, in full_load
+    value = self.construct_object(value_node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 100, in construct_object
+    yaml_config = yaml.full_load(file)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 105, in full_load
+    return self.construct_document(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 60, in construct_document
+        return load(stream, FullLoader)data = constructor(self, node)
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 308, in import_function
+    return load(stream, FullLoader)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+    for dummy in generator:
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 413, in construct_yaml_map
+    return loader.get_single_data()
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 51, in get_single_data
+        spec.loader.exec_module(module)return loader.get_single_data()
+
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 51, in get_single_data
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/utils.py", line 4, in <module>
+    value = self.construct_mapping(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 218, in construct_mapping
+    return self.construct_document(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 60, in construct_document
+    for dummy in generator:
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 413, in construct_yaml_map
+    return super().construct_mapping(node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 143, in construct_mapping
+    return self.construct_document(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 60, in construct_document
+    for dummy in generator:
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 413, in construct_yaml_map
+    from lm_eval.tasks.ifeval import instructions_registry
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions_registry.py", line 16, in <module>
+    value = self.construct_mapping(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 218, in construct_mapping
+    return super().construct_mapping(node, deep=deep)
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 143, in construct_mapping
+value = self.construct_object(value_node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 100, in construct_object
+        value = self.construct_mapping(node)from lm_eval.tasks.ifeval import instructions
+
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 218, in construct_mapping
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions.py", line 24, in <module>
+    value = self.construct_object(value_node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 100, in construct_object
+    data = constructor(self, node)
+      File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 308, in import_function
+return super().construct_mapping(node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 143, in construct_mapping
+    data = constructor(self, node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 308, in import_function
+    import langdetect
+ModuleNotFoundError: No module named 'langdetect'
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/utils.py", line 4, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+    value = self.construct_object(value_node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 100, in construct_object
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/utils.py", line 4, in <module>
+    from lm_eval.tasks.ifeval import instructions_registry
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions_registry.py", line 16, in <module>
+    data = constructor(self, node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 308, in import_function
+    from lm_eval.tasks.ifeval import instructions_registry
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions_registry.py", line 16, in <module>
+    from lm_eval.tasks.ifeval import instructions
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions.py", line 24, in <module>
+    from lm_eval.tasks.ifeval import instructions
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions.py", line 24, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/utils.py", line 4, in <module>
+    import langdetect
+ModuleNotFoundError: No module named 'langdetect'
+    import langdetect
+ModuleNotFoundError: No module named 'langdetect'
+    from lm_eval.tasks.ifeval import instructions_registry
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions_registry.py", line 16, in <module>
+    from lm_eval.tasks.ifeval import instructions
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions.py", line 24, in <module>
+    import langdetect
+ModuleNotFoundError: No module named 'langdetect'
+Traceback (most recent call last):
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 465, in <module>
+    cli_evaluate()
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/main.py", line 384, in cli_evaluate
+    results = xevaluator.simple_evaluate(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/hpcaas/.mounts/fs-0565f60d669b6a2d3/home/beidic/zhuoming/MagicPiG/xevaluator.py", line 221, in simple_evaluate
+    task_dict = get_task_dict(tasks, task_manager)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 420, in get_task_dict
+    task_name_from_string_dict = task_manager.load_task_or_group(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 270, in load_task_or_group
+    collections.ChainMap(*map(self._load_individual_task_or_group, task_list))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 160, in _load_individual_task_or_group
+    task_config = self._get_config(name_or_config)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/__init__.py", line 112, in _get_config
+    return utils.load_yaml_config(yaml_path, mode="full")
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 324, in load_yaml_config
+    yaml_config = yaml.full_load(file)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 105, in full_load
+    return load(stream, FullLoader)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 51, in get_single_data
+    return self.construct_document(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 60, in construct_document
+    for dummy in generator:
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 413, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 218, in construct_mapping
+    return super().construct_mapping(node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 143, in construct_mapping
+    value = self.construct_object(value_node, deep=deep)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/yaml/constructor.py", line 100, in construct_object
+    data = constructor(self, node)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/utils.py", line 308, in import_function
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/utils.py", line 4, in <module>
+    from lm_eval.tasks.ifeval import instructions_registry
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions_registry.py", line 16, in <module>
+    from lm_eval.tasks.ifeval import instructions
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/lm_eval/tasks/ifeval/instructions.py", line 24, in <module>
+    import langdetect
+ModuleNotFoundError: No module named 'langdetect'
+[2024-05-26 19:04:25,193] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 3058150) of binary: /fsx-storygen/beidic/anaconda3/envs/beidic/bin/python3.9
+Traceback (most recent call last):
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/accelerate_cli.py", line 47, in main
+    args.func(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/launch.py", line 1014, in launch_command
+    multi_gpu_launcher(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/accelerate/commands/launch.py", line 672, in multi_gpu_launcher
+    distrib_run.run(args)
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/fsx-storygen/beidic/anaconda3/envs/beidic/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+main.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-05-26_19:04:25
+  host      : a100-st-p4de24xlarge-430.fair-a100.hpcaas
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 3058151)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2024-05-26_19:04:25
+  host      : a100-st-p4de24xlarge-430.fair-a100.hpcaas
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 3058152)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2024-05-26_19:04:25
+  host      : a100-st-p4de24xlarge-430.fair-a100.hpcaas
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 3058153)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2024-05-26_19:04:25
+  host      : a100-st-p4de24xlarge-430.fair-a100.hpcaas
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 3058154)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2024-05-26_19:04:25
+  host      : a100-st-p4de24xlarge-430.fair-a100.hpcaas
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 3058155)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2024-05-26_19:04:25
+  host      : a100-st-p4de24xlarge-430.fair-a100.hpcaas
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 3058156)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2024-05-26_19:04:25
+  host      : a100-st-p4de24xlarge-430.fair-a100.hpcaas
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 3058157)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-05-26_19:04:25
+  host      : a100-st-p4de24xlarge-430.fair-a100.hpcaas
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 3058150)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
