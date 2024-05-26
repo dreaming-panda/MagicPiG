@@ -1,2 +1,2 @@
-accelerate launch main.py --model xhf --tasks coqa --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct
-accelerate launch main.py --model xhf --tasks truthfulqa_gen --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct
+accelerate launch main.py --model xhf --tasks coqa --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct,sparse=0.01
+accelerate launch main.py --model xhf --tasks truthfulqa_gen --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct,sparse=0.01
