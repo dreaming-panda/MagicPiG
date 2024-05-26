@@ -156,14 +156,14 @@ class LlamaAttention(nn.Module):
             
             score = F.max_pool1d(score, kernel_size=8, stride=1)
             score = score.unsqueeze(-2)
-            
+            self.indices_to_remove = None
             self.initial_len = score.shape[-1]
             score = score.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, 1, self.initial_len)
             score = score.sum(-3)
             num_activate_tokens = int(self.sparse * self.initial_len)
-            num_activate_tokens = max(num_activate_tokens, 16)
-            self.indices_to_remove = score < torch.topk(score, num_activate_tokens)[0][..., -1, None]
-            self.indices_to_remove = self.indices_to_remove.repeat(1, self.num_key_value_groups, 1, 1)
+            if num_activate_tokens > 0:
+                self.indices_to_remove = score < torch.topk(score, num_activate_tokens)[0][..., -1, None]
+                self.indices_to_remove = self.indices_to_remove.repeat(1, self.num_key_value_groups, 1, 1)
             
             # score = score.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len)
             # score = score.sum(-2)
@@ -195,8 +195,8 @@ class LlamaAttention(nn.Module):
             if self.dec_len % self.kernel_size == 0:
                 if attention_mask is not None:
                     attn_weights = attn_weights + attention_mask
-                
-                attn_weights[...,:self.initial_len].masked_fill_(self.indices_to_remove, torch.finfo(attn_weights.dtype).min)
+                if self.indices_to_remove is not None:
+                    attn_weights[...,:self.initial_len].masked_fill_(self.indices_to_remove, torch.finfo(attn_weights.dtype).min)
                 
                 
                 attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
