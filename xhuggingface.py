@@ -455,6 +455,7 @@ class XHFLM(TemplateLM):
         pretrained: str,
         revision: Optional[str] = "main",
         dtype: Optional[Union[str, torch.dtype]] = "auto",
+        sparse:float = 0.05,
         trust_remote_code: Optional[bool] = False,
         parallelize: Optional[bool] = False,
         device_map_option: Optional[str] = "auto",
@@ -487,6 +488,7 @@ class XHFLM(TemplateLM):
 
         )
         self._model.eval()
+        self._model.set_sparse_attn(sparse=sparse)
         return None
 
     def _create_tokenizer(

@@ -47,7 +47,16 @@ class LlamaAttention(nn.Module):
         self.max_position_embeddings = config.max_position_embeddings
         self.rope_theta = config.rope_theta
         self.is_causal = True
-
+        self.magic_attention_mask = torch.zeros((self.num_heads, config.max_position_embeddings)).cuda()
+        self.accumulated_score = torch.zeros((self.num_heads, config.max_position_embeddings)).cuda()
+        self.kernel_size = 1
+        self.prefill_len = -1
+        self.dec_len = 0
+        self.num_activate_tokens = 0
+        self.sparse = 0.05
+        self.indices_to_remove = None
+        self.window_size = 64
+        self.initial_len = -1
         if (self.head_dim * self.num_heads) != self.hidden_size:
             raise ValueError(
                 f"hidden_size must be divisible by num_heads (got `hidden_size`: {self.hidden_size}"
@@ -106,8 +115,6 @@ class LlamaAttention(nn.Module):
             )
 
         bsz, q_len, _ = hidden_states.size()
-
-        
         query_states = self.q_proj(hidden_states)
         key_states = self.k_proj(hidden_states)
         value_states = self.v_proj(hidden_states)
@@ -117,50 +124,100 @@ class LlamaAttention(nn.Module):
         value_states = value_states.view(bsz, q_len, self.num_key_value_heads, self.head_dim).transpose(1, 2)
 
         kv_seq_len = key_states.shape[-2]
-        if past_key_value is not None:
-            if self.layer_idx is None:
-                raise ValueError(
-                    f"The cache structure has changed since version v4.36. If you are using {self.__class__.__name__} "
-                    "for auto-regressive decoding with k/v caching, please make sure to initialize the attention class "
-                    "with a layer index."
-                )
+        
+        decode = True
+        if q_len > 1:
+            decode = False
+        
+        if not decode:
             kv_seq_len += past_key_value.get_usable_length(kv_seq_len, self.layer_idx)
-        cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
-        query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin, position_ids)
+            cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+            query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin, position_ids)
 
-        if past_key_value is not None:
-            cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
-            key_states, value_states = past_key_value.update(key_states, value_states, self.layer_idx, cache_kwargs)
+            if past_key_value is not None:
+                cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
+                key_states, value_states = past_key_value.update(key_states, value_states, self.layer_idx, cache_kwargs)
 
-        key_states = repeat_kv(key_states, self.num_key_value_groups)
-        value_states = repeat_kv(value_states, self.num_key_value_groups)
+            key_states = repeat_kv(key_states, self.num_key_value_groups)
+            value_states = repeat_kv(value_states, self.num_key_value_groups)
 
-        attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
+            attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
 
-        if attn_weights.size() != (bsz, self.num_heads, q_len, kv_seq_len):
-            raise ValueError(
-                f"Attention weights should be of size {(bsz, self.num_heads, q_len, kv_seq_len)}, but is"
-                f" {attn_weights.size()}"
-            )
+            if attention_mask is not None:
+                attn_weights = attn_weights + attention_mask
+                attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+            
+            assert bsz == 1
+            self.prefill_len = q_len
+            self.dec_len = 0
+            score = attn_weights[...,-self.window_size:,:-self.window_size].sum(-2)
+            
+            
+            
+            score = F.max_pool1d(score, kernel_size=8, stride=1)
+            score = score.unsqueeze(-2)
+            
+            self.initial_len = score.shape[-1]
+            score = score.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, 1, self.initial_len)
+            score = score.sum(-3)
+            num_activate_tokens = int(self.sparse * self.initial_len)
+            self.indices_to_remove = score < torch.topk(score, num_activate_tokens)[0][..., -1, None]
+            self.indices_to_remove = self.indices_to_remove.repeat(1, self.num_key_value_groups, 1, 1)
+            
+            # score = score.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len)
+            # score = score.sum(-2)
+            
+            #self.accumulated_score.zero_()
+            #self.magic_attention_mask.zero_()
+            #self.accumulated_score[:,:q_len] = score.squeeze(0)
+            
+            #num_activate_tokens = int(self.sparse * q_len) 
+            #indices = self.accumulated_score[:,:q_len] < torch.topk(self.accumulated_score[:,:q_len], num_activate_tokens)[0][..., -1, None]
+            #self.magic_attention_mask[:,:q_len].masked_fill_(indices, 1.0)
+            
+            
+        
+        else:
+            kv_seq_len += past_key_value.get_usable_length(kv_seq_len, self.layer_idx)
+            cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
+            query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin, position_ids)
 
-        if attention_mask is not None:
-            if attention_mask.size() != (bsz, 1, q_len, kv_seq_len):
-                raise ValueError(
-                    f"Attention mask should be of size {(bsz, 1, q_len, kv_seq_len)}, but is {attention_mask.size()}"
-                )
-            attn_weights = attn_weights + attention_mask
+            if past_key_value is not None:
+                cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
+                key_states, value_states = past_key_value.update(key_states, value_states, self.layer_idx, cache_kwargs)
 
-        # upcast attention to fp32
-        attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-        attn_weights = nn.functional.dropout(attn_weights, p=self.attention_dropout, training=self.training)
+            key_states = repeat_kv(key_states, self.num_key_value_groups)
+            value_states = repeat_kv(value_states, self.num_key_value_groups)
+
+            attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
+            
+            if self.dec_len % self.kernel_size == 0:
+                if attention_mask is not None:
+                    attn_weights = attn_weights + attention_mask
+                
+                attn_weights[...,:self.initial_len].masked_fill_(self.indices_to_remove, torch.finfo(attn_weights.dtype).min)
+                
+                
+                attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+                
+            
+            else:
+                attn_weights = attn_weights + attention_mask
+                attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+                
+                
+            attn_output = torch.matmul(attn_weights, value_states)
+            attn_output = attn_output.transpose(1, 2).contiguous()
+            attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
+            attn_output = self.o_proj(attn_output)
+
+            if not output_attentions:
+                    attn_weights = None
+            self.dec_len += 1
+            return attn_output, attn_weights, past_key_value
+            
+                
         attn_output = torch.matmul(attn_weights, value_states)
-
-        if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):
-            raise ValueError(
-                f"`attn_output` should be of size {(bsz, self.num_heads, q_len, self.head_dim)}, but is"
-                f" {attn_output.size()}"
-            )
-
         attn_output = attn_output.transpose(1, 2).contiguous()
         attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
         attn_output = self.o_proj(attn_output)
@@ -569,3 +626,10 @@ class LlamaForCausalLM(LlamaPreTrainedModel):
                 tuple(past_state.index_select(0, beam_idx.to(past_state.device)) for past_state in layer_past),
             )
         return reordered_past
+    
+    def set_sparse_attn(self,
+                        sparse = 0.05):
+        
+        for layer in self.model.layers:
+            layer.self_attn.sparse = sparse
+            

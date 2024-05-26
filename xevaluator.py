@@ -589,9 +589,9 @@ def evaluate(
         if log_samples:
             results_dict["samples"] = dict(samples)
 
-        print(results_dict)
+        
         return results_dict
-
+    
     else:
         return None
 
