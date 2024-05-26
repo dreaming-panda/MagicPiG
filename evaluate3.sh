@@ -1,1 +1,1 @@
-UDA_VISIBLE_DEVICES=0,1,2,3,4,6 accelerate launch main.py --model xhf --tasks mmlu_flan_cot_fewshot --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct,sparse=0.95
+accelerate launch -m lm_eval --model hf --tasks gsm8k_cot --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct
