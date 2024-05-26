@@ -24,7 +24,7 @@
 #SBATCH --no-requeue
 
 source /data/home/beidic/.bashrc
-source /data/home/beidic/anaconda3/etc/profile.d/conda.sh 
+source /fsx-storygen/beidic/anaconda3/etc/profile.d/conda.sh
 conda init
 conda activate beidic
 
