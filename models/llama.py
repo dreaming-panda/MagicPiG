@@ -161,6 +161,7 @@ class LlamaAttention(nn.Module):
             score = score.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, 1, self.initial_len)
             score = score.sum(-3)
             num_activate_tokens = int(self.sparse * self.initial_len)
+            num_activate_tokens = max(num_activate_tokens, 16)
             self.indices_to_remove = score < torch.topk(score, num_activate_tokens)[0][..., -1, None]
             self.indices_to_remove = self.indices_to_remove.repeat(1, self.num_key_value_groups, 1, 1)
             
