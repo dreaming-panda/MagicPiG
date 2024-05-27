@@ -459,6 +459,8 @@ class XHFLM(TemplateLM):
         topk = False,
         snap=False,
         imp=False,
+        window_size :int = 32,
+        kernel_size :int = 5,
         trust_remote_code: Optional[bool] = False,
         parallelize: Optional[bool] = False,
         device_map_option: Optional[str] = "auto",
@@ -494,6 +496,7 @@ class XHFLM(TemplateLM):
             use_flash_attention_2=True
             )
             self._model.config.ratio = sparse
+            self._model.config.window_size = window_size
             self._model.config.pooling = "maxpool"
             self._model.eval()
             return None
@@ -506,6 +509,9 @@ class XHFLM(TemplateLM):
             _attn_implementation = "eager"
 
             )
+            self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size)
+            self._model.eval()
+            return None
         elif topk:
             from models.llama_topk import LlamaForCausalLM
             self._model = LlamaForCausalLM.from_pretrained(
@@ -521,7 +527,6 @@ class XHFLM(TemplateLM):
             pretrained,
             torch_dtype=get_dtype(dtype),
             device_map=str(self.device),
-            use_flash_attention_2=True
             )
             self._model.eval()
             return None

@@ -115,6 +115,7 @@ def load_model_and_tokenizer(path, model_name, device, args):
         
         #replace_llama_attn_with_flash_attn()
         tokenizer = AutoTokenizer.from_pretrained(path, use_fast=False)
+            
         if args.imp:
             from models.llama import LlamaForCausalLM
             model = LlamaForCausalLM.from_pretrained(
@@ -136,6 +137,8 @@ def load_model_and_tokenizer(path, model_name, device, args):
         else:
             from transformers import LlamaForCausalLM
             model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16).to(device)
+        if "llama3" in model_name:  
+            model.generation_config.pad_token_id = model.generation_config.eos_token_id[0]
     elif "longchat" in model_name or "vicuna" in model_name:
         from fastchat.model import load_model
         #replace_llama_attn_with_flash_attn()

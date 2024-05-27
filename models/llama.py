@@ -49,14 +49,15 @@ class LlamaAttention(nn.Module):
         self.is_causal = True
         self.magic_attention_mask = torch.zeros((self.num_heads, config.max_position_embeddings)).cuda()
         self.accumulated_score = torch.zeros((self.num_heads, config.max_position_embeddings)).cuda()
-        self.kernel_size = 1
+        self.kernel_size = None
         self.prefill_len = -1
         self.dec_len = 0
         self.num_activate_tokens = 0
-        self.sparse = 0.05
+        self.sparse = None
         self.indices_to_remove = None
-        self.window_size = 64
+        self.window_size = None
         self.initial_len = -1
+        self.is_sparse = False
         if (self.head_dim * self.num_heads) != self.hidden_size:
             raise ValueError(
                 f"hidden_size must be divisible by num_heads (got `hidden_size`: {self.hidden_size}"
@@ -130,6 +131,8 @@ class LlamaAttention(nn.Module):
             decode = False
         
         if not decode:
+            
+            self.is_sparse = False
             kv_seq_len += past_key_value.get_usable_length(kv_seq_len, self.layer_idx)
             cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
             query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin, position_ids)
@@ -150,34 +153,26 @@ class LlamaAttention(nn.Module):
             assert bsz == 1
             self.prefill_len = q_len
             self.dec_len = 0
-            score = attn_weights[...,-self.window_size:,:-self.window_size].sum(-2)
             
+            num_activate_tokens = int(self.sparse * (q_len-self.window_size))
+            if num_activate_tokens > 0 and num_activate_tokens < (q_len - self.window_size) :
+                attn_weights_sum = attn_weights[:, :, -self.window_size:, : -self.window_size].sum(dim = -2)
+                attn_cache = F.max_pool1d(attn_weights_sum, kernel_size = self.kernel_size, padding=self.kernel_size//2, stride=1)
+                num_deactivate_tokens = (q_len-self.window_size - num_activate_tokens)
+                self.indices_to_remove = attn_cache.topk(num_deactivate_tokens, dim=-1, largest=False).indices
+                self.indices_to_remove.unsqueeze_(-2)
+                self.is_sparse = True
             
-            
-            score = F.max_pool1d(score, kernel_size=8, stride=1)
-            score = score.unsqueeze(-2)
-            self.indices_to_remove = None
-            self.initial_len = score.shape[-1]
-            score = score.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, 1, self.initial_len)
-            score = score.sum(-3)
-            num_activate_tokens = int(self.sparse * self.initial_len)
-            if num_activate_tokens > 0:
-                self.indices_to_remove = score < torch.topk(score, num_activate_tokens)[0][..., -1, None]
-                self.indices_to_remove = self.indices_to_remove.repeat(1, self.num_key_value_groups, 1, 1)
-            
-            # score = score.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len)
-            # score = score.sum(-2)
-            
-            #self.accumulated_score.zero_()
-            #self.magic_attention_mask.zero_()
-            #self.accumulated_score[:,:q_len] = score.squeeze(0)
-            
-            #num_activate_tokens = int(self.sparse * q_len) 
-            #indices = self.accumulated_score[:,:q_len] < torch.topk(self.accumulated_score[:,:q_len], num_activate_tokens)[0][..., -1, None]
-            #self.magic_attention_mask[:,:q_len].masked_fill_(indices, 1.0)
-            
-            
-        
+            attn_output = torch.matmul(attn_weights, value_states)
+            attn_output = attn_output.transpose(1, 2).contiguous()
+            attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
+            attn_output = self.o_proj(attn_output)
+
+            if not output_attentions:
+                attn_weights = None
+
+            return attn_output, attn_weights, past_key_value
+
         else:
             kv_seq_len += past_key_value.get_usable_length(kv_seq_len, self.layer_idx)
             cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
@@ -192,21 +187,14 @@ class LlamaAttention(nn.Module):
 
             attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
             
-            if self.dec_len % self.kernel_size == 0:
-                if attention_mask is not None:
+            if attention_mask is not None:
                     attn_weights = attn_weights + attention_mask
-                if self.indices_to_remove is not None:
-                    attn_weights[...,:self.initial_len].masked_fill_(self.indices_to_remove, torch.finfo(attn_weights.dtype).min)
+            if self.is_sparse:
+                    attn_weights.scatter_(dim=-1, index=self.indices_to_remove, value=torch.finfo(attn_weights.dtype).min)
                 
                 
-                attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-                
-            
-            else:
-                attn_weights = attn_weights + attention_mask
-                attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-                
-                
+            attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+                   
             attn_output = torch.matmul(attn_weights, value_states)
             attn_output = attn_output.transpose(1, 2).contiguous()
             attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
@@ -218,16 +206,7 @@ class LlamaAttention(nn.Module):
             return attn_output, attn_weights, past_key_value
             
                 
-        attn_output = torch.matmul(attn_weights, value_states)
-        attn_output = attn_output.transpose(1, 2).contiguous()
-        attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
-        attn_output = self.o_proj(attn_output)
-
-        if not output_attentions:
-            attn_weights = None
-
-        return attn_output, attn_weights, past_key_value
-
+        
 class LlamaDecoderLayer(nn.Module):
     def __init__(self, config: LlamaConfig, layer_idx: int):
         super().__init__()
@@ -629,8 +608,12 @@ class LlamaForCausalLM(LlamaPreTrainedModel):
         return reordered_past
     
     def set_sparse_attn(self,
-                        sparse = 0.05):
+                        sparse = 0.05,
+                        window_size = 32,
+                        kernel_size = 5):
         
         for layer in self.model.layers:
             layer.self_attn.sparse = sparse
+            layer.self_attn.window_size = window_size
+            layer.self_attn.kernel_size = kernel_size
             
