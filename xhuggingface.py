@@ -457,6 +457,8 @@ class XHFLM(TemplateLM):
         dtype: Optional[Union[str, torch.dtype]] = "auto",
         sparse:float = 0.05,
         topk = False,
+        snap=False,
+        imp=False,
         trust_remote_code: Optional[bool] = False,
         parallelize: Optional[bool] = False,
         device_map_option: Optional[str] = "auto",
@@ -480,7 +482,22 @@ class XHFLM(TemplateLM):
         HF's public interface relied on in this HFLM class)
         please consider subclassing HFLM and overriding this and other methods as needed.
         """
-        if not topk:
+        if snap:
+            from transformers import LlamaForCausalLM
+            from snapkv.monkeypatch.monkeypatch import replace_llama, replace_mistral, replace_mixtral
+            replace_llama()
+            
+            self._model = LlamaForCausalLM.from_pretrained(
+            pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            use_flash_attention_2=True
+            )
+            self._model.config.ratio = sparse
+            self._model.config.pooling = "maxpool"
+            self._model.eval()
+            return None
+        elif imp:
             from models.llama import LlamaForCausalLM
             self._model = LlamaForCausalLM.from_pretrained(
                 pretrained,
@@ -489,7 +506,7 @@ class XHFLM(TemplateLM):
             _attn_implementation = "eager"
 
             )
-        else:
+        elif topk:
             from models.llama_topk import LlamaForCausalLM
             self._model = LlamaForCausalLM.from_pretrained(
                 pretrained,
@@ -498,6 +515,16 @@ class XHFLM(TemplateLM):
             _attn_implementation = "eager"
 
             )
+        else:
+            from transformers import LlamaForCausalLM
+            self._model = LlamaForCausalLM.from_pretrained(
+            pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            use_flash_attention_2=True
+            )
+            self._model.eval()
+            return None
         self._model.eval()
         self._model.set_sparse_attn(sparse=sparse)
         return None
