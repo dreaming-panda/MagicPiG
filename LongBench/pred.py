@@ -114,8 +114,7 @@ def load_model_and_tokenizer(path, model_name, device, args):
     elif "llama" in model_name:
         
         #replace_llama_attn_with_flash_attn()
-        tokenizer = AutoModelForCausalLM.from_pretrained(path, use_fast=False)
-        model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16).to(device)
+        tokenizer = AutoTokenizer.from_pretrained(path, use_fast=False)
         if args.imp:
             from models.llama import LlamaForCausalLM
             model = LlamaForCausalLM.from_pretrained(
