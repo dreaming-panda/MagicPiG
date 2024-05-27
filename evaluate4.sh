@@ -1,1 +1,2 @@
-accelerate launch -m lm_eval --model hf --tasks mmlu_flan_cot_fewshot --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct
+accelerate launch main.py --model xhf --tasks gsm8k_cot --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct,sparse=0.2
+accelerate launch main.py --model xhf --tasks gsm8k_cot --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct,sparse=0.2,topk=True

@@ -25,11 +25,11 @@
 
 source /data/home/beidic/.bashrc
 source /fsx-storygen/beidic/anaconda3/etc/profile.d/conda.sh
-conda activate hanshi 
+conda activate beidic
 
 cd /data/home/beidic/zhuoming/MagicPiG
 
 which python 
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 
 
-/usr/bin/bash evaluate5.sh >results/eval5.log
+/usr/bin/bash evaluate5.sh >results/eval5Q.log
