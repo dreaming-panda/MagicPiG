@@ -459,6 +459,7 @@ class XHFLM(TemplateLM):
         topk = False,
         snap=False,
         imp=False,
+        asym=False,
         window_size :int = 32,
         kernel_size :int = 5,
         trust_remote_code: Optional[bool] = False,
@@ -521,6 +522,21 @@ class XHFLM(TemplateLM):
             _attn_implementation = "eager"
 
             )
+            self._model.eval()
+            self._model.set_sparse_attn(sparse=sparse)
+            return None
+        elif asym:
+            from models.llama_asym import LlamaForCausalLM
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
+
+            )
+            self._model.eval()
+            self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
+            return None
         else:
             from transformers import LlamaForCausalLM
             self._model = LlamaForCausalLM.from_pretrained(
@@ -530,9 +546,8 @@ class XHFLM(TemplateLM):
             )
             self._model.eval()
             return None
-        self._model.eval()
-        self._model.set_sparse_attn(sparse=sparse)
-        return None
+        
+        
 
     def _create_tokenizer(
         self,
