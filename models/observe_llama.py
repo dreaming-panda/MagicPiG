@@ -59,6 +59,14 @@ LlamaConfig,
 LlamaMLP,
 LlamaPreTrainedModel
 )
+from lm_eval.models.utils import (
+    Collator,
+    clear_torch_cache,
+    get_dtype,
+    pad_and_concat,
+    stop_sequences_criteria,
+)
+
 
 
 if is_flash_attn_2_available():
@@ -974,7 +982,7 @@ class LlamaModel(LlamaPreTrainedModel):
         self.gradient_checkpointing = False
         # Initialize weights and apply final processing
         self.post_init()
-        self.example_count = 0
+        self.example_count = -1
         self.collection = {}
         
     def reset_collection(self):
@@ -982,11 +990,9 @@ class LlamaModel(LlamaPreTrainedModel):
         tmp = {}
         count = 0
         for layer in self.layers:
-            context_len = layer.record[0].shape[-2]
-            print()
-            tmp[str(count)] = (torch.cat(layer.record, dim=-2), context_len)
-            layer.record = []
+            tmp[str(count)] = layer.record
             count+=1
+            layer.record = []
         self.collection[str(self.example_count)] = tmp
 
     def get_input_embeddings(self):
@@ -1017,15 +1023,11 @@ class LlamaModel(LlamaPreTrainedModel):
         return_dict = return_dict if return_dict is not None else self.config.use_return_dict
 
         if input_ids.shape[-1]>1:
-            if self.example_count>0:
-                self.reset_collection()
-        
-            if self.example_count==10:
-                print("starting writing")
-                print(self.collection.keys())
-                torch.save(self.collection, 'activation.pt')
+            self.reset_collection()
             self.example_count+=1
-
+        
+        if self.example_count==10:
+            torch.save(self.collection, 'activation.pt')
 
         # retrieve input_ids and inputs_embeds
         if input_ids is not None and inputs_embeds is not None:
@@ -1119,7 +1121,6 @@ class LlamaModel(LlamaPreTrainedModel):
 
             if output_attentions:
                 all_self_attns += (layer_outputs[1],)
-
 
         hidden_states = self.norm(hidden_states)
 
@@ -1449,3 +1450,40 @@ class LlamaForSequenceClassification(LlamaPreTrainedModel):
             hidden_states=transformer_outputs.hidden_states,
             attentions=transformer_outputs.attentions,
         )
+
+def get_qkv(x, model, layer):
+    model.model.layers[layer].self_attn.q_proj
+    model.model.layers[layer].self_attn.k_proj
+    model.model.layers[layer].self_attn.v_proj
+    # return q, k, v
+
+def anns(query, data):
+    pass
+    # return recall, count
+
+if __name__ == "__main__":
+    
+    from llama_pq import LlamaForCausalLM
+    pretrained = 'meta-llama/Meta-Llama-3-8B-Instruct'
+    device = (
+        torch.device("cuda")
+        if torch.cuda.is_available()
+        else torch.device("cpu")
+    )
+    model = LlamaForCausalLM.from_pretrained(
+        pretrained,
+    device_map=str(device),
+    _attn_implementation = "eager"
+    )
+    model.eval()
+    print(model)
+
+    example = 1
+    layer = 0
+    collection = torch.load('activation.pt')
+    x = collection['1'][str(layer)]
+    q, k, v = get_qkv(x, model, layer)
+
+
+
+

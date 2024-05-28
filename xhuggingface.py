@@ -459,6 +459,7 @@ class XHFLM(TemplateLM):
         topk = False,
         snap=False,
         imp=False,
+        anns=False,
         window_size :int = 32,
         kernel_size :int = 5,
         trust_remote_code: Optional[bool] = False,
@@ -519,8 +520,20 @@ class XHFLM(TemplateLM):
             torch_dtype=get_dtype(dtype),
             device_map=str(self.device),
             _attn_implementation = "eager"
-
             )
+            self._model.eval()
+            self._model.set_sparse_attn(sparse=sparse)
+            return None
+        elif anns:
+            from models.llama_pq import LlamaForCausalLM
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
+            )
+            self._model.eval()
+            return None
         else:
             from transformers import LlamaForCausalLM
             self._model = LlamaForCausalLM.from_pretrained(
@@ -530,9 +543,7 @@ class XHFLM(TemplateLM):
             )
             self._model.eval()
             return None
-        self._model.eval()
-        self._model.set_sparse_attn(sparse=sparse)
-        return None
+
 
     def _create_tokenizer(
         self,
@@ -1190,7 +1201,7 @@ class XHFLM(TemplateLM):
                 stop=until,
                 **kwargs,
             )
-            
+
             cont_toks_list = cont.tolist()
             for cont_toks, context in zip(cont_toks_list, contexts):
                 # discard context + left-padding toks if using causal decoder-only LM
