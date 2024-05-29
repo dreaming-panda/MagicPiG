@@ -525,27 +525,25 @@ class XHFLM(TemplateLM):
             self._model.eval()
             self._model.set_sparse_attn(sparse=sparse)
             return None
-<<<<<<< HEAD
         elif anns:
             from models.llama_pq import LlamaForCausalLM
-=======
-        elif asym:
-            from models.llama_asym import LlamaForCausalLM
->>>>>>> a6146640958ab2aad92cb1e0b26966b899c7323a
             self._model = LlamaForCausalLM.from_pretrained(
                 pretrained,
             torch_dtype=get_dtype(dtype),
             device_map=str(self.device),
             _attn_implementation = "eager"
-<<<<<<< HEAD
             )
             self._model.eval()
-=======
-
+        elif asym:
+            from models.llama_asym import LlamaForCausalLM
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
             )
             self._model.eval()
             self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
->>>>>>> a6146640958ab2aad92cb1e0b26966b899c7323a
             return None
         else:
             from transformers import LlamaForCausalLM
@@ -556,12 +554,6 @@ class XHFLM(TemplateLM):
             )
             self._model.eval()
             return None
-<<<<<<< HEAD
-
-=======
-        
-        
->>>>>>> a6146640958ab2aad92cb1e0b26966b899c7323a
 
     def _create_tokenizer(
         self,
