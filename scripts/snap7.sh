@@ -1,6 +1,6 @@
 #!/bin/bash
 ## job name
-#SBATCH --job-name=snap4
+#SBATCH --job-name=snap7
 ## filename for job standard output (stdout)
 ## %j is the job id, %u is the user id
 
@@ -32,4 +32,4 @@ cd /data/home/beidic/zhuoming/MagicPiG
 which python 
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 
 
-/usr/bin/bash evaluate4.sh >results/eval4W.log
+/usr/bin/bash evaluate7.sh >results/eval7W.log
