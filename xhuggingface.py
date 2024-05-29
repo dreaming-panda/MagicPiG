@@ -461,6 +461,7 @@ class XHFLM(TemplateLM):
         imp=False,
         anns=False,
         asym=False,
+        search=False,
         window_size :int = 32,
         kernel_size :int = 5,
         trust_remote_code: Optional[bool] = False,
@@ -541,6 +542,18 @@ class XHFLM(TemplateLM):
             torch_dtype=get_dtype(dtype),
             device_map=str(self.device),
             _attn_implementation = "eager"
+            )
+            self._model.eval()
+            self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
+            return None
+        elif search:
+            from models.llama_search import LlamaForCausalLM
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
+
             )
             self._model.eval()
             self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
