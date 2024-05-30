@@ -2,7 +2,7 @@ from transformers.cache_utils import Cache
 from typing import Any, Dict, List, Optional, Tuple
 import torch
 import math
-
+from transformers.models.llama.modeling_llama import repeat_kv
 class MagicCache(Cache):
     """
     A cache that grows dynamically as more tokens are generated. This is the default for generative models.
@@ -199,6 +199,14 @@ class MGPCache(Cache):
                 unselected_len = self.unselected_key_cache[layer_idx].shape[-1]
                 num_random_cache = int(random_sparse * unselected_len)
                 if num_random_cache > 0:
+                    
+                    num_qh = query_states.shape[1]
+                    num_kh = self.unselected_key_cache[layer_idx].shape[1]
+                    k = self.unselected_key_cache[layer_idx]
+                    k = repeat_kv(k, num_qh // num_kh)
+                    
+                    self.sampling_prob = torch.matmul(query_states, k.transpose(2,3)).squeeze().reshape(num_kh, num_qh // num_kh, -1).sum(dim=-2)
+                    self.sampling_prob = torch.softmax(self.sampling_prob, dim=-1)
                     random_cache_ids = self.sampling_prob.multinomial(num_samples=num_random_cache, replacement=False)[None,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
                     
                     sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
@@ -274,8 +282,7 @@ class MGPCache(Cache):
         self.unselected_value_cache.append(unselect_v_cache)
         
         if self.sampling_prob is None:
-            self.sampling_prob = torch.zeros((unselect_k_cache.shape[1], unselect_k_cache.shape[2])).to(device=unselect_k_cache.device, dtype=torch.float16)
-            self.sampling_prob.fill_(1/unselect_k_cache.shape[2])
+            self.sampling_prob = unselect_k_cache.squeeze().norm(p=2, dim=-1)
             
         
         
