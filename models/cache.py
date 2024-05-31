@@ -131,7 +131,8 @@ class MGPCache(Cache):
         self.unselected_value_cache: List[torch.Tensor] = []
         self.sampling_prob: torch.Tensor = None
         self.seen_tokens = 0  # Used in `generate` to keep tally of how many tokens the cache has seen
-
+        self.kernel_size = None
+        self.interleave = None
     def __getitem__(self, layer_idx: int) -> List[Tuple[torch.Tensor]]:
         """
         Support for backwards-compatible `past_key_value` indexing, e.g. `past_key_value[0][0].shape[2]` to get the
@@ -203,12 +204,19 @@ class MGPCache(Cache):
                     num_qh = query_states.shape[1]
                     num_kh = self.unselected_key_cache[layer_idx].shape[1]
                     k = self.unselected_key_cache[layer_idx]
-                    k = repeat_kv(k, num_qh // num_kh)
+    
+                    k = repeat_kv(k.mean(dim=1, keepdim=True), num_qh)
+                    
+                    #k = k - k.mean(dim=-2, keepdim=True)
+                    #k = k / k.norm(p=2, dim=-1, keepdim=True)
+                    #q = query_states / query_states.norm(p=2, dim=-1, keepdim=True)
+                    #self.sampling_prob = k.norm(p=2, dim=-1).squeeze()
                     
                     self.sampling_prob = torch.matmul(query_states, k.transpose(2,3)).squeeze().reshape(num_kh, num_qh // num_kh, -1).sum(dim=-2)
-                    self.sampling_prob = torch.softmax(self.sampling_prob, dim=-1)
-                    random_cache_ids = self.sampling_prob.multinomial(num_samples=num_random_cache, replacement=False)[None,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
                     
+                    self.sampling_prob = torch.softmax(self.sampling_prob, dim=-1)
+                    
+                    random_cache_ids = self.sampling_prob.topk(k=num_random_cache, dim=-1).indices[None,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
                     sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
                     sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
                     

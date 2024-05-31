@@ -1,1 +1,1 @@
-accelerate launch main.py --model xhf --tasks mmlu_flan_cot_fewshot  --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.5,random_sparse=0.01,vsparse=1.0,window_size=64  --output_path results/Ullama3_mmlu_s05r001
+accelerate launch main.py --model xhf --tasks mmlu_flan_cot_fewshot  --batch_size 1 --model_args pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.3,random_sparse=0.01,vsparse=1.0,window_size=64  --output_path results/Kllama3_mmlu_s03r001
