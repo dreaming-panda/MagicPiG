@@ -126,6 +126,14 @@ def setup_parser() -> argparse.ArgumentParser:
         help="The path to the output file where the result metrics will be saved. If the path is a directory and log_samples is true, the results will be saved in the directory. Else the parent directory will be used.",
     )
     parser.add_argument(
+        "--output_log",
+        "-o",
+        default=None,
+        type=str,
+        metavar="DIR|DIR/file.log",
+        help="print the final result tables",
+    )
+    parser.add_argument(
         "--limit",
         "-L",
         type=float,
@@ -453,6 +461,10 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
             f"batch_size: {args.batch_size}{f' ({batch_sizes})' if batch_sizes else ''}"
         )
         print(make_table(results))
+        if args.output_log is not None:
+            with open(args.output_log, "w") as f:
+                f.write(make_table(results))
+                f.write("\n")
         if "groups" in results:
             print(make_table(results, "groups"))
 
