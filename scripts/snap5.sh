@@ -11,8 +11,8 @@
 #SBATCH --time=2:00:00 
 
 ## partition name
-#SBATCH --partition=learnlab,learnfair,storygen
-#SBATCH --account=fairaws-storygen
+#SBATCH -q storygen
+#SBATCH -A storygen
 ## number of nodes
 #SBATCH --nodes=1
 
