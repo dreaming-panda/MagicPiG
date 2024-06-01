@@ -127,7 +127,7 @@ def setup_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--output_log",
-        "-o",
+        "-olog",
         default=None,
         type=str,
         metavar="DIR|DIR/file.log",
