@@ -177,6 +177,7 @@ class XHFLM(TemplateLM):
         
         # if we passed `pretrained` as a string, initialize our model now
         if isinstance(pretrained, str):
+            self.search = False
             self._create_model(
                 pretrained=pretrained,
                 revision=revision,
@@ -462,8 +463,13 @@ class XHFLM(TemplateLM):
         anns=False,
         asym=False,
         search=False,
+        usehash=False,
         window_size :int = 32,
         kernel_size :int = 5,
+        K: int = 4,
+        L: int = 25,
+        static_tokens: int = 96,
+        dynamic_tokens: int = 96,
         trust_remote_code: Optional[bool] = False,
         parallelize: Optional[bool] = False,
         device_map_option: Optional[str] = "auto",
@@ -548,6 +554,7 @@ class XHFLM(TemplateLM):
             return None
         elif search:
             from models.llama_search import LlamaForCausalLM
+            self.search = True
             self._model = LlamaForCausalLM.from_pretrained(
                 pretrained,
             torch_dtype=get_dtype(dtype),
@@ -555,6 +562,25 @@ class XHFLM(TemplateLM):
             _attn_implementation = "eager"
 
             )
+            self._model.config.K = K
+            self._model.config.L = L
+            self._model.eval()
+            self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
+            return None
+        
+        elif usehash:
+            from models.llama_hash import LlamaForCausalLM
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
+            )
+            self._model.config.K = K
+            self._model.config.L = L
+            self._model.config.static_tokens = static_tokens
+            self._model.config.dynamic_tokens = dynamic_tokens
+            self._model.config.pooling = "maxpool"
             self._model.eval()
             self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
             return None
@@ -1249,5 +1275,6 @@ class XHFLM(TemplateLM):
         
         pbar.close()
         
+        self.model.print_recall()
         #self.model.save_file()
         return res
