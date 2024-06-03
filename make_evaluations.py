@@ -1,8 +1,8 @@
-model = ["meta-llama/Meta-Llama-3-8B-Instruct", "meta-llama/Llama-2-7b-chat-hf", "meta-llama/Llama-2-13b-chat-hf", "meta-llama/Meta-Llama-3-8B"]
-TASK = "ALSH"
+model = ["meta-llama/Llama-2-7b-chat-hf", "meta-llama/Meta-Llama-3-8B", "meta-llama/Llama-2-13b-chat-hf", "meta-llama/Meta-Llama-3-8B-Instruct"]
+TASK = "ALSH-X"
 sparse = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 random_sparse = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-method = ["", ",oracle=True", ",random=True"]
+method = [""]
 launch_cmd = []
 from itertools import product
 
@@ -30,7 +30,7 @@ for i, pack in enumerate(product(model, sparse, random_sparse, method)):
 
 #SBATCH --time=2:00:00 
 
-#SBATCH -q storygen_high
+#SBATCH -q storygen
 #SBATCH -A storygen
 
 #SBATCH --nodes=1
