@@ -62,7 +62,7 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
     
     launch_cmd.append(l_cmd)
 
-with open("submit-alsh.sh", "w+") as f:
+with open("submit-{}.sh".format(TASK), "w+") as f:
         f.writelines(launch_cmd)
 
     
