@@ -20,8 +20,7 @@ for i, pack in enumerate(product(model, sparse, random_sparse, method)):
     script_name = "scripts/" + name + "-mgp.sh"
     cmd = "accelerate launch main.py --model xhf --tasks gsm8k_cot  --batch_size 1 --model_args pretrained={},search=True,sparse={},random_sparse={},vsparse=1.0,window_size=64,K=4,L=25{} --output_path results/{}".format(pack[0], pack[1], pack[2], pack[3], log_name)
     
-    script_cmd = """
-#!/bin/bash
+    script_cmd = """#!/bin/bash
 ## job name
 #SBATCH --job-name={}-{}
 
@@ -59,7 +58,7 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
     
     with open(script_name, "w+") as f:
         f.write(script_cmd)
-    
+    exit(0)
     l_cmd = "sbatch " + script_name + "\n"
     
     launch_cmd.append(l_cmd)
