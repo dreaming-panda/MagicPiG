@@ -145,6 +145,7 @@ class MGPCache(Cache):
         self.mode = mode
         self.key_hashcode: List[torch.Tensor] = []
         self.window = window
+        self.hash_matrices: List[torch.Tensor] = []
     def __getitem__(self, layer_idx: int) -> List[Tuple[torch.Tensor]]:
         """
         Support for backwards-compatible `past_key_value` indexing, e.g. `past_key_value[0][0].shape[2]` to get the
@@ -339,13 +340,19 @@ class MGPCache(Cache):
         self.unselected_value_cache.append(unselect_v_cache)
         
         
+        #feature_matrix = unselect_k_cache.squeeze().reshape(-1, unselect_k_cache.shape[-1])
+        # feature_matrix = unselect_k_cache
         
+        # _,_,feature_matrix = torch.pca_lowrank(feature_matrix.float(), q=self.L * self.K)
         
+        # feature_matrix = feature_matrix.to(unselect_k_cache.dtype)
+        # feature_matrix = repeat_kv(feature_matrix, self.num_qh // self.num_kh)
         expand_k = repeat_kv(unselect_k_cache, self.num_qh // self.num_kh)
-        # expand_k = expand_k - expand_k.mean(dim=-1, keepdim=True)
+        
+        expand_k = expand_k - expand_k.mean(dim=-2, keepdim=True)
         # expand_k = expand_k / expand_k.norm(p=2, dim=-1, keepdim=True)
         hash_code = torch.matmul(expand_k, self.hash_matrix).reshape(1, self.num_qh, expand_k.shape[2], self.K, self.L)
-        
+        #self.hash_matrices.append(feature_matrix)     
         hash_code = hash_code.argmax(dim=-1)
         self.key_hashcode.append(hash_code)
         
