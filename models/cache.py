@@ -122,14 +122,14 @@ class MGPCache(Cache):
     `[batch_size, num_heads, seq_len, head_dim]`.
     """
 
-    def __init__(self, K, L) -> None:
+    def __init__(self, K, L, mode = "anns", window = 64) -> None:
         self.key_cache: List[torch.Tensor] = []
         self.value_cache: List[torch.Tensor] = []
         self.selected_key_cache: List[torch.Tensor] = []
         self.selected_value_cache: List[torch.Tensor] = []
         self.unselected_key_cache: List[torch.Tensor] = []
         self.unselected_value_cache: List[torch.Tensor] = []
-        
+        self.prefill_tokens = 0
         self.sampling_prob: torch.Tensor = None
         self.seen_tokens = 0  # Used in `generate` to keep tally of how many tokens the cache has seen
         self.kernel_size = 5
@@ -141,7 +141,10 @@ class MGPCache(Cache):
         self.K = K
         self.L = L
         self.recall = None
+        self.reserved = 16
+        self.mode = mode
         self.key_hashcode: List[torch.Tensor] = []
+        self.window = window
     def __getitem__(self, layer_idx: int) -> List[Tuple[torch.Tensor]]:
         """
         Support for backwards-compatible `past_key_value` indexing, e.g. `past_key_value[0][0].shape[2]` to get the
@@ -200,6 +203,7 @@ class MGPCache(Cache):
         if len(self.key_cache) <= layer_idx:
             self.key_cache.append(key_states)
             self.value_cache.append(value_states)
+            self.prefill_tokens = key_states.shape[2]
             if self.hash_matrix is None:
                 self.num_qh = query_states.shape[1]
                 self.num_kh = key_states.shape[1]
@@ -213,57 +217,59 @@ class MGPCache(Cache):
             if len(self.selected_key_cache) > 0 and layer_idx >= 2:
                 self.selected_key_cache[layer_idx] = torch.cat([self.selected_key_cache[layer_idx], key_states], dim=-2)
                 self.selected_value_cache[layer_idx] = torch.cat([self.selected_value_cache[layer_idx], value_states], dim=-2)
-                total_len = self.unselected_key_cache[layer_idx].shape[-2] + self.selected_key_cache[layer_idx].shape[-2]
-                num_random_cache = int(random_sparse * total_len)
+                #total_len = self.unselected_key_cache[layer_idx].shape[-2] + self.selected_key_cache[layer_idx].shape[-2]
+                #total_len = self.unselected_key_cache[layer_idx].shape[-2]
+                num_random_cache = int(random_sparse * (self.prefill_tokens - self.window))
                 
                 if num_random_cache > 0:
+                    if self.mode == "anns":
+                        q_hashcode = torch.matmul(query_states, self.hash_matrix).reshape(1, self.num_qh, query_states.shape[2], self.K, self.L)
+                        q_hashcode = q_hashcode.argmax(dim=-1)
+                        k_hashcode = self.key_hashcode[layer_idx]
+                        
+                        hash_hit = (q_hashcode == k_hashcode).long().sum(dim=-1)
+                        hash_hit = hash_hit.reshape(1, self.num_kh, self.num_qh // self.num_kh, -1)
+                        
+                        hash_hit = hash_hit.sum(dim=-2, keepdim=True)
+                        # k = self.unselected_key_cache[layer_idx]
+                        # k = repeat_kv(k, (self.num_qh // self.num_kh))
+                        # sampling_prob = torch.matmul(query_states, k.transpose(2,3))
                     
-                    q_hashcode = torch.matmul(query_states, self.hash_matrix).reshape(1, self.num_qh, query_states.shape[2], self.K, self.L)
-                    q_hashcode = q_hashcode.argmax(dim=-1)
-                    k_hashcode = self.key_hashcode[layer_idx]
-                    
-                    hash_hit = (q_hashcode == k_hashcode).long().sum(dim=-1)
-                    #print(hash_hit.shape)
-                    hash_hit = hash_hit.reshape(1, self.num_kh, self.num_qh // self.num_kh, -1)
-                    
-                    hash_hit = hash_hit.sum(dim=-2, keepdim=True)
-                    #print(hash_hit.shape)
-                    
-                    
-                    
-                    # num_qh = query_states.shape[1]
-                    # num_kh = self.unselected_key_cache[layer_idx].shape[1]
-                    k = self.unselected_key_cache[layer_idx]
-                    k = repeat_kv(k, (self.num_qh // self.num_kh))
-                    
-                    # k = k - k.mean(dim=-2, keepdim=True)
-                    # k = k / k.norm(p=2, dim=-1, keepdim=True)
-                    # q = query_states / query_states.norm(p=2, dim=-1, keepdim=True)
-                    # self.sampling_prob = k.norm(p=2, dim=-1).squeeze()
-                    #self.sampling_prob = torch.matmul(query_states, k.transpose(2,3)).squeeze().reshape(num_kh, num_qh // num_kh, -1).sum(dim=-2)
-                    sampling_prob = torch.matmul(query_states, k.transpose(2,3))
-                   
-                    
-                    sampling_prob = torch.softmax(sampling_prob, dim=-1)
-                    
-                    
-                    oracle_cache_ids = sampling_prob.topk(k=num_random_cache).indices
-                    hash_cache_ids = hash_hit.topk(k=num_random_cache, dim=-1).indices
-                    
-                    hash_cache_ids = repeat_kv(hash_cache_ids, (self.num_qh // self.num_kh))
-                    
-                    #mask1 = self.sampling_prob.scatter(dim=-1, index=oracle_cache_ids, value=1)
-                    #mask2 = self.sampling_prob.scatter(dim=-1, index=hash_cache_ids, value=1)
-                    #recall_mask = (mask1 * mask2)
-                    recall = sampling_prob.gather(-1, hash_cache_ids).sum(dim=-1).mean().item()
-                    #recall = (mask1 * mask2)
-                    #recall = ((recall.sum()) / (recall.shape[1] * oracle_cache_ids.shape[-1])).item()
-                    random_cache_ids = hash_hit.squeeze(-2).topk(k=num_random_cache, dim=-1).indices[:,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
-                    sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
-                    sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
-                    
-                    return_key = torch.cat([self.selected_key_cache[layer_idx],  sampled_unselected_key], dim=-2)
-                    return_value = torch.cat([self.selected_value_cache[layer_idx], sampled_unselected_value], dim=-2)
+                        
+                        # sampling_prob = torch.softmax(sampling_prob, dim=-1)
+                        # oracle_cache_ids = sampling_prob.topk(k=num_random_cache).indices
+                        # hash_cache_ids = hash_hit.topk(k=num_random_cache, dim=-1).indices
+                        # hash_cache_ids = repeat_kv(hash_cache_ids, (self.num_qh // self.num_kh))
+                        # recall = sampling_prob.gather(-1, hash_cache_ids).sum(dim=-1).mean().item()
+                        recall = -1
+                        random_cache_ids = hash_hit.squeeze(-2).topk(k=num_random_cache, dim=-1).indices[:,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
+                        sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                        sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                        
+                        return_key = torch.cat([self.selected_key_cache[layer_idx],  sampled_unselected_key], dim=-2)
+                        return_value = torch.cat([self.selected_value_cache[layer_idx], sampled_unselected_value], dim=-2)
+                    elif self.mode == "oracle":
+                        
+                        k = self.unselected_key_cache[layer_idx]
+                        k = repeat_kv(k, (self.num_qh // self.num_kh))
+                        
+                        sampling_prob = torch.matmul(query_states, k.transpose(2,3))
+                        sampling_prob = sampling_prob.squeeze().reshape(self.num_kh, self.num_qh // self.num_kh, -1).sum(dim=-2)
+                        sampling_prob = torch.softmax(sampling_prob, dim=-1)
+                        random_cache_ids = sampling_prob.multinomial(num_samples=num_random_cache, replacement=False)[None,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
+                        sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                        sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                        recall = -1
+                        return_key = torch.cat([self.selected_key_cache[layer_idx],  sampled_unselected_key], dim=-2)
+                        return_value = torch.cat([self.selected_value_cache[layer_idx], sampled_unselected_value], dim=-2)
+                        
+                    elif self.mode == "random":
+                        random_cache_ids = self.sampling_prob.multinomial(num_samples=num_random_cache, replacement=False)[None,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
+                        sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                        sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                        recall = -1
+                        return_key = torch.cat([self.selected_key_cache[layer_idx],  sampled_unselected_key], dim=-2)
+                        return_value = torch.cat([self.selected_value_cache[layer_idx], sampled_unselected_value], dim=-2)
                 else:
                     return_key = self.selected_key_cache[layer_idx]
                     return_value = self.selected_value_cache[layer_idx]
@@ -345,7 +351,7 @@ class MGPCache(Cache):
         
         
         if self.sampling_prob is None:
-            self.sampling_prob = torch.zeros((1, self.num_qh, 1, unselect_k_cache.shape[2]), device=unselect_k_cache.device, dtype=unselect_k_cache.dtype)
+            self.sampling_prob = torch.ones((self.num_kh, unselect_k_cache.shape[2]), device=unselect_k_cache.device, dtype=unselect_k_cache.dtype)
             
             
 class MGPCacheV2(Cache):
