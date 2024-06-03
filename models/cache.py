@@ -209,7 +209,7 @@ class MGPCache(Cache):
                 self.num_qh = query_states.shape[1]
                 self.num_kh = key_states.shape[1]
                 self.head_dim = key_states.shape[-1]
-                self.hash_matrix = torch.rand((1, self.num_qh, self.head_dim + 1, self.K * self.L), device=key_states.device, dtype=key_states.dtype) - 0.5
+                self.hash_matrix = torch.rand((1, self.num_qh, self.head_dim, self.K * self.L), device=key_states.device, dtype=key_states.dtype) - 0.5
                 self.hash_matrix = self.hash_matrix / self.hash_matrix.norm(p=2, dim=-1, keepdim=True)
             
         else:
