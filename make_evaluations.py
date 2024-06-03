@@ -1,5 +1,5 @@
 model = ["meta-llama/Meta-Llama-3-8B-Instruct", "meta-llama/Llama-2-7b-chat-hf", "meta-llama/Llama-2-13b-chat-hf", "meta-llama/Meta-Llama-3-8B"]
-
+TASK = "ALSH"
 sparse = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 random_sparse = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 method = ["", ",oracle=True", ",random=True"]
@@ -15,14 +15,14 @@ for i, pack in enumerate(product(model, sparse, random_sparse, method)):
         name = name + "-random"
     else:
         name = name + "-ann"
-    log_name = name + "-center.log"
-    bash_name = name + "-mgp.sh"
-    script_name = "scripts/" + name + "-mgp.sh"
+    log_name = name + "-{}.log".format(TASK)
+    bash_name = name + "-mgp{}.sh".format(TASK)
+    script_name = "scripts/" + name + "-mgp{}.sh".format(TASK)
     cmd = "accelerate launch main.py --model xhf --tasks gsm8k_cot  --batch_size 1 --model_args pretrained={},search=True,sparse={},random_sparse={},vsparse=1.0,window_size=64,K=4,L=25{} --output_path results/{}".format(pack[0], pack[1], pack[2], pack[3], log_name)
     
     script_cmd = """#!/bin/bash
 ## job name
-#SBATCH --job-name={}-{}
+#SBATCH --job-name={}-{}-{}
 
 
 #SBATCH --output=/data/home/beidic/zhuoming/MagicPiG/log/log-%j.out
@@ -51,7 +51,7 @@ which python
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 
 
 /usr/bin/bash {}
-""".format(i, name, bash_name)
+""".format(i, name, TASK, bash_name)
 
     with open(bash_name, "w+") as f:
         f.write(cmd)
@@ -62,7 +62,7 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
     
     launch_cmd.append(l_cmd)
 
-with open("submit.sh", "w+") as f:
+with open("submit-{}.sh".format(TASK), "w+") as f:
         f.writelines(launch_cmd)
 
     
