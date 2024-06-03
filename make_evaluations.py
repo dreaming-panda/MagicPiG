@@ -15,8 +15,8 @@ for i, pack in enumerate(product(model, sparse, random_sparse, method)):
         name = name + "-random"
     else:
         name = name + "-ann"
-    log_name = name + "-center.log"
-    bash_name = name + "-mgp.sh"
+    log_name = name + "-ALSH.log"
+    bash_name = name + "-mgp-alsh.sh"
     script_name = "scripts/" + name + "-mgp.sh"
     cmd = "accelerate launch main.py --model xhf --tasks gsm8k_cot  --batch_size 1 --model_args pretrained={},search=True,sparse={},random_sparse={},vsparse=1.0,window_size=64,K=4,L=25{} --output_path results/{}".format(pack[0], pack[1], pack[2], pack[3], log_name)
     
@@ -62,7 +62,7 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
     
     launch_cmd.append(l_cmd)
 
-with open("submit.sh", "w+") as f:
+with open("submit-alsh.sh", "w+") as f:
         f.writelines(launch_cmd)
 
     
