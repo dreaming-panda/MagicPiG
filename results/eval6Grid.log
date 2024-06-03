@@ -1,0 +1,947 @@
+Namespace(model='xhf', tasks='mmlu_flan_cot_fewshot', model_args='pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.1,random_sparse=0.2,vsparse=0.5,window_size=16,K=4,L=32', num_fewshot=None, batch_size='1', max_batch_size=None, device=None, output_path='results/Hashllama3_mmlu_K4L32', output_log=None, limit=None, topp=1.1, topk=64, spr=0.25, sink=8, local=256, use_cache=None, cache_requests=None, check_integrity=False, write_out=False, log_samples=False, show_config=False, include_path=None, gen_kwargs=None, verbosity='INFO', wandb_args='', predict_only=False, seed=[0, 1234, 1234], trust_remote_code=False)Namespace(model='xhf', tasks='mmlu_flan_cot_fewshot', model_args='pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.1,random_sparse=0.2,vsparse=0.5,window_size=16,K=4,L=32', num_fewshot=None, batch_size='1', max_batch_size=None, device=None, output_path='results/Hashllama3_mmlu_K4L32', output_log=None, limit=None, topp=1.1, topk=64, spr=0.25, sink=8, local=256, use_cache=None, cache_requests=None, check_integrity=False, write_out=False, log_samples=False, show_config=False, include_path=None, gen_kwargs=None, verbosity='INFO', wandb_args='', predict_only=False, seed=[0, 1234, 1234], trust_remote_code=False)
+
+Namespace(model='xhf', tasks='mmlu_flan_cot_fewshot', model_args='pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.1,random_sparse=0.2,vsparse=0.5,window_size=16,K=4,L=32', num_fewshot=None, batch_size='1', max_batch_size=None, device=None, output_path='results/Hashllama3_mmlu_K4L32', output_log=None, limit=None, topp=1.1, topk=64, spr=0.25, sink=8, local=256, use_cache=None, cache_requests=None, check_integrity=False, write_out=False, log_samples=False, show_config=False, include_path=None, gen_kwargs=None, verbosity='INFO', wandb_args='', predict_only=False, seed=[0, 1234, 1234], trust_remote_code=False)
+Namespace(model='xhf', tasks='mmlu_flan_cot_fewshot', model_args='pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.1,random_sparse=0.2,vsparse=0.5,window_size=16,K=4,L=32', num_fewshot=None, batch_size='1', max_batch_size=None, device=None, output_path='results/Hashllama3_mmlu_K4L32', output_log=None, limit=None, topp=1.1, topk=64, spr=0.25, sink=8, local=256, use_cache=None, cache_requests=None, check_integrity=False, write_out=False, log_samples=False, show_config=False, include_path=None, gen_kwargs=None, verbosity='INFO', wandb_args='', predict_only=False, seed=[0, 1234, 1234], trust_remote_code=False)
+Namespace(model='xhf', tasks='mmlu_flan_cot_fewshot', model_args='pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.1,random_sparse=0.2,vsparse=0.5,window_size=16,K=4,L=32', num_fewshot=None, batch_size='1', max_batch_size=None, device=None, output_path='results/Hashllama3_mmlu_K4L32', output_log=None, limit=None, topp=1.1, topk=64, spr=0.25, sink=8, local=256, use_cache=None, cache_requests=None, check_integrity=False, write_out=False, log_samples=False, show_config=False, include_path=None, gen_kwargs=None, verbosity='INFO', wandb_args='', predict_only=False, seed=[0, 1234, 1234], trust_remote_code=False)
+Namespace(model='xhf', tasks='mmlu_flan_cot_fewshot', model_args='pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.1,random_sparse=0.2,vsparse=0.5,window_size=16,K=4,L=32', num_fewshot=None, batch_size='1', max_batch_size=None, device=None, output_path='results/Hashllama3_mmlu_K4L32', output_log=None, limit=None, topp=1.1, topk=64, spr=0.25, sink=8, local=256, use_cache=None, cache_requests=None, check_integrity=False, write_out=False, log_samples=False, show_config=False, include_path=None, gen_kwargs=None, verbosity='INFO', wandb_args='', predict_only=False, seed=[0, 1234, 1234], trust_remote_code=False)
+Namespace(model='xhf', tasks='mmlu_flan_cot_fewshot', model_args='pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.1,random_sparse=0.2,vsparse=0.5,window_size=16,K=4,L=32', num_fewshot=None, batch_size='1', max_batch_size=None, device=None, output_path='results/Hashllama3_mmlu_K4L32', output_log=None, limit=None, topp=1.1, topk=64, spr=0.25, sink=8, local=256, use_cache=None, cache_requests=None, check_integrity=False, write_out=False, log_samples=False, show_config=False, include_path=None, gen_kwargs=None, verbosity='INFO', wandb_args='', predict_only=False, seed=[0, 1234, 1234], trust_remote_code=False)Namespace(model='xhf', tasks='mmlu_flan_cot_fewshot', model_args='pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.1,random_sparse=0.2,vsparse=0.5,window_size=16,K=4,L=32', num_fewshot=None, batch_size='1', max_batch_size=None, device=None, output_path='results/Hashllama3_mmlu_K4L32', output_log=None, limit=None, topp=1.1, topk=64, spr=0.25, sink=8, local=256, use_cache=None, cache_requests=None, check_integrity=False, write_out=False, log_samples=False, show_config=False, include_path=None, gen_kwargs=None, verbosity='INFO', wandb_args='', predict_only=False, seed=[0, 1234, 1234], trust_remote_code=False)
+
+a100-st-p4de24xlarge-933:2922459:2922459 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker0,veth,nerdctl
+a100-st-p4de24xlarge-933:2922459:2922459 [0] NCCL INFO Bootstrap : Using ens32:10.200.29.119<0>
+a100-st-p4de24xlarge-933:2922459:2922459 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+a100-st-p4de24xlarge-933:2922459:2922459 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (v4 or v5).
+a100-st-p4de24xlarge-933:2922459:2922459 [0] NCCL INFO cudaDriverVersion 12020
+NCCL version 2.18.5+cuda12.2
+a100-st-p4de24xlarge-933:2922464:2922464 [5] NCCL INFO cudaDriverVersion 12020
+a100-st-p4de24xlarge-933:2922464:2922464 [5] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker0,veth,nerdctl
+a100-st-p4de24xlarge-933:2922463:2922463 [4] NCCL INFO cudaDriverVersion 12020
+a100-st-p4de24xlarge-933:2922466:2922466 [7] NCCL INFO cudaDriverVersion 12020
+a100-st-p4de24xlarge-933:2922463:2922463 [4] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker0,veth,nerdctl
+a100-st-p4de24xlarge-933:2922460:2922460 [1] NCCL INFO cudaDriverVersion 12020
+a100-st-p4de24xlarge-933:2922466:2922466 [7] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker0,veth,nerdctl
+a100-st-p4de24xlarge-933:2922465:2922465 [6] NCCL INFO cudaDriverVersion 12020
+a100-st-p4de24xlarge-933:2922460:2922460 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker0,veth,nerdctl
+a100-st-p4de24xlarge-933:2922465:2922465 [6] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker0,veth,nerdctl
+a100-st-p4de24xlarge-933:2922464:2922464 [5] NCCL INFO Bootstrap : Using ens32:10.200.29.119<0>
+a100-st-p4de24xlarge-933:2922463:2922463 [4] NCCL INFO Bootstrap : Using ens32:10.200.29.119<0>
+a100-st-p4de24xlarge-933:2922466:2922466 [7] NCCL INFO Bootstrap : Using ens32:10.200.29.119<0>
+a100-st-p4de24xlarge-933:2922460:2922460 [1] NCCL INFO Bootstrap : Using ens32:10.200.29.119<0>
+a100-st-p4de24xlarge-933:2922465:2922465 [6] NCCL INFO Bootstrap : Using ens32:10.200.29.119<0>
+a100-st-p4de24xlarge-933:2922464:2922464 [5] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+a100-st-p4de24xlarge-933:2922464:2922464 [5] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (v4 or v5).
+a100-st-p4de24xlarge-933:2922463:2922463 [4] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+a100-st-p4de24xlarge-933:2922466:2922466 [7] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+a100-st-p4de24xlarge-933:2922463:2922463 [4] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (v4 or v5).
+a100-st-p4de24xlarge-933:2922466:2922466 [7] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (v4 or v5).
+a100-st-p4de24xlarge-933:2922460:2922460 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+a100-st-p4de24xlarge-933:2922460:2922460 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (v4 or v5).
+a100-st-p4de24xlarge-933:2922465:2922465 [6] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+a100-st-p4de24xlarge-933:2922465:2922465 [6] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (v4 or v5).
+a100-st-p4de24xlarge-933:2922461:2922461 [2] NCCL INFO cudaDriverVersion 12020
+a100-st-p4de24xlarge-933:2922461:2922461 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker0,veth,nerdctl
+a100-st-p4de24xlarge-933:2922461:2922461 [2] NCCL INFO Bootstrap : Using ens32:10.200.29.119<0>
+a100-st-p4de24xlarge-933:2922461:2922461 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+a100-st-p4de24xlarge-933:2922461:2922461 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (v4 or v5).
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.3-aws
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Using CUDA runtime version 12010
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Configuring AWS-specific options
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Setting provider_filter to efa
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Running on p4de.24xlarge platform, NCCL_TOPO_FILE environment variable is already set to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Internode latency set at 75.0 us
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Selected Provider is efa (found 4 nics)
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Using transport protocol SENDRECV
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Setting FI_OPT_EFA_SENDRECV_IN_ORDER_ALIGNED_128_BYTES not supported.
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NET/OFI Setting NCCL_PROTO to "simple"
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Using network AWS Libfabric
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.3-aws
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Using CUDA runtime version 12010
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Configuring AWS-specific options
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Setting provider_filter to efa
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Running on p4de.24xlarge platform, NCCL_TOPO_FILE environment variable is already set to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Internode latency set at 75.0 us
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Selected Provider is efa (found 4 nics)
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Using transport protocol SENDRECV
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Setting FI_OPT_EFA_SENDRECV_IN_ORDER_ALIGNED_128_BYTES not supported.
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NET/OFI Setting NCCL_PROTO to "simple"
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Using network AWS Libfabric
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.3-aws
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Using CUDA runtime version 12010
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Configuring AWS-specific options
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Setting provider_filter to efa
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Running on p4de.24xlarge platform, NCCL_TOPO_FILE environment variable is already set to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Internode latency set at 75.0 us
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.3-aws
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Using CUDA runtime version 12010
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Configuring AWS-specific options
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Setting provider_filter to efa
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Running on p4de.24xlarge platform, NCCL_TOPO_FILE environment variable is already set to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Internode latency set at 75.0 us
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Selected Provider is efa (found 4 nics)
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Using transport protocol SENDRECV
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Selected Provider is efa (found 4 nics)
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Using transport protocol SENDRECV
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Setting FI_OPT_EFA_SENDRECV_IN_ORDER_ALIGNED_128_BYTES not supported.
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NET/OFI Setting NCCL_PROTO to "simple"
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Setting FI_OPT_EFA_SENDRECV_IN_ORDER_ALIGNED_128_BYTES not supported.
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NET/OFI Setting NCCL_PROTO to "simple"
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.3-aws
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Using CUDA runtime version 12010
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Configuring AWS-specific options
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Setting provider_filter to efa
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Running on p4de.24xlarge platform, NCCL_TOPO_FILE environment variable is already set to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Internode latency set at 75.0 us
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Using network AWS Libfabric
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Using network AWS Libfabric
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Selected Provider is efa (found 4 nics)
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Using transport protocol SENDRECV
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Setting FI_OPT_EFA_SENDRECV_IN_ORDER_ALIGNED_128_BYTES not supported.
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NET/OFI Setting NCCL_PROTO to "simple"
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Using network AWS Libfabric
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.3-aws
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Using CUDA runtime version 12010
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Configuring AWS-specific options
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Setting provider_filter to efa
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Running on p4de.24xlarge platform, NCCL_TOPO_FILE environment variable is already set to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Internode latency set at 75.0 us
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Selected Provider is efa (found 4 nics)
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Using transport protocol SENDRECV
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Setting FI_OPT_EFA_SENDRECV_IN_ORDER_ALIGNED_128_BYTES not supported.
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NET/OFI Setting NCCL_PROTO to "simple"
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Using network AWS Libfabric
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.3-aws
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Using CUDA runtime version 12010
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Configuring AWS-specific options
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Setting provider_filter to efa
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Running on p4de.24xlarge platform, NCCL_TOPO_FILE environment variable is already set to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Internode latency set at 75.0 us
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Selected Provider is efa (found 4 nics)
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Using transport protocol SENDRECV
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Setting FI_OPT_EFA_SENDRECV_IN_ORDER_ALIGNED_128_BYTES not supported.
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NET/OFI Setting NCCL_PROTO to "simple"
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Using network AWS Libfabric
+a100-st-p4de24xlarge-933:2922462:2922462 [3] NCCL INFO cudaDriverVersion 12020
+a100-st-p4de24xlarge-933:2922462:2922462 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker0,veth,nerdctl
+a100-st-p4de24xlarge-933:2922462:2922462 [3] NCCL INFO Bootstrap : Using ens32:10.200.29.119<0>
+a100-st-p4de24xlarge-933:2922462:2922462 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+a100-st-p4de24xlarge-933:2922462:2922462 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (v4 or v5).
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.3-aws
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Using CUDA runtime version 12010
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Configuring AWS-specific options
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Setting provider_filter to efa
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Running on p4de.24xlarge platform, NCCL_TOPO_FILE environment variable is already set to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Internode latency set at 75.0 us
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Selected Provider is efa (found 4 nics)
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Using transport protocol SENDRECV
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Setting FI_OPT_EFA_SENDRECV_IN_ORDER_ALIGNED_128_BYTES not supported.
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NET/OFI Setting NCCL_PROTO to "simple"
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Using network AWS Libfabric
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO comm 0x560c18c8c0a0 rank 0 nranks 8 cudaDev 0 nvmlDev 0 busId 101c0 commId 0x361fe44e884af6b8 - Init START
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO comm 0x559626defd60 rank 3 nranks 8 cudaDev 3 nvmlDev 3 busId 201d0 commId 0x361fe44e884af6b8 - Init START
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO comm 0x55f919999660 rank 2 nranks 8 cudaDev 2 nvmlDev 2 busId 201c0 commId 0x361fe44e884af6b8 - Init START
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO comm 0x55865a22e400 rank 4 nranks 8 cudaDev 4 nvmlDev 4 busId 901c0 commId 0x361fe44e884af6b8 - Init START
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO comm 0x55e574247690 rank 7 nranks 8 cudaDev 7 nvmlDev 7 busId a01d0 commId 0x361fe44e884af6b8 - Init START
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO comm 0x5572840bc7d0 rank 5 nranks 8 cudaDev 5 nvmlDev 5 busId 901d0 commId 0x361fe44e884af6b8 - Init START
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO comm 0x5588983dcd00 rank 1 nranks 8 cudaDev 1 nvmlDev 1 busId 101d0 commId 0x361fe44e884af6b8 - Init START
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO comm 0x556506c315d0 rank 6 nranks 8 cudaDev 6 nvmlDev 6 busId a01c0 commId 0x361fe44e884af6b8 - Init START
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NCCL_TOPO_FILE set by environment to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NCCL_TOPO_FILE set by environment to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NCCL_TOPO_FILE set by environment to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NCCL_TOPO_FILE set by environment to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NCCL_TOPO_FILE set by environment to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NCCL_TOPO_FILE set by environment to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NCCL_TOPO_FILE set by environment to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NCCL_TOPO_FILE set by environment to /opt/aws-ofi-nccl/share/aws-ofi-nccl/xml/p4de-24xl-topo.xml
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Setting affinity for GPU 0 to 010000,00000001
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NVLS multicast support is not available on dev 0
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Setting affinity for GPU 1 to 010000,00000001
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NVLS multicast support is not available on dev 1
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Setting affinity for GPU 2 to 010000,00000001
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NVLS multicast support is not available on dev 2
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Setting affinity for GPU 7 to ff000100,0000ff00,01000000
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NVLS multicast support is not available on dev 7
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Setting affinity for GPU 5 to ff000100,0000ff00,01000000
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NVLS multicast support is not available on dev 5
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Setting affinity for GPU 4 to ff000100,0000ff00,01000000
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NVLS multicast support is not available on dev 4
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Setting affinity for GPU 3 to 010000,00000001
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NVLS multicast support is not available on dev 3
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Setting affinity for GPU 6 to ff000100,0000ff00,01000000
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NVLS multicast support is not available on dev 6
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Trees [0] 7/-1/-1->6->5 [1] 7/-1/-1->6->5 [2] 7/-1/-1->6->5 [3] 7/-1/-1->6->5 [4] 7/-1/-1->6->5 [5] 7/-1/-1->6->5 [6] 7/-1/-1->6->5 [7] 7/-1/-1->6->5 [8] 7/-1/-1->6->5 [9] 7/-1/-1->6->5 [10] 7/-1/-1->6->5 [11] 7/-1/-1->6->5 [12] 7/-1/-1->6->5 [13] 7/-1/-1->6->5 [14] 7/-1/-1->6->5 [15] 7/-1/-1->6->5 [16] 7/-1/-1->6->5 [17] 7/-1/-1->6->5 [18] 7/-1/-1->6->5 [19] 7/-1/-1->6->5 [20] 7/-1/-1->6->5 [21] 7/-1/-1->6->5 [22] 7/-1/-1->6->5 [23] 7/-1/-1->6->5
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO P2P Chunksize set to 524288
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Trees [0] -1/-1/-1->7->6 [1] -1/-1/-1->7->6 [2] -1/-1/-1->7->6 [3] -1/-1/-1->7->6 [4] -1/-1/-1->7->6 [5] -1/-1/-1->7->6 [6] -1/-1/-1->7->6 [7] -1/-1/-1->7->6 [8] -1/-1/-1->7->6 [9] -1/-1/-1->7->6 [10] -1/-1/-1->7->6 [11] -1/-1/-1->7->6 [12] -1/-1/-1->7->6 [13] -1/-1/-1->7->6 [14] -1/-1/-1->7->6 [15] -1/-1/-1->7->6 [16] -1/-1/-1->7->6 [17] -1/-1/-1->7->6 [18] -1/-1/-1->7->6 [19] -1/-1/-1->7->6 [20] -1/-1/-1->7->6 [21] -1/-1/-1->7->6 [22] -1/-1/-1->7->6 [23] -1/-1/-1->7->6
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 00/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO P2P Chunksize set to 524288
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 01/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 02/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 03/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 04/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 05/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 06/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 07/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 08/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 09/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 10/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 11/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 12/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 13/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 14/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 15/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 16/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 17/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 18/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 19/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 20/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 21/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 22/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 23/24 :    0   1   2   3   4   5   6   7
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1 [16] 1/-1/-1->0->-1 [17] 1/-1/-1->0->-1 [18] 1/-1/-1->0->-1 [19] 1/-1/-1->0->-1 [20] 1/-1/-1->0->-1 [21] 1/-1/-1->0->-1 [22] 1/-1/-1->0->-1 [23] 1/-1/-1->0->-1
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO P2P Chunksize set to 524288
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1 [16] 3/-1/-1->2->1 [17] 3/-1/-1->2->1 [18] 3/-1/-1->2->1 [19] 3/-1/-1->2->1 [20] 3/-1/-1->2->1 [21] 3/-1/-1->2->1 [22] 3/-1/-1->2->1 [23] 3/-1/-1->2->1
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO P2P Chunksize set to 524288
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0 [16] 2/-1/-1->1->0 [17] 2/-1/-1->1->0 [18] 2/-1/-1->1->0 [19] 2/-1/-1->1->0 [20] 2/-1/-1->1->0 [21] 2/-1/-1->1->0 [22] 2/-1/-1->1->0 [23] 2/-1/-1->1->0
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO P2P Chunksize set to 524288
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Trees [0] 6/-1/-1->5->4 [1] 6/-1/-1->5->4 [2] 6/-1/-1->5->4 [3] 6/-1/-1->5->4 [4] 6/-1/-1->5->4 [5] 6/-1/-1->5->4 [6] 6/-1/-1->5->4 [7] 6/-1/-1->5->4 [8] 6/-1/-1->5->4 [9] 6/-1/-1->5->4 [10] 6/-1/-1->5->4 [11] 6/-1/-1->5->4 [12] 6/-1/-1->5->4 [13] 6/-1/-1->5->4 [14] 6/-1/-1->5->4 [15] 6/-1/-1->5->4 [16] 6/-1/-1->5->4 [17] 6/-1/-1->5->4 [18] 6/-1/-1->5->4 [19] 6/-1/-1->5->4 [20] 6/-1/-1->5->4 [21] 6/-1/-1->5->4 [22] 6/-1/-1->5->4 [23] 6/-1/-1->5->4
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Trees [0] 5/-1/-1->4->3 [1] 5/-1/-1->4->3 [2] 5/-1/-1->4->3 [3] 5/-1/-1->4->3 [4] 5/-1/-1->4->3 [5] 5/-1/-1->4->3 [6] 5/-1/-1->4->3 [7] 5/-1/-1->4->3 [8] 5/-1/-1->4->3 [9] 5/-1/-1->4->3 [10] 5/-1/-1->4->3 [11] 5/-1/-1->4->3 [12] 5/-1/-1->4->3 [13] 5/-1/-1->4->3 [14] 5/-1/-1->4->3 [15] 5/-1/-1->4->3 [16] 5/-1/-1->4->3 [17] 5/-1/-1->4->3 [18] 5/-1/-1->4->3 [19] 5/-1/-1->4->3 [20] 5/-1/-1->4->3 [21] 5/-1/-1->4->3 [22] 5/-1/-1->4->3 [23] 5/-1/-1->4->3
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO P2P Chunksize set to 524288
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO P2P Chunksize set to 524288
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Trees [0] 4/-1/-1->3->2 [1] 4/-1/-1->3->2 [2] 4/-1/-1->3->2 [3] 4/-1/-1->3->2 [4] 4/-1/-1->3->2 [5] 4/-1/-1->3->2 [6] 4/-1/-1->3->2 [7] 4/-1/-1->3->2 [8] 4/-1/-1->3->2 [9] 4/-1/-1->3->2 [10] 4/-1/-1->3->2 [11] 4/-1/-1->3->2 [12] 4/-1/-1->3->2 [13] 4/-1/-1->3->2 [14] 4/-1/-1->3->2 [15] 4/-1/-1->3->2 [16] 4/-1/-1->3->2 [17] 4/-1/-1->3->2 [18] 4/-1/-1->3->2 [19] 4/-1/-1->3->2 [20] 4/-1/-1->3->2 [21] 4/-1/-1->3->2 [22] 4/-1/-1->3->2 [23] 4/-1/-1->3->2
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO P2P Chunksize set to 524288
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 00/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 00/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 01/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 01/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 02/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 02/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 03/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 03/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 04/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 04/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 05/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 05/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 06/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 06/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 07/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 07/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 08/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 08/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 09/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 09/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 10/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 10/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 11/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 11/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 12/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 12/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 00/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 13/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 00/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 01/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 13/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 14/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 01/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 02/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 14/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 15/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 02/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 03/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 16/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 15/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 04/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 03/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 17/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 16/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 05/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 04/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 18/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 17/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 05/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 06/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 19/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 18/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 06/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 07/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 20/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 19/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 08/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 07/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 21/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 20/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 09/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 08/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 22/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 21/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 10/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 09/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 23/0 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 22/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 11/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 10/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 12/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 23/0 : 6[6] -> 7[7] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 11/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 13/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 12/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 14/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 13/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 15/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 14/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 16/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 15/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 17/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 16/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 18/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 17/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 18/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 19/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 19/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 20/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 20/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 21/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 21/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 22/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 22/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 23/0 : 5[5] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 23/0 : 4[4] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Connected all rings
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Connected all rings
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 00/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 00/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 01/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 02/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 03/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 04/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 05/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 06/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 01/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 07/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 02/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 08/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 03/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 09/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 04/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 10/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 05/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 11/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 06/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 12/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 07/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 13/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 08/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 14/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 09/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 15/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 10/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 16/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 11/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 17/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 12/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 18/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 13/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 19/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 14/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 20/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 15/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 21/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 16/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 22/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 17/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Channel 23/0 : 5[5] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 18/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 19/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 20/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 21/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 22/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Channel 23/0 : 6[6] -> 5[5] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 00/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 01/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 00/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 01/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 02/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 03/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 04/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 05/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 06/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 07/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 08/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 02/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 09/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 03/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 04/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 10/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 11/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 05/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 06/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 12/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 07/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 13/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 08/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 14/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 15/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 09/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 16/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 10/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 11/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 17/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 18/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 19/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 20/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 21/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 22/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 23/0 : 1[1] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 12/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 00/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 01/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 02/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 03/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 13/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 04/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 05/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 06/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 07/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 08/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 09/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 10/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 11/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 12/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 13/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 14/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 15/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 16/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 17/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 18/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 19/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 20/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 14/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 21/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 22/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 15/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 16/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 17/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 18/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 23/0 : 3[3] -> 4[4] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 19/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 20/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 21/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 22/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 23/0 : 2[2] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Connected all rings
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Connected all rings
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Connected all rings
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 00/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 01/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 02/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 03/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 04/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 05/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 06/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 07/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 08/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 09/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 10/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 11/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 12/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 13/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 14/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 15/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 16/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 17/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 18/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 19/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 20/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 21/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 22/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Channel 23/0 : 4[4] -> 3[3] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO Connected all trees
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO NCCL_PROTO set by environment to simple
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 01/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 02/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 03/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 04/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 05/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 00/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 06/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 01/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 02/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 03/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 04/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 05/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 06/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 07/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 08/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 00/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 01/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 02/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 09/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 10/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 07/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 08/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 09/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 10/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 11/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 11/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 12/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 13/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 14/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 15/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 03/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 16/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 17/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 18/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 19/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 20/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 21/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 22/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Channel 23/0 : 0[0] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 12/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 04/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 05/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Connected all rings
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 00/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 01/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 02/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 03/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 04/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 05/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 06/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Connected all rings
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 07/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 08/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 09/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 10/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 11/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 12/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 13/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 14/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 15/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 16/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 17/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 18/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 19/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 20/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 21/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 22/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Channel 23/0 : 7[7] -> 6[6] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 13/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO Connected all trees
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO NCCL_PROTO set by environment to simple
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO Connected all trees
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO NCCL_PROTO set by environment to simple
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Connected all rings
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 06/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 14/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 07/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 15/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 00/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 01/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 02/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 03/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 04/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 05/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 16/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 06/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 07/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 08/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 09/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 10/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 11/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 12/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 13/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 14/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 08/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 15/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 16/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 17/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 18/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 19/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 20/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 21/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 22/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Channel 23/0 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO Connected all trees
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO NCCL_PROTO set by environment to simple
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 17/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 09/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 10/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 11/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 12/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 13/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 18/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 14/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 19/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 15/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 20/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 16/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 21/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 17/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 22/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 18/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Channel 23/0 : 3[3] -> 2[2] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 19/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 20/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 21/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 22/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Channel 23/0 : 2[2] -> 1[1] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO Connected all trees
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO NCCL_PROTO set by environment to simple
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO Connected all trees
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO NCCL_PROTO set by environment to simple
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO Connected all trees
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO NCCL_PROTO set by environment to simple
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO Connected all trees
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO NCCL_PROTO set by environment to simple
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a100-st-p4de24xlarge-933:2922462:2925085 [3] NCCL INFO comm 0x559626defd60 rank 3 nranks 8 cudaDev 3 nvmlDev 3 busId 201d0 commId 0x361fe44e884af6b8 - Init COMPLETE
+a100-st-p4de24xlarge-933:2922464:2924900 [5] NCCL INFO comm 0x5572840bc7d0 rank 5 nranks 8 cudaDev 5 nvmlDev 5 busId 901d0 commId 0x361fe44e884af6b8 - Init COMPLETE
+a100-st-p4de24xlarge-933:2922465:2924899 [6] NCCL INFO comm 0x556506c315d0 rank 6 nranks 8 cudaDev 6 nvmlDev 6 busId a01c0 commId 0x361fe44e884af6b8 - Init COMPLETE
+a100-st-p4de24xlarge-933:2922463:2924902 [4] NCCL INFO comm 0x55865a22e400 rank 4 nranks 8 cudaDev 4 nvmlDev 4 busId 901c0 commId 0x361fe44e884af6b8 - Init COMPLETE
+a100-st-p4de24xlarge-933:2922461:2924950 [2] NCCL INFO comm 0x55f919999660 rank 2 nranks 8 cudaDev 2 nvmlDev 2 busId 201c0 commId 0x361fe44e884af6b8 - Init COMPLETE
+a100-st-p4de24xlarge-933:2922459:2924895 [0] NCCL INFO comm 0x560c18c8c0a0 rank 0 nranks 8 cudaDev 0 nvmlDev 0 busId 101c0 commId 0x361fe44e884af6b8 - Init COMPLETE
+a100-st-p4de24xlarge-933:2922460:2924901 [1] NCCL INFO comm 0x5588983dcd00 rank 1 nranks 8 cudaDev 1 nvmlDev 1 busId 101d0 commId 0x361fe44e884af6b8 - Init COMPLETE
+a100-st-p4de24xlarge-933:2922466:2924903 [7] NCCL INFO comm 0x55e574247690 rank 7 nranks 8 cudaDev 7 nvmlDev 7 busId a01d0 commId 0x361fe44e884af6b8 - Init COMPLETE
+[0.0, 0.0, 0.7392675494138373, 0.7041092146158761, 0.7346046481867075, 0.6953412604294056, 0.6395188899197868, 0.7033283900819544, 0.6636052621962141, 0.6324260134763608, 0.6045566163343745, 0.7016709012710459, 0.6935646143565826, 0.62474632240789, 0.6570638619093317, 0.6327251405146737, 0.6917433889801944, 0.6683730413078592, 0.706688398914409, 0.6860958797122076, 0.6893080706273349, 0.6906863340329672, 0.7111605244695537, 0.7077033999211233, 0.6929285197083259, 0.6975575544877861, 0.7219475640123284, 0.6993476735940162, 0.6194302825471314, 0.7513142932126317, 0.6402739114459601, 0.606236058081992]
+[0.0, 0.0, 0.7245131296939185, 0.6909883905674029, 0.7241690734275311, 0.6855245616700641, 0.6351068217561947, 0.6874165015984933, 0.6526283516824002, 0.617249805295687, 0.5902871405473564, 0.6850363245005137, 0.688951715430758, 0.6079187506178654, 0.6472852689023837, 0.6259095019708398, 0.6781110483353893, 0.653140349182029, 0.6874536312385341, 0.6720963545960331, 0.6724390558945138, 0.6747449297199474, 0.6943771653020641, 0.6920315398857053, 0.6785167380445459, 0.6824452123337336, 0.7087943757690868, 0.6889232962986889, 0.6029036954497945, 0.736141640239091, 0.6263555591654246, 0.5910489140626957]
+[0.0, 0.0, 0.7331949464908146, 0.6956087326496471, 0.7281598006563056, 0.6836160226285004, 0.6360640488142885, 0.690834889644841, 0.6537567734426172, 0.61594828229038, 0.5890589780723919, 0.6884285566223417, 0.6944952068655535, 0.6015487682642737, 0.6427498473178743, 0.6203106538896098, 0.6748043721618368, 0.6544320566498816, 0.6863996962341663, 0.6702449802361885, 0.6648180298151032, 0.6770011047843496, 0.6910386533836828, 0.6937556851720571, 0.6749317399045812, 0.6860588105737743, 0.7078025125660303, 0.6878890396114145, 0.6031769194161779, 0.7368889103463607, 0.6204516493117688, 0.5950448394176797]
+[0.0, 0.0, 0.729194526373815, 0.6952190945992631, 0.7292362142567741, 0.6849302340761796, 0.6390094269423308, 0.6906281332178071, 0.6530317809851217, 0.6289433809660977, 0.5942052081908442, 0.6983860413748445, 0.6829027882410039, 0.6105804536080072, 0.6336088213091818, 0.6204653312850579, 0.67346115329808, 0.6549529472616599, 0.6846588421013728, 0.6825790760447122, 0.6713694006602698, 0.6777855304851756, 0.6936171439075873, 0.7005691681371095, 0.6847970537368858, 0.6963796060223124, 0.7123874550575872, 0.6943778864143204, 0.6096660659207821, 0.742073031875286, 0.6258929341174319, 0.5943607488727428]
+[0.0, 0.0, 0.7221666346209077, 0.691923372910846, 0.7219057013017863, 0.6793398432467487, 0.6321684395589278, 0.6808422536265123, 0.6458502302373966, 0.6124062973693244, 0.5822604034599181, 0.6836067736622049, 0.6910825238721463, 0.6051715379957531, 0.6350677173385351, 0.6166054905851606, 0.6710372939815188, 0.6463047224274802, 0.6839947850113866, 0.6725038008142529, 0.6663567561198981, 0.6761141333903414, 0.6915940034319727, 0.6952377356852512, 0.6761604771013667, 0.6848789872734584, 0.7064948159708966, 0.6886152919300316, 0.600244753825378, 0.7351483061323012, 0.6204438522685906, 0.5929104678375792]
+[0.0, 0.0, 0.7226183623504981, 0.6922922062056979, 0.725623687768611, 0.6817729180605709, 0.6401691768715883, 0.6876864723642677, 0.657806356705545, 0.619604397972808, 0.5897992320995625, 0.6897753812680103, 0.6867531508066933, 0.6156306644790641, 0.6480597878211901, 0.6219072210298925, 0.6747457802232962, 0.6568314524262334, 0.6989183690508958, 0.6745987142428737, 0.675156124486853, 0.6814728908277833, 0.6942992655748818, 0.708260032761879, 0.6878482589790943, 0.6978263927417142, 0.7203853000113998, 0.695382100703462, 0.608519444448437, 0.7414030323044283, 0.6301259670267222, 0.6007625649355782]
+[0.0, 0.0, 0.7231747683360538, 0.687616955400678, 0.7227583326471155, 0.6775767004633414, 0.631703983254662, 0.6857300858936929, 0.6480724770302158, 0.615182412241499, 0.5850299350775949, 0.6827742548595276, 0.687412343937948, 0.6020048609003361, 0.6389640220769224, 0.6182190121185261, 0.6724771885086159, 0.6518899158679001, 0.6828951083268052, 0.6728499772791954, 0.6656635430328945, 0.6722698700551918, 0.687768106001588, 0.6873122734578565, 0.6724756366181853, 0.6774849449416362, 0.703472778645482, 0.6849971350974005, 0.6002422087594881, 0.7344559712940224, 0.6211949163263568, 0.5888345179138719]
+[0.0, 0.0, 0.7266667373027154, 0.6956316901546689, 0.7237252764845429, 0.6859981936599239, 0.6336089017974302, 0.681766049257066, 0.6509107506392955, 0.6157487340874613, 0.5847478635500987, 0.6849013398428776, 0.6847731786494827, 0.5972165903194786, 0.635981156011943, 0.6167875565371945, 0.6630414778134978, 0.6444818805676703, 0.6854229948536977, 0.6709619237895205, 0.6655754337637348, 0.6747837909437533, 0.6953453628882647, 0.6995934748001572, 0.6782054526627521, 0.6918747458393683, 0.7135857327803912, 0.6932118931206732, 0.6024767950051801, 0.7377438194411877, 0.626436244098914, 0.5981083214139212]
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 00/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 00/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 00/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 00/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 00/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 01/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 01/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 02/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 01/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 02/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 00/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 03/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 02/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 03/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 01/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 03/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 04/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 04/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 02/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 04/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 05/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 05/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 03/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 05/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 06/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 04/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 06/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 06/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 07/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 05/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 07/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 07/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 08/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 06/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 08/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 08/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 09/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 07/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 09/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 09/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 10/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 08/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 10/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 10/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 11/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 09/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 11/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 11/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 12/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 10/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 12/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 12/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 13/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 11/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 13/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 13/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 14/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 12/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 14/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 14/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 15/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 13/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 16/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 15/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 15/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 14/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 17/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 16/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 16/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 15/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 00/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 18/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 17/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 16/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 17/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 19/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 18/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 17/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 18/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 20/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 19/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 18/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 19/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 21/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 19/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 20/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 20/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 22/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 20/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 21/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 21/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 23/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 21/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 22/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 22/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 24/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 22/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 23/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 23/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 25/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 23/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 24/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 24/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 26/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 24/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 25/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 25/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 27/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 25/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 26/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 26/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 28/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 26/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 27/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 27/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 29/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 27/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 28/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 30/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 28/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 28/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 29/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922463:3014170 [4] NCCL INFO Channel 31/1 : 4[4] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 29/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 29/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 30/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 30/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922464:3014171 [5] NCCL INFO Channel 31/1 : 5[5] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 30/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:3014176 [6] NCCL INFO Channel 31/1 : 6[6] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922466:3014172 [7] NCCL INFO Channel 31/1 : 7[7] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 01/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 02/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 01/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 03/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 01/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 02/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 04/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 02/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 05/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 03/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 04/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 06/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 03/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 04/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 07/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 05/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 08/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 05/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 06/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 09/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 06/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 10/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 07/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 11/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 07/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 08/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 12/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 09/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 08/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 13/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 10/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 09/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 11/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 14/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 10/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 15/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 12/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 11/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 13/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 16/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 12/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 17/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 13/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 14/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 14/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 18/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 15/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 15/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 16/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 19/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 16/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 17/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 20/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 17/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 18/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 21/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 18/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 19/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 22/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 19/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 23/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 20/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 20/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 24/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 21/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 21/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 22/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 23/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 22/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 25/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 24/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 25/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 23/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 26/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 26/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 27/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 24/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 27/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 28/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 25/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 29/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 28/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 26/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 30/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 29/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922460:3014174 [1] NCCL INFO Channel 31/1 : 1[1] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 27/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 30/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 28/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922462:3014175 [3] NCCL INFO Channel 31/1 : 3[3] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 29/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 30/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922461:3014173 [2] NCCL INFO Channel 31/1 : 2[2] -> 0[0] via P2P/IPC/read
+a100-st-p4de24xlarge-933:2922465:2925088 [6] NCCL INFO [Service thread] Connection closed by localRank 6
+a100-st-p4de24xlarge-933:2922460:2925091 [1] NCCL INFO [Service thread] Connection closed by localRank 1
+a100-st-p4de24xlarge-933:2922464:2925092 [5] NCCL INFO [Service thread] Connection closed by localRank 5
+a100-st-p4de24xlarge-933:2922461:2925090 [2] NCCL INFO [Service thread] Connection closed by localRank 2
+a100-st-p4de24xlarge-933:2922462:2925094 [3] NCCL INFO [Service thread] Connection closed by localRank 3
+a100-st-p4de24xlarge-933:2922466:2925087 [7] NCCL INFO [Service thread] Connection closed by localRank 7
+a100-st-p4de24xlarge-933:2922463:2925093 [4] NCCL INFO [Service thread] Connection closed by localRank 4
+a100-st-p4de24xlarge-933:2922466:2922466 [7] NCCL INFO comm 0x55e574247690 rank 7 nranks 8 cudaDev 7 busId a01d0 - Abort COMPLETE
+a100-st-p4de24xlarge-933:2922463:2922463 [4] NCCL INFO comm 0x55865a22e400 rank 4 nranks 8 cudaDev 4 busId 901c0 - Abort COMPLETE
+a100-st-p4de24xlarge-933:2922465:2922465 [6] NCCL INFO comm 0x556506c315d0 rank 6 nranks 8 cudaDev 6 busId a01c0 - Abort COMPLETE
+a100-st-p4de24xlarge-933:2922461:2922461 [2] NCCL INFO comm 0x55f919999660 rank 2 nranks 8 cudaDev 2 busId 201c0 - Abort COMPLETE
+a100-st-p4de24xlarge-933:2922464:2922464 [5] NCCL INFO comm 0x5572840bc7d0 rank 5 nranks 8 cudaDev 5 busId 901d0 - Abort COMPLETE
+a100-st-p4de24xlarge-933:2922460:2922460 [1] NCCL INFO comm 0x5588983dcd00 rank 1 nranks 8 cudaDev 1 busId 101d0 - Abort COMPLETE
+a100-st-p4de24xlarge-933:2922462:2922462 [3] NCCL INFO comm 0x559626defd60 rank 3 nranks 8 cudaDev 3 busId 201d0 - Abort COMPLETE
+xhf (pretrained=meta-llama/Meta-Llama-3-8B-Instruct,search=True,sparse=0.1,random_sparse=0.2,vsparse=0.5,window_size=16,K=4,L=32), gen_kwargs: (None), limit: None, num_fewshot: None, batch_size: 1
+|                            Tasks                            |Version|  Filter  |n-shot|  Metric   |Value |   |Stderr|
+|-------------------------------------------------------------|-------|----------|-----:|-----------|-----:|---|-----:|
+|mmlu_flan_cot_fewshot                                        |N/A    |get-answer|     0|exact_match|0.6114|±  |0.0115|
+| - mmlu_flan_cot_fewshot_humanities                          |N/A    |get-answer|     0|exact_match|0.5232|±  |0.0207|
+|  - mmlu_flan_cot_fewshot_formal_logic                       |      0|get-answer|     0|exact_match|0.2857|±  |0.1253|
+|  - mmlu_flan_cot_fewshot_high_school_european_history       |      0|get-answer|     0|exact_match|0.8333|±  |0.0904|
+|  - mmlu_flan_cot_fewshot_high_school_us_history             |      0|get-answer|     0|exact_match|0.6818|±  |0.1016|
+|  - mmlu_flan_cot_fewshot_high_school_world_history          |      0|get-answer|     0|exact_match|0.6923|±  |0.0923|
+|  - mmlu_flan_cot_fewshot_international_law                  |      0|get-answer|     0|exact_match|1.0000|±  |0.0000|
+|  - mmlu_flan_cot_fewshot_jurisprudence                      |      0|get-answer|     0|exact_match|0.5455|±  |0.1575|
+|  - mmlu_flan_cot_fewshot_logical_fallacies                  |      0|get-answer|     0|exact_match|0.7778|±  |0.1008|
+|  - mmlu_flan_cot_fewshot_moral_disputes                     |      0|get-answer|     0|exact_match|0.4474|±  |0.0817|
+|  - mmlu_flan_cot_fewshot_moral_scenarios                    |      0|get-answer|     0|exact_match|0.4500|±  |0.0500|
+|  - mmlu_flan_cot_fewshot_philosophy                         |      0|get-answer|     0|exact_match|0.7059|±  |0.0793|
+|  - mmlu_flan_cot_fewshot_prehistory                         |      0|get-answer|     0|exact_match|0.6857|±  |0.0796|
+|  - mmlu_flan_cot_fewshot_professional_law                   |      0|get-answer|     0|exact_match|0.3588|±  |0.0369|
+|  - mmlu_flan_cot_fewshot_world_religions                    |      0|get-answer|     0|exact_match|0.7895|±  |0.0961|
+| - mmlu_flan_cot_fewshot_other                               |N/A    |get-answer|     0|exact_match|0.7155|±  |0.0227|
+|  - mmlu_flan_cot_fewshot_business_ethics                    |      0|get-answer|     0|exact_match|0.7273|±  |0.1408|
+|  - mmlu_flan_cot_fewshot_clinical_knowledge                 |      0|get-answer|     0|exact_match|0.6207|±  |0.0917|
+|  - mmlu_flan_cot_fewshot_college_medicine                   |      0|get-answer|     0|exact_match|0.7273|±  |0.0972|
+|  - mmlu_flan_cot_fewshot_global_facts                       |      0|get-answer|     0|exact_match|0.5000|±  |0.1667|
+|  - mmlu_flan_cot_fewshot_human_aging                        |      0|get-answer|     0|exact_match|0.7391|±  |0.0936|
+|  - mmlu_flan_cot_fewshot_management                         |      0|get-answer|     0|exact_match|0.9091|±  |0.0909|
+|  - mmlu_flan_cot_fewshot_marketing                          |      0|get-answer|     0|exact_match|0.7200|±  |0.0917|
+|  - mmlu_flan_cot_fewshot_medical_genetics                   |      0|get-answer|     0|exact_match|0.9091|±  |0.0909|
+|  - mmlu_flan_cot_fewshot_miscellaneous                      |      0|get-answer|     0|exact_match|0.8256|±  |0.0412|
+|  - mmlu_flan_cot_fewshot_nutrition                          |      0|get-answer|     0|exact_match|0.8485|±  |0.0634|
+|  - mmlu_flan_cot_fewshot_professional_accounting            |      0|get-answer|     0|exact_match|0.2581|±  |0.0799|
+|  - mmlu_flan_cot_fewshot_professional_medicine              |      0|get-answer|     0|exact_match|0.8710|±  |0.0612|
+|  - mmlu_flan_cot_fewshot_virology                           |      0|get-answer|     0|exact_match|0.4444|±  |0.1205|
+| - mmlu_flan_cot_fewshot_social_sciences                     |N/A    |get-answer|     0|exact_match|0.6973|±  |0.0245|
+|  - mmlu_flan_cot_fewshot_econometrics                       |      0|get-answer|     0|exact_match|0.6667|±  |0.1421|
+|  - mmlu_flan_cot_fewshot_high_school_geography              |      0|get-answer|     0|exact_match|0.9091|±  |0.0627|
+|  - mmlu_flan_cot_fewshot_high_school_government_and_politics|      0|get-answer|     0|exact_match|0.7619|±  |0.0952|
+|  - mmlu_flan_cot_fewshot_high_school_macroeconomics         |      0|get-answer|     0|exact_match|0.5814|±  |0.0761|
+|  - mmlu_flan_cot_fewshot_high_school_microeconomics         |      0|get-answer|     0|exact_match|0.7308|±  |0.0887|
+|  - mmlu_flan_cot_fewshot_high_school_psychology             |      0|get-answer|     0|exact_match|0.8167|±  |0.0504|
+|  - mmlu_flan_cot_fewshot_human_sexuality                    |      0|get-answer|     0|exact_match|0.7500|±  |0.1306|
+|  - mmlu_flan_cot_fewshot_professional_psychology            |      0|get-answer|     0|exact_match|0.5652|±  |0.0601|
+|  - mmlu_flan_cot_fewshot_public_relations                   |      0|get-answer|     0|exact_match|0.5000|±  |0.1508|
+|  - mmlu_flan_cot_fewshot_security_studies                   |      0|get-answer|     0|exact_match|0.5926|±  |0.0964|
+|  - mmlu_flan_cot_fewshot_sociology                          |      0|get-answer|     0|exact_match|0.8182|±  |0.0842|
+|  - mmlu_flan_cot_fewshot_us_foreign_policy                  |      0|get-answer|     0|exact_match|0.9091|±  |0.0909|
+| - mmlu_flan_cot_fewshot_stem                                |N/A    |get-answer|     0|exact_match|0.5552|±  |0.0248|
+|  - mmlu_flan_cot_fewshot_abstract_algebra                   |      0|get-answer|     0|exact_match|0.1818|±  |0.1220|
+|  - mmlu_flan_cot_fewshot_anatomy                            |      0|get-answer|     0|exact_match|0.6429|±  |0.1329|
+|  - mmlu_flan_cot_fewshot_astronomy                          |      0|get-answer|     0|exact_match|0.8125|±  |0.1008|
+|  - mmlu_flan_cot_fewshot_college_biology                    |      0|get-answer|     0|exact_match|0.6875|±  |0.1197|
+|  - mmlu_flan_cot_fewshot_college_chemistry                  |      0|get-answer|     0|exact_match|0.3750|±  |0.1830|
+|  - mmlu_flan_cot_fewshot_college_computer_science           |      0|get-answer|     0|exact_match|0.0909|±  |0.0909|
+|  - mmlu_flan_cot_fewshot_college_mathematics                |      0|get-answer|     0|exact_match|0.4545|±  |0.1575|
+|  - mmlu_flan_cot_fewshot_college_physics                    |      0|get-answer|     0|exact_match|0.4545|±  |0.1575|
+|  - mmlu_flan_cot_fewshot_computer_security                  |      0|get-answer|     0|exact_match|0.5455|±  |0.1575|
+|  - mmlu_flan_cot_fewshot_conceptual_physics                 |      0|get-answer|     0|exact_match|0.6923|±  |0.0923|
+|  - mmlu_flan_cot_fewshot_electrical_engineering             |      0|get-answer|     0|exact_match|0.5625|±  |0.1281|
+|  - mmlu_flan_cot_fewshot_elementary_mathematics             |      0|get-answer|     0|exact_match|0.8537|±  |0.0559|
+|  - mmlu_flan_cot_fewshot_high_school_biology                |      0|get-answer|     0|exact_match|0.7812|±  |0.0742|
+|  - mmlu_flan_cot_fewshot_high_school_chemistry              |      0|get-answer|     0|exact_match|0.3182|±  |0.1016|
+|  - mmlu_flan_cot_fewshot_high_school_computer_science       |      0|get-answer|     0|exact_match|0.6667|±  |0.1667|
+|  - mmlu_flan_cot_fewshot_high_school_mathematics            |      0|get-answer|     0|exact_match|0.2414|±  |0.0809|
+|  - mmlu_flan_cot_fewshot_high_school_physics                |      0|get-answer|     0|exact_match|0.2941|±  |0.1139|
+|  - mmlu_flan_cot_fewshot_high_school_statistics             |      0|get-answer|     0|exact_match|0.6522|±  |0.1015|
+|  - mmlu_flan_cot_fewshot_machine_learning                   |      0|get-answer|     0|exact_match|0.3636|±  |0.1521|
+
+|                 Groups                 |Version|  Filter  |n-shot|  Metric   |Value |   |Stderr|
+|----------------------------------------|-------|----------|-----:|-----------|-----:|---|-----:|
+|mmlu_flan_cot_fewshot                   |N/A    |get-answer|     0|exact_match|0.6114|±  |0.0115|
+| - mmlu_flan_cot_fewshot_humanities     |N/A    |get-answer|     0|exact_match|0.5232|±  |0.0207|
+| - mmlu_flan_cot_fewshot_other          |N/A    |get-answer|     0|exact_match|0.7155|±  |0.0227|
+| - mmlu_flan_cot_fewshot_social_sciences|N/A    |get-answer|     0|exact_match|0.6973|±  |0.0245|
+| - mmlu_flan_cot_fewshot_stem           |N/A    |get-answer|     0|exact_match|0.5552|±  |0.0248|
+
+a100-st-p4de24xlarge-933:2922459:2925089 [0] NCCL INFO [Service thread] Connection closed by localRank 0
+a100-st-p4de24xlarge-933:2922459:2922459 [0] NCCL INFO comm 0x560c18c8c0a0 rank 0 nranks 8 cudaDev 0 busId 101c0 - Abort COMPLETE
