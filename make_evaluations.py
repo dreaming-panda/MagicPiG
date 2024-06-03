@@ -30,7 +30,7 @@ for i, pack in enumerate(product(model, sparse, random_sparse, method)):
 
 #SBATCH --time=2:00:00 
 
-#SBATCH -q storygen
+#SBATCH -q storygen_high
 #SBATCH -A storygen
 
 #SBATCH --nodes=1
