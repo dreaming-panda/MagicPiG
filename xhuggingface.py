@@ -470,6 +470,8 @@ class XHFLM(TemplateLM):
         L: int = 25,
         static_tokens: int = 96,
         dynamic_tokens: int = 96,
+        oracle = False,
+        random = False,
         trust_remote_code: Optional[bool] = False,
         parallelize: Optional[bool] = False,
         device_map_option: Optional[str] = "auto",
@@ -564,6 +566,16 @@ class XHFLM(TemplateLM):
             )
             self._model.config.K = K
             self._model.config.L = L
+            self._model.config.window = window_size
+            if oracle:
+                self._model.config.cache_mode = "oracle"
+            elif random:
+                self._model.config.cache_mode = "random"
+            else:
+                self._model.config.cache_mode = "anns"
+                
+            
+            
             self._model.eval()
             self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
             return None
@@ -1231,6 +1243,7 @@ class XHFLM(TemplateLM):
 
             
             # encode, pad, and truncate contexts for this batch
+            
             context_enc, attn_masks = self.tok_batch_encode(
                 contexts,
                 left_truncate_len=max_ctx_len,
@@ -1275,6 +1288,6 @@ class XHFLM(TemplateLM):
         
         pbar.close()
         
-        self.model.print_recall()
+        #self.model.print_recall()
         #self.model.save_file()
         return res

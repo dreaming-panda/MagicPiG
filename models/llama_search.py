@@ -369,7 +369,9 @@ class LlamaModel(LlamaPreTrainedModel):
             use_legacy_cache = not isinstance(past_key_values, Cache)
             if use_legacy_cache:
                 past_key_values = MGPCache(K=self.config.K, 
-                                           L=self.config.L)
+                                           L=self.config.L,
+                                           mode=self.config.cache_mode,
+                                           window=self.config.window)
             past_key_values_length = past_key_values.get_usable_length(seq_length)
 
         if position_ids is None:
