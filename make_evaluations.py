@@ -58,7 +58,6 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
     
     with open(script_name, "w+") as f:
         f.write(script_cmd)
-    exit(0)
     l_cmd = "sbatch " + script_name + "\n"
     
     launch_cmd.append(l_cmd)
