@@ -15,7 +15,7 @@ for i, pack in enumerate(product(model, sparse, random_sparse, method)):
         name = name + "-random"
     else:
         name = name + "-ann"
-    log_name = name + ".log"
+    log_name = name + "-center.log"
     bash_name = name + "-mgp.sh"
     script_name = "scripts/" + name + "-mgp.sh"
     cmd = "accelerate launch main.py --model xhf --tasks gsm8k_cot  --batch_size 1 --model_args pretrained={},search=True,sparse={},random_sparse={},vsparse=1.0,window_size=64,K=4,L=25{} --output_path results/{}".format(pack[0], pack[1], pack[2], pack[3], log_name)
