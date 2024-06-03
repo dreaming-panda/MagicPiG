@@ -15,7 +15,7 @@ from typing import List, Optional, Tuple, Union
 import torch.nn as nn
 import torch
 from transformers.cache_utils import Cache, SinkCache
-from .cache import MagicCache, MGPCache
+from .cache import MagicCache, MGPCache, MGPCacheV2
 import torch.nn.functional as F
 from transformers.modeling_outputs import (
     BaseModelOutputWithPast,
@@ -60,8 +60,6 @@ class LlamaAttention(nn.Module):
         self.window_size = None
         self.initial_len = -1
         self.is_sparse = False
-        self.recall = 0
-        self.num_examples = 0.01
         if (self.head_dim * self.num_heads) != self.hidden_size:
             raise ValueError(
                 f"hidden_size must be divisible by num_heads (got `hidden_size`: {self.hidden_size}"
@@ -109,7 +107,7 @@ class LlamaAttention(nn.Module):
         hidden_states: torch.Tensor,
         attention_mask: Optional[torch.Tensor] = None,
         position_ids: Optional[torch.LongTensor] = None,
-        past_key_value: Optional[MGPCache] = None,
+        past_key_value: Optional[MGPCacheV2] = None,
         output_attentions: bool = False,
         use_cache: bool = False,
         **kwargs,
@@ -143,7 +141,7 @@ class LlamaAttention(nn.Module):
 
             if past_key_value is not None:
                 cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
-                key_states, value_states, _ = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
+                key_states, value_states = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
 
             key_states = repeat_kv(key_states, self.num_key_value_groups)
             value_states = repeat_kv(value_states, self.num_key_value_groups)
@@ -158,7 +156,7 @@ class LlamaAttention(nn.Module):
             self.prefill_len = q_len
             self.dec_len = 0
             
-            num_activate_tokens = int(self.sparse * (q_len-self.window_size))
+            num_activate_tokens = self.config.static_tokens
             
             
             if num_activate_tokens > 0 and num_activate_tokens < (q_len - self.window_size) :
@@ -193,11 +191,8 @@ class LlamaAttention(nn.Module):
 
             if past_key_value is not None:
                 cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
-                key_states, value_states, recall = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
-                if recall >= 0:
-                    self.recall += recall
-                    self.num_examples += 1
-                    
+                key_states, value_states = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
+
             key_states = repeat_kv(key_states, self.num_key_value_groups)
             value_states = repeat_kv(value_states, self.num_key_value_groups)
 
@@ -368,8 +363,10 @@ class LlamaModel(LlamaPreTrainedModel):
         if use_cache:
             use_legacy_cache = not isinstance(past_key_values, Cache)
             if use_legacy_cache:
-                past_key_values = MGPCache(K=self.config.K, 
-                                           L=self.config.L)
+                past_key_values = MGPCacheV2(K=self.config.K, 
+                                             L=self.config.L, 
+                                             static_tokens=self.config.static_tokens, 
+                                             dynamic_tokens=self.config.dynamic_tokens)
             past_key_values_length = past_key_values.get_usable_length(seq_length)
 
         if position_ids is None:
@@ -642,12 +639,5 @@ class LlamaForCausalLM(LlamaPreTrainedModel):
             layer.self_attn.kernel_size = kernel_size
             layer.self_attn.random_sparse = random_sparse
             layer.self_attn.vsparse = vsparse
-    
-    def print_recall(self):
-        recalls = []
-        for layer in self.model.layers:
-           recalls.append(layer.self_attn.recall / layer.self_attn.num_examples)
-        
-        print(recalls)
             
             
