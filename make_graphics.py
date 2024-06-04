@@ -4,7 +4,7 @@ import numpy as np
 from itertools import product
 
 
-model = ["meta-llama/Meta-Llama-3-8B-Instruct", "meta-llama/Llama-2-7b-chat-hf", "meta-llama/Llama-2-13b-chat-hf", "meta-llama/Meta-Llama-3-8B"]
+model = ["meta-llama/Meta-Llama-3-8B-Instruct", "meta-llama/Llama-2-7b-chat-hf", "meta-llama/Llama-2-13b-chat-hf"]
 sparse = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 random_sparse = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 method = ["", ",oracle=True", ",random=True"]
@@ -24,7 +24,7 @@ for m_s in product(model, sparse):
         elif pack[3] == ",random=True":
             name = name + "-random"
         else:
-            name = name + "-ann"
+            name = name + "-ann-ALSH-X"
         log_name = "results/" + name + ".log"+"/results.json"
         with open(log_name, "r") as log:
             result_dict = json.load(log)
