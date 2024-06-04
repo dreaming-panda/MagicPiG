@@ -461,6 +461,7 @@ class XHFLM(TemplateLM):
         snap=False,
         imp=False,
         anns=False,
+        anns_es=False,
         asym=False,
         search=False,
         usehash=False,
@@ -472,6 +473,7 @@ class XHFLM(TemplateLM):
         dynamic_tokens: int = 96,
         oracle = False,
         random = False,
+        oracle_es=False,
         trust_remote_code: Optional[bool] = False,
         parallelize: Optional[bool] = False,
         device_map_option: Optional[str] = "auto",
@@ -571,6 +573,10 @@ class XHFLM(TemplateLM):
                 self._model.config.cache_mode = "oracle"
             elif random:
                 self._model.config.cache_mode = "random"
+            elif oracle_es:
+                self._model.config.cache_mode = "oracle_es"
+            elif anns_es:
+                self._model.config.cache_mode = "anns_es"
             else:
                 self._model.config.cache_mode = "anns"
                 

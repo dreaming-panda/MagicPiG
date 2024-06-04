@@ -250,8 +250,48 @@ class MGPCache(Cache):
                         sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
                         sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
                         
+                        
                         return_key = torch.cat([self.selected_key_cache[layer_idx],  sampled_unselected_key], dim=-2)
                         return_value = torch.cat([self.selected_value_cache[layer_idx], sampled_unselected_value], dim=-2)
+                    
+                    if self.mode == "anns_es":
+                        
+                        q = query_states / query_states.norm(p=2, dim=-1, keepdim=True)
+                        
+                        q_hashcode = torch.matmul(q, self.hash_matrix[...,:-1,:]).reshape(1, self.num_qh, query_states.shape[2], self.K, self.L)
+                        q_hashcode = q_hashcode.argmax(dim=-1)
+                        k_hashcode = self.key_hashcode[layer_idx]
+                        
+                        hash_hit = (q_hashcode == k_hashcode).long().sum(dim=-1)
+                        hash_hit = hash_hit.reshape(1, self.num_kh, self.num_qh // self.num_kh, -1)
+                        
+                        hash_hit = hash_hit.sum(dim=-2, keepdim=True)
+                        # k = self.unselected_key_cache[layer_idx]
+                        # k = repeat_kv(k, (self.num_qh // self.num_kh))
+                        # sampling_prob = torch.matmul(query_states, k.transpose(2,3))
+                    
+                        
+                        # sampling_prob = torch.softmax(sampling_prob, dim=-1)
+                        # oracle_cache_ids = sampling_prob.topk(k=num_random_cache).indices
+                        # hash_cache_ids = hash_hit.topk(k=num_random_cache, dim=-1).indices
+                        # hash_cache_ids = repeat_kv(hash_cache_ids, (self.num_qh // self.num_kh))
+                        # recall = sampling_prob.gather(-1, hash_cache_ids).sum(dim=-1).mean().item()
+                        recall = -1
+                        random_cache_ids = hash_hit.squeeze(-2).topk(k=num_random_cache, dim=-1).indices[:,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
+                        sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                        sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                        
+                        avg_key = (self.unselected_key_cache[layer_idx].sum(dim=-2, keepdim=True) - sampled_unselected_key.sum(dim=-2, keepdim=True)) / (self.unselected_key_cache[layer_idx].shape[-2] - num_random_cache)
+                        avg_value = (self.unselected_value_cache[layer_idx].sum(dim=-2, keepdim=True) - sampled_unselected_value.sum(dim=-2, keepdim=True)) / (self.unselected_value_cache[layer_idx].shape[-2] - num_random_cache)
+                        
+                        #avg_key = self.unselected_key_cache[layer_idx].mean(dim=-2, keepdim=True).repeat(1, 1, self.unselected_key_cache[layer_idx].shape[-2] - num_random_cache, 1)
+                        #avg_value = self.unselected_value_cache[layer_idx].mean(dim=-2, keepdim=True).repeat(1, 1, self.unselected_key_cache[layer_idx].shape[-2] - num_random_cache, 1)
+
+                        
+                        return_key = torch.cat([self.selected_key_cache[layer_idx],  sampled_unselected_key, avg_key], dim=-2)
+                        return_value = torch.cat([self.selected_value_cache[layer_idx], sampled_unselected_value, avg_value], dim=-2)
+                        
+                        
                     elif self.mode == "oracle":
                         
                         k = self.unselected_key_cache[layer_idx]
@@ -266,7 +306,47 @@ class MGPCache(Cache):
                         recall = -1
                         return_key = torch.cat([self.selected_key_cache[layer_idx],  sampled_unselected_key], dim=-2)
                         return_value = torch.cat([self.selected_value_cache[layer_idx], sampled_unselected_value], dim=-2)
+                    
+                    elif self.mode == "oracle_es":
+                        static_len = self.selected_key_cache[layer_idx].shape[-2]
+                        full_k = torch.cat([self.selected_key_cache[layer_idx],  self.unselected_key_cache[layer_idx]], dim=-2)
+                        full_k = repeat_kv(full_k, (self.num_qh // self.num_kh))
+                        attn_prob = torch.matmul(query_states, full_k.transpose(2,3))
                         
+                        attn_prob = attn_prob.squeeze().reshape(self.num_kh, self.num_qh // self.num_kh, -1).sum(dim=-2)
+                        
+                        attn_prob = torch.softmax(attn_prob, dim=-1)
+                        
+                        static_prob =  attn_prob[:,:static_len]
+                        dynamic_prob = attn_prob[:,static_len:]
+                        
+                        k = self.unselected_key_cache[layer_idx]
+                        k = repeat_kv(k, (self.num_qh // self.num_kh))
+                        
+                        sampling_prob = torch.matmul(query_states, k.transpose(2,3))
+                        sampling_prob = sampling_prob.squeeze().reshape(self.num_kh, self.num_qh // self.num_kh, -1).sum(dim=-2)
+                        sampling_prob = torch.softmax(sampling_prob, dim=-1)
+                        random_cache_ids = sampling_prob.multinomial(num_samples=num_random_cache, replacement=False)
+                        
+                        sampled_prob = sampling_prob.gather(dim=-1, index=random_cache_ids)
+                        dynamic_prob = dynamic_prob.gather(dim=-1, index=random_cache_ids)
+                        
+                        
+                        dynamic_prob = (dynamic_prob / (sampled_prob + 1e-5)) * dynamic_prob.sum(dim=-1, keepdim=True)
+                        
+                        random_cache_ids = random_cache_ids[None,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
+                        
+                        
+                        output1 = torch.matmul(static_prob[None, :, None, :], self.selected_value_cache[layer_idx])
+                        
+                        sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                        
+                        output2 = torch.matmul(dynamic_prob[None, :, None, :], sampled_unselected_value)
+                        
+                        return output1 + output2    
+                        
+                    
+
                     elif self.mode == "random":
                         random_cache_ids = self.sampling_prob.multinomial(num_samples=num_random_cache, replacement=False)[None,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
                         sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)

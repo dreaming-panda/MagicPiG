@@ -1,8 +1,8 @@
 model = ["meta-llama/Llama-2-7b-chat-hf", "meta-llama/Meta-Llama-3-8B", "meta-llama/Llama-2-13b-chat-hf", "meta-llama/Meta-Llama-3-8B-Instruct"]
-TASK = "ALSH-X"
+TASK = "ANNSES"
 sparse = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 random_sparse = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-method = [""]
+method = [",anns_es=True"]
 launch_cmd = []
 from itertools import product
 
@@ -13,10 +13,12 @@ for i, pack in enumerate(product(model, sparse, random_sparse, method)):
         name = name + "-oracle"
     elif pack[3] == ",random=True":
         name = name + "-random"
+    elif pack[3] == ",anns_es=True":
+        name = name + "-anns_es"
     else:
         name = name + "-ann"
     log_name = name + "-{}.log".format(TASK)
-    bash_name = name + "-mgp{}.sh".format(TASK)
+    bash_name = "bashes/" + name + "-mgp{}.sh".format(TASK)
     script_name = "scripts/" + name + "-mgp{}.sh".format(TASK)
     cmd = "accelerate launch main.py --model xhf --tasks gsm8k_cot  --batch_size 1 --model_args pretrained={},search=True,sparse={},random_sparse={},vsparse=1.0,window_size=64,K=4,L=25{} --output_path results/{}".format(pack[0], pack[1], pack[2], pack[3], log_name)
     
