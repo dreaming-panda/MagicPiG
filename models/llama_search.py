@@ -143,7 +143,7 @@ class LlamaAttention(nn.Module):
 
             if past_key_value is not None:
                 cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
-                key_states, value_states, _ = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
+                key_states, value_states, _ , _ = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
 
             key_states = repeat_kv(key_states, self.num_key_value_groups)
             value_states = repeat_kv(value_states, self.num_key_value_groups)
@@ -193,7 +193,7 @@ class LlamaAttention(nn.Module):
 
             if past_key_value is not None:
                 cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
-                key_states, value_states, recall = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
+                key_states, value_states, recall, attention_mask = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
                 if recall >= 0:
                     self.recall += recall
                     self.num_examples += 1
@@ -202,7 +202,10 @@ class LlamaAttention(nn.Module):
             value_states = repeat_kv(value_states, self.num_key_value_groups)
 
             attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
-            
+            if attention_mask is not None:
+                attention_mask = repeat_kv(attention_mask, self.num_key_value_groups)
+                attn_weights += attention_mask
+                
             # if attention_mask is not None:
             #         attn_weights = attn_weights + attention_mask
             # if self.is_sparse:
