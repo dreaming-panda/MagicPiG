@@ -12,7 +12,7 @@ baseline = {
 model = ["meta-llama/Meta-Llama-3-8B-Instruct", "meta-llama/Llama-2-7b-chat-hf", "meta-llama/Llama-2-13b-chat-hf"]
 sparse = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 random_sparse = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-method = ["", ",oracle=True", ",random=True", ",anns_es=True"]
+method = ["", ",oracle=True", ",random=True", ",anns_es1=True"]
 for m_s in product(model, sparse):
     MODEL = m_s[0]
     SPARSE = m_s[1]
@@ -29,8 +29,8 @@ for m_s in product(model, sparse):
             name = name + "-oracle"
         elif pack[3] == ",random=True":
             name = name + "-random"
-        elif pack[3] == ",anns_es=True":
-            name = name + "-anns_es-ANNSES"
+        elif pack[3] == ",anns_es1=True":
+            name = name + "-anns_es1-ANNSES1"
         else:
             name = name + "-ann-ALSH-X"
         log_name = "results/" + name + ".log"+"/results.json"
@@ -44,7 +44,7 @@ for m_s in product(model, sparse):
             VALID_NUMBER += 1
         elif pack[3] == ",random=True":
             RESULTS[2][int(10 * pack[2])] = em
-        elif pack[3] == ",anns_es=True":
+        elif pack[3] == ",anns_es1=True":
             RESULTS[3][int(10 * pack[2])] = em
         else:
             RESULTS[0][int(10 * pack[2])] = em
