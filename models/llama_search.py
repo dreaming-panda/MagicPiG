@@ -190,35 +190,35 @@ class LlamaAttention(nn.Module):
             kv_seq_len += past_key_value.get_usable_length(kv_seq_len, self.layer_idx)
             cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
             query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin, position_ids)
-
+            
             if past_key_value is not None:
                 cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
                 key_states, value_states, recall, attention_mask = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
                 if recall >= 0:
-                    self.recall += recall
-                    self.num_examples += 1
-                    
+                        self.recall += recall
+                        self.num_examples += 1
+                        
             key_states = repeat_kv(key_states, self.num_key_value_groups)
             value_states = repeat_kv(value_states, self.num_key_value_groups)
 
             attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
             if attention_mask is not None:
-                attention_mask = repeat_kv(attention_mask, self.num_key_value_groups)
-                attn_weights += attention_mask
+                    attention_mask = repeat_kv(attention_mask, self.num_key_value_groups)
+                    attn_weights += attention_mask
+                    
+                # if attention_mask is not None:
+                #         attn_weights = attn_weights + attention_mask
+                # if self.is_sparse:
+                #         attn_weights.scatter_(dim=-1, index=self.indices_to_remove, value=torch.finfo(attn_weights.dtype).min)
                 
-            # if attention_mask is not None:
-            #         attn_weights = attn_weights + attention_mask
-            # if self.is_sparse:
-            #         attn_weights.scatter_(dim=-1, index=self.indices_to_remove, value=torch.finfo(attn_weights.dtype).min)
-            
             num_activate_tokens = int(self.vsparse * attn_weights.shape[-1])
             indices_to_remove = attn_weights < torch.topk(attn_weights, num_activate_tokens)[0][..., -1, None]
             if indices_to_remove.shape[-1] > 0:
-                attn_weights = attn_weights.masked_fill(indices_to_remove, torch.finfo(attn_weights.dtype).min)
-                
-                
+                    attn_weights = attn_weights.masked_fill(indices_to_remove, torch.finfo(attn_weights.dtype).min)
+                    
+                    
             attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-                   
+                    
             attn_output = torch.matmul(attn_weights, value_states)
             attn_output = attn_output.transpose(1, 2).contiguous()
             attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
@@ -228,6 +228,8 @@ class LlamaAttention(nn.Module):
                     attn_weights = None
             self.dec_len += 1
             return attn_output, attn_weights, past_key_value
+           
+        
             
                 
         
