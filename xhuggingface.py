@@ -458,6 +458,7 @@ class XHFLM(TemplateLM):
         dtype: Optional[Union[str, torch.dtype]] = "auto",
         sparse:float = 0.05,
         topk = False,
+        sim = False,
         snap=False,
         imp=False,
         anns=False,
@@ -591,7 +592,39 @@ class XHFLM(TemplateLM):
             self._model.eval()
             self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
             return None
-        
+        elif sim:
+            from models.llama_sim import LlamaForCausalLM
+            self.search = True
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
+
+            )
+            self._model.config.K = K
+            self._model.config.L = L
+            self._model.config.window = window_size
+            if oracle:
+                self._model.config.cache_mode = "oracle"
+            elif random:
+                self._model.config.cache_mode = "random"
+            elif oracle_es:
+                self._model.config.cache_mode = "oracle_es"
+            elif anns_es:
+                self._model.config.cache_mode = "anns_es"
+            elif random_es:
+                self._model.config.cache_mode = "random_es"
+            elif anns_es1:
+                self._model.config.cache_mode = "anns_es1"
+            else:
+                self._model.config.cache_mode = "anns"
+                
+            
+            
+            self._model.eval()
+            self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
+            return None
         elif usehash:
             from models.llama_hash import LlamaForCausalLM
             self._model = LlamaForCausalLM.from_pretrained(
