@@ -464,6 +464,7 @@ class XHFLM(TemplateLM):
         anns=False,
         anns_es=False,
         anns_es1=False,
+        cross=False,
         asym=False,
         search=False,
         usehash=False,
@@ -586,6 +587,26 @@ class XHFLM(TemplateLM):
                 self._model.config.cache_mode = "anns_es1"
             else:
                 self._model.config.cache_mode = "anns"
+                
+            
+            
+            self._model.eval()
+            self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
+            return None
+        elif cross:
+            from models.llama_cross import LlamaForCausalLM
+            self.search = True
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
+
+            )
+            self._model.config.K = K
+            self._model.config.L = L
+            self._model.config.window = window_size
+            
                 
             
             

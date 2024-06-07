@@ -15,7 +15,10 @@ from typing import List, Optional, Tuple, Union
 import torch.nn as nn
 import torch
 from transformers.cache_utils import Cache, SinkCache
+
+import torch.bin
 from .cache import MagicCache, MGPCache
+from .crosspolyhash import CrossPolyCache
 import torch.nn.functional as F
 from transformers.modeling_outputs import (
     BaseModelOutputWithPast,
@@ -109,7 +112,7 @@ class LlamaAttention(nn.Module):
         hidden_states: torch.Tensor,
         attention_mask: Optional[torch.Tensor] = None,
         position_ids: Optional[torch.LongTensor] = None,
-        past_key_value: Optional[MGPCache] = None,
+        past_key_value: Optional[CrossPolyCache] = None,
         output_attentions: bool = False,
         use_cache: bool = False,
         **kwargs,
@@ -143,7 +146,7 @@ class LlamaAttention(nn.Module):
 
             if past_key_value is not None:
                 cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
-                key_states, value_states, _ , _ = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
+                key_states, value_states, _  = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
 
             key_states = repeat_kv(key_states, self.num_key_value_groups)
             value_states = repeat_kv(value_states, self.num_key_value_groups)
@@ -193,33 +196,28 @@ class LlamaAttention(nn.Module):
             
             if past_key_value is not None:
                 cache_kwargs = {"sin": sin, "cos": cos}  # Specific to RoPE models
-                key_states, value_states, recall, attention_mask = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
-                if recall >= 0:
-                        self.recall += recall
-                        self.num_examples += 1
-                        
-            key_states = repeat_kv(key_states, self.num_key_value_groups)
-            value_states = repeat_kv(value_states, self.num_key_value_groups)
-
-            attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
-            if attention_mask is not None:
-                    attention_mask = repeat_kv(attention_mask, self.num_key_value_groups)
-                    attn_weights += attention_mask
-                    
-                # if attention_mask is not None:
-                #         attn_weights = attn_weights + attention_mask
-                # if self.is_sparse:
-                #         attn_weights.scatter_(dim=-1, index=self.indices_to_remove, value=torch.finfo(attn_weights.dtype).min)
+                key_states, value_states, sign = past_key_value.update(key_states, value_states, query_states, self.layer_idx, self.random_sparse, cache_kwargs)
                 
-            num_activate_tokens = int(self.vsparse * attn_weights.shape[-1])
-            indices_to_remove = attn_weights < torch.topk(attn_weights, num_activate_tokens)[0][..., -1, None]
-            if indices_to_remove.shape[-1] > 0:
-                    attn_weights = attn_weights.masked_fill(indices_to_remove, torch.finfo(attn_weights.dtype).min)
+            if sign:  
+                key_states = repeat_kv(key_states, self.num_key_value_groups)
+                value_states = repeat_kv(value_states, self.num_key_value_groups)
+
+                attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
+                
+                        
+                    # if attention_mask is not None:
+                    #         attn_weights = attn_weights + attention_mask
+                    # if self.is_sparse:
+                    #         attn_weights.scatter_(dim=-1, index=self.indices_to_remove, value=torch.finfo(attn_weights.dtype).min)
                     
-                    
-            attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-                    
-            attn_output = torch.matmul(attn_weights, value_states)
+                
+                        
+                        
+                attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+                        
+                attn_output = torch.matmul(attn_weights, value_states)
+            else:
+                attn_output = key_states
             attn_output = attn_output.transpose(1, 2).contiguous()
             attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
             attn_output = self.o_proj(attn_output)
@@ -373,9 +371,8 @@ class LlamaModel(LlamaPreTrainedModel):
         if use_cache:
             use_legacy_cache = not isinstance(past_key_values, Cache)
             if use_legacy_cache:
-                past_key_values = MGPCache(K=self.config.K, 
+                past_key_values = CrossPolyCache(K=self.config.K, 
                                            L=self.config.L,
-                                           mode=self.config.cache_mode,
                                            window=self.config.window)
             past_key_values_length = past_key_values.get_usable_length(seq_length)
 
