@@ -13,11 +13,14 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 def parse_args(args=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default=None, choices=["llama2-7b-chat-4k", "longchat-v1.5-7b-32k", "xgen-7b-8k", "internlm-7b-8k", "chatglm2-6b", "chatglm2-6b-32k", "chatglm3-6b-32k", "vicuna-v1.5-7b-16k", "llama3-8b-instruct-8k"])
+    parser.add_argument('--model', type=str, default=None, choices=["llama2-7b-chat-4k", "longchat-v1.5-7b-32k", "xgen-7b-8k", "internlm-7b-8k", "chatglm2-6b", "chatglm2-6b-32k", "chatglm3-6b-32k", "vicuna-v1.5-7b-16k", "llama3-8b-instruct-8k", "llama2-7b-chat-4k-hash",
+                                                                    "lwm-text-chat-1m", "lwm-text-1m", "lwm-text-chat-1m-hash", "lwm-text-1m-hash"])
     parser.add_argument('--e', action='store_true', help="Evaluate on LongBench-E")
-    parser.add_argument('--imp', action='store_true', help="use sparse implementation")
-    parser.add_argument('--topk', action='store_true', help="use topk sparse implementation")
-    parser.add_argument('--sparse', type=float, default=0.5)
+    parser.add_argument('--snap', type=float, default=0.1)
+    parser.add_argument('--hash', type=float, default=0.2)
+    parser.add_argument('--K', type=int, default=4)
+    parser.add_argument('--L', type=int, default=25)
+    parser.add_argument('--W', type=int, default=64)
     return parser.parse_args(args)
 
 # This is the customized building prompt for chat models
@@ -32,7 +35,7 @@ def build_chat(tokenizer, prompt, model_name):
         conv.append_message(conv.roles[0], prompt)
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
-    elif "llama" in model_name:
+    elif "llama" in model_name or "lwm" in model_name:
         prompt = f"[INST]{prompt}[/INST]"
     elif "xgen" in model_name:
         header = (
@@ -111,37 +114,23 @@ def load_model_and_tokenizer(path, model_name, device, args):
     if "chatglm" in model_name or "internlm" in model_name or "xgen" in model_name:
         tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True)
         model = AutoModelForCausalLM.from_pretrained(path, trust_remote_code=True, torch_dtype=torch.bfloat16).to(device)
-    elif "llama" in model_name:
-        
-        #replace_llama_attn_with_flash_attn()
+    elif "hash" in model_name:
+        from llama_cross import LlamaForCausalLM
         tokenizer = AutoTokenizer.from_pretrained(path, use_fast=False)
-            
-        if args.imp:
-            from models.llama import LlamaForCausalLM
-            model = LlamaForCausalLM.from_pretrained(
-            path,
-            torch_dtype=torch.bfloat16,
-            _attn_implementation = "eager"
-            ).to(device)
-            model.eval()
-            model.set_sparse_attn(sparse=args.sparse)
-        elif args.topk:
-            from models.llama_topk import LlamaForCausalLM
-            model = LlamaForCausalLM.from_pretrained(
-            path,
-            torch_dtype=torch.bfloat16,
-            _attn_implementation = "eager"
-            ).to(device)
-            model.eval()
-            model.set_sparse_attn(sparse=args.sparse)
-        else:
-            from transformers import LlamaForCausalLM
-            model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16).to(device)
-        if "llama3" in model_name:  
-            model.generation_config.pad_token_id = model.generation_config.eos_token_id[0]
+        model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
+        model.config.K = args.K
+        model.config.L = args.L
+        model.config.window = args.W
+        model.eval()
+        model.set_sparse_attn(sparse=args.snap, window_size=args.W, kernel_size=5, random_sparse=args.hash, vsparse=1.0)
+    elif "llama" in model_name or "lwm" in model_name:
+        from transformers import LlamaForCausalLM
+        tokenizer = AutoTokenizer.from_pretrained(path, use_fast=False)
+        
+        model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
     elif "longchat" in model_name or "vicuna" in model_name:
         from fastchat.model import load_model
-        #replace_llama_attn_with_flash_attn()
+
         model, _ = load_model(
             path,
             device='cpu',
@@ -184,16 +173,20 @@ if __name__ == '__main__':
     if not os.path.exists("pred_e"):
         os.makedirs("pred_e")
     for dataset in datasets:
+        if 'hash' in model_name:
+            model_name_x = model_name + "-snap-" + str(args.snap) + "-hash-" + str(args.hash)
+        else:
+            model_name_x = model_name
         if args.e:
             data = load_dataset('THUDM/LongBench', f"{dataset}_e", split='test')
-            if not os.path.exists(f"pred_e/{model_name}"):
-                os.makedirs(f"pred_e/{model_name}")
-            out_path = f"pred_e/{model_name}/{dataset}.jsonl"
+            if not os.path.exists(f"pred_e/{model_name_x}"):
+                os.makedirs(f"pred_e/{model_name_x}")
+            out_path = f"pred_e/{model_name_x}/{dataset}.jsonl"
         else:
             data = load_dataset('THUDM/LongBench', dataset, split='test')
-            if not os.path.exists(f"pred/{model_name}"):
-                os.makedirs(f"pred/{model_name}")
-            out_path = f"pred/{model_name}/{dataset}.jsonl"
+            if not os.path.exists(f"pred/{model_name_x}"):
+                os.makedirs(f"pred/{model_name_x}")
+            out_path = f"pred/{model_name_x}/{dataset}.jsonl"
         prompt_format = dataset2prompt[dataset]
         max_gen = dataset2maxlen[dataset]
         data_all = [data_sample for data_sample in data]

@@ -104,20 +104,17 @@ class SimCache(Cache):
                 self.head_dim = key_states.shape[-1]
                 self.hash_matrix = torch.rand((1, self.num_qh, self.head_dim + 1, self.K * self.L), device=key_states.device, dtype=key_states.dtype) - 0.5
                 self.hash_matrix = self.hash_matrix / self.hash_matrix.norm(p=2, dim=-1, keepdim=True)
-            return self.key_cache[layer_idx], self.value_cache[layer_idx], True
+            return self.key_cache[layer_idx], self.value_cache[layer_idx]
         else:
             
             self.key_cache[layer_idx] = torch.cat([self.key_cache[layer_idx], key_states], dim=-2)
             self.value_cache[layer_idx] = torch.cat([self.value_cache[layer_idx], value_states], dim=-2)
-            if len(self.selected_key_cache) > 0 and layer_idx >= self.preserve_layer:
-                self.selected_key_cache[layer_idx] = torch.cat([self.selected_key_cache[layer_idx], key_states], dim=-2)
-                self.selected_value_cache[layer_idx] = torch.cat([self.selected_value_cache[layer_idx], value_states], dim=-2)
-                #total_len = self.unselected_key_cache[layer_idx].shape[-2] + self.selected_key_cache[layer_idx].shape[-2]
-                #total_len = self.unselected_key_cache[layer_idx].shape[-2]
-                num_random_cache = int(random_sparse * (self.prefill_tokens - self.window))
+            self.selected_key_cache[layer_idx] = torch.cat([self.selected_key_cache[layer_idx], key_states], dim=-2)
+            self.selected_value_cache[layer_idx] = torch.cat([self.selected_value_cache[layer_idx], value_states], dim=-2)
+            num_random_cache = int(random_sparse * (self.prefill_tokens - self.window))
+            if layer_idx >= 2:
                 
                 if num_random_cache > 0:
-                    #return_key = torch.cat([self.selected_key_cache[layer_idx],  self.unselected_key_cache[layer_idx]], dim=-2)
                     return_value = torch.cat([self.selected_value_cache[layer_idx], self.unselected_value_cache[layer_idx]], dim=-2)
                     q = query_states / query_states.norm(p=2, dim=-1, keepdim=True)
                     q_hashcode = torch.matmul(q, self.hash_matrix[...,:-1,:]).reshape(1, self.num_qh, query_states.shape[2], self.L, self.K).gt(0)
@@ -160,21 +157,32 @@ class SimCache(Cache):
                     attn_weights = torch.cat([attn_selected, attn_unselected], dim=-1)
                     
                     attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-                    
-                    
                     return_value = repeat_kv(return_value, self.num_qh //  self.num_kh)
-                    #return_key = repeat_kv(return_key, self.num_qh //  self.num_kh)
-                    #attn_weights = torch.matmul(query_states, return_key.transpose(2, 3)) / math.sqrt(self.head_dim)
                     
-                    #attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-                        
                     attn_output = torch.matmul(attn_weights, return_value)
-                    #attn_output = torch.matmul(attn_weight, return_value)
                     
-                    return attn_output, None, False
+                    return attn_output
+                else:
+                    return_key = self.selected_key_cache[layer_idx]
+                    return_value = self.selected_value_cache[layer_idx]
+                    
+                    return_key = repeat_kv(return_key, self.num_qh // self.num_kh)
+                    return_value = repeat_kv(return_value, self.num_qh // self.num_kh)
+                        
+                    attn_weights = torch.matmul(query_states, return_key.transpose(2, 3)) / math.sqrt(self.head_dim)
+                        
+                    attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype) 
+                    attn_output = torch.matmul(attn_weights, return_value)
+                    return attn_output
             else:
-                return self.key_cache[layer_idx], self.value_cache[layer_idx], True
-        
+                return_key = repeat_kv(self.key_cache[layer_idx], self.num_qh // self.num_kh)
+                return_value = repeat_kv(self.value_cache[layer_idx], self.num_qh // self.num_kh)
+                        
+                attn_weights = torch.matmul(query_states, return_key.transpose(2, 3)) / math.sqrt(self.head_dim)
+                        
+                attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype) 
+                attn_output = torch.matmul(attn_weights, return_value)
+                return attn_output
 
     def get_seq_length(self, layer_idx: Optional[int] = 0) -> int:
         """Returns the sequence length of the cached states. A layer index can be optionally passed."""

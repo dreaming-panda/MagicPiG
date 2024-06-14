@@ -105,51 +105,71 @@ class CrossPolyCache(Cache):
                 self.hash_matrix = torch.rand((1, self.num_qh, self.head_dim + 1, self.K * self.L), device=key_states.device, dtype=key_states.dtype) - 0.5
                 self.hash_matrix = self.hash_matrix / self.hash_matrix.norm(p=2, dim=-1, keepdim=True)
                 self.build_tables(key_states=key_states, query_states=query_states)
+            return self.key_cache[layer_idx], self.value_cache[layer_idx]
         else:
             
             self.key_cache[layer_idx] = torch.cat([self.key_cache[layer_idx], key_states], dim=-2)
             self.value_cache[layer_idx] = torch.cat([self.value_cache[layer_idx], value_states], dim=-2)
+            self.selected_key_cache[layer_idx] = torch.cat([self.selected_key_cache[layer_idx], key_states], dim=-2)
+            self.selected_value_cache[layer_idx] = torch.cat([self.selected_value_cache[layer_idx], value_states], dim=-2)
+            num_random_cache = int(random_sparse * (self.prefill_tokens - self.window))
             if layer_idx >= 2:
-                self.selected_key_cache[layer_idx] = torch.cat([self.selected_key_cache[layer_idx], key_states], dim=-2)
-                self.selected_value_cache[layer_idx] = torch.cat([self.selected_value_cache[layer_idx], value_states], dim=-2)
-                num_random_cache = int(random_sparse * (self.prefill_tokens - self.window))
-                
                 if num_random_cache > 0: 
-                        q = query_states / query_states.norm(p=2, dim=-1, keepdim=True)
+                    q = query_states / query_states.norm(p=2, dim=-1, keepdim=True)
                         
-                        q_hashcode = torch.matmul(q, self.hash_matrix[...,:-1,:]).reshape(1, self.num_qh, query_states.shape[2], self.K, self.L)
-                        q_hashcode = q_hashcode.argmax(dim=-1)
-                        k_hashcode = self.key_hashcode[layer_idx]
+                    q_hashcode = torch.matmul(q, self.hash_matrix[...,:-1,:]).reshape(1, self.num_qh, query_states.shape[2], self.K, self.L)
+                    q_hashcode = q_hashcode.argmax(dim=-1)
+                    k_hashcode = self.key_hashcode[layer_idx]
                         
-                        hash_hit = (q_hashcode == k_hashcode).long().sum(dim=-1)
-                        hash_hit = hash_hit.reshape(1, self.num_kh, self.num_qh // self.num_kh, -1)
+                    hash_hit = (q_hashcode == k_hashcode).long().sum(dim=-1)
+                    hash_hit = hash_hit.reshape(1, self.num_kh, self.num_qh // self.num_kh, -1)
                         
-                        hash_hit = hash_hit.sum(dim=-2, keepdim=True)
+                    hash_hit = hash_hit.sum(dim=-2, keepdim=True)
                         
 
-                        random_cache_ids = hash_hit.squeeze(-2).topk(k=num_random_cache, dim=-1).indices[:,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
-                        sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
-                        sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
-                        rep = int(self.unselected_key_cache[layer_idx].shape[-2] / sampled_unselected_key.shape[-2])
-                        sampled_unselected_key = sampled_unselected_key.repeat(1, 1, rep, 1)
-                        sampled_unselected_value = sampled_unselected_value.repeat(1, 1, rep, 1)
-                        return_key = torch.cat([self.selected_key_cache[layer_idx],  sampled_unselected_key], dim=-2)
-                        return_value = torch.cat([self.selected_value_cache[layer_idx], sampled_unselected_value], dim=-2)
+                    random_cache_ids = hash_hit.squeeze(-2).topk(k=num_random_cache, dim=-1).indices[:,:,:,None].expand(-1, -1, -1, key_states.shape[-1])
+                    sampled_unselected_key = self.unselected_key_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                    sampled_unselected_value = self.unselected_value_cache[layer_idx].gather(dim=-2, index=random_cache_ids)
+                    # rep = int(self.unselected_key_cache[layer_idx].shape[-2] / sampled_unselected_key.shape[-2])
+                    # sampled_unselected_key = sampled_unselected_key.repeat(1, 1, rep, 1)
+                    # sampled_unselected_value = sampled_unselected_value.repeat(1, 1, rep, 1)
+                    return_key = torch.cat([self.selected_key_cache[layer_idx],  sampled_unselected_key], dim=-2)
+                    return_value = torch.cat([self.selected_value_cache[layer_idx], sampled_unselected_value], dim=-2)
                         
-                        attn_weights = torch.matmul(query_states, return_key.transpose(2, 3)) / math.sqrt(self.head_dim)
+                    return_key = repeat_kv(return_key, self.num_qh // self.num_kh)
+                    return_value = repeat_kv(return_value, self.num_qh // self.num_kh)
                         
-                        attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+                    attn_weights = torch.matmul(query_states, return_key.transpose(2, 3)) / math.sqrt(self.head_dim)
                         
-                        attn_output = torch.matmul(attn_weights, return_value)
+                    attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
                         
-                        return attn_output, None, False
+                    attn_output = torch.matmul(attn_weights, return_value)
+                        
+                    return attn_output
                     
                      
                 else:
                     return_key = self.selected_key_cache[layer_idx]
                     return_value = self.selected_value_cache[layer_idx]
-                    return return_key, return_value, True
-        return self.key_cache[layer_idx], self.value_cache[layer_idx], True
+                    
+                    return_key = repeat_kv(return_key, self.num_qh // self.num_kh)
+                    return_value = repeat_kv(return_value, self.num_qh // self.num_kh)
+                        
+                    attn_weights = torch.matmul(query_states, return_key.transpose(2, 3)) / math.sqrt(self.head_dim)
+                        
+                    attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype) 
+                    attn_output = torch.matmul(attn_weights, return_value)
+                    return attn_output
+        
+            else:
+                return_key = repeat_kv(self.key_cache[layer_idx], self.num_qh // self.num_kh)
+                return_value = repeat_kv(self.value_cache[layer_idx], self.num_qh // self.num_kh)
+                        
+                attn_weights = torch.matmul(query_states, return_key.transpose(2, 3)) / math.sqrt(self.head_dim)
+                        
+                attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype) 
+                attn_output = torch.matmul(attn_weights, return_value)
+                return attn_output
 
     def get_seq_length(self, layer_idx: Optional[int] = 0) -> int:
         """Returns the sequence length of the cached states. A layer index can be optionally passed."""
