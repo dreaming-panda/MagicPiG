@@ -13,7 +13,7 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 def parse_args(args=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default=None, choices=["llama2-7b-chat-4k", "longchat-v1.5-7b-32k", "xgen-7b-8k", "internlm-7b-8k", "chatglm2-6b", "chatglm2-6b-32k", "chatglm3-6b-32k", "vicuna-v1.5-7b-16k", "vicuna-7b-v1.5", "vicuna-7b-v1.5-hash", "llama3-8b-instruct-8k", "llama2-7b-chat-4k-hash",
+    parser.add_argument('--model', type=str, default=None, choices=["llama2-7b-chat-4k", "longchat-v1.5-7b-32k", "xgen-7b-8k", "internlm-7b-8k", "chatglm2-6b", "chatglm2-6b-32k", "chatglm3-6b-32k", "vicuna-v1.5-7b-16k", "vicuna-7b-v1.5", "vicuna-7b-v1.5-hash", "llama3-8b-instruct-8k",  "llama3-8b-instruct-8k-hash", "llama2-7b-chat-4k-hash",
                                                                     "lwm-text-chat-1m", "lwm-text-1m", "lwm-text-chat-1m-hash", "lwm-text-1m-hash"])
     parser.add_argument('--e', action='store_true', help="Evaluate on LongBench-E")
     parser.add_argument('--snap', type=float, default=0.1)
@@ -55,6 +55,7 @@ def post_process(response, model_name):
     return response
 
 def get_pred(rank, world_size, data, max_length, max_gen, prompt_format, dataset, device, model_name, model2path, out_path, args):
+    
     device = torch.device(f'cuda:{rank}')
     model, tokenizer = load_model_and_tokenizer(model2path[model_name], model_name, device, args)
     for json_obj in tqdm(data):
@@ -76,6 +77,7 @@ def get_pred(rank, world_size, data, max_length, max_gen, prompt_format, dataset
         else:
             input = tokenizer(prompt, truncation=False, return_tensors="pt").to(device)
         context_length = input.input_ids.shape[-1]
+        assert context_length < max_length + 100, "{} > {}".format(context_length, max_length + 100)
         if dataset == "samsum": # prevent illegal output on samsum (model endlessly repeat "\nDialogue"), might be a prompting issue
             output = model.generate(
                 **input,

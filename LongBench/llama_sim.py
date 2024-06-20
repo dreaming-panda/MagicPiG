@@ -47,8 +47,8 @@ class LlamaAttention(nn.Module):
         self.max_position_embeddings = config.max_position_embeddings
         self.rope_theta = config.rope_theta
         self.is_causal = True
-        self.magic_attention_mask = torch.zeros((self.num_heads, config.max_position_embeddings)).cuda()
-        self.accumulated_score = torch.zeros((self.num_heads, config.max_position_embeddings)).cuda()
+        # self.magic_attention_mask = torch.zeros((self.num_heads, config.max_position_embeddings)).cuda()
+        # self.accumulated_score = torch.zeros((self.num_heads, config.max_position_embeddings)).cuda()
         self.kernel_size = None
         self.prefill_len = -1
         self.dec_len = 0
