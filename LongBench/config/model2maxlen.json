@@ -11,5 +11,8 @@
     "lwm-text-chat-1m": 1048576,
     "lwm-text-1m": 1048576,
     "lwm-text-chat-1m-hash": 1048576,
-    "lwm-text-1m-hash": 1048576
+    "lwm-text-1m-hash": 1048576,
+    "vicuna-7b-v1.5": 3500,
+    "vicuna-7b-v1.5-hash": 3500
+
 }

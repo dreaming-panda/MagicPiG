@@ -12,5 +12,7 @@
     "lwm-text-chat-1m": "LargeWorldModel/LWM-Text-Chat-1M",
     "lwm-text-1m": "LargeWorldModel/LWM-Text-1M",
     "lwm-text-chat-1m-hash": "LargeWorldModel/LWM-Text-Chat-1M",
-    "lwm-text-1m-hash": "LargeWorldModel/LWM-Text-1M"
+    "lwm-text-1m-hash": "LargeWorldModel/LWM-Text-1M",
+    "vicuna-7b-v1.5": "lmsys/vicuna-7b-v1.5",
+    "vicuna-7b-v1.5-hash": "lmsys/vicuna-7b-v1.5"
 }

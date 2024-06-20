@@ -120,7 +120,25 @@ class SimCache(Cache):
                     q_hashcode = torch.matmul(q, self.hash_matrix[...,:-1,:]).reshape(1, self.num_qh, query_states.shape[2], self.L, self.K).gt(0)
                     k_hashcode = self.key_hashcode[layer_idx]
                     mask = ((q_hashcode == k_hashcode).long().sum(dim=-1) == self.K).long().sum(dim=-1) > 0
+
+                    
                     mask = mask.unsqueeze(-2)
+                    mask = mask.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
+                    
+                    mask = mask.sum(dim=2) > 0
+                    
+                    # if self.num_qh // self.num_kh > 1:
+                    #     mask = mask.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
+                    #     mask = mask.sum(dim=2)
+                        
+                    #     remove_cache_ids = mask.topk(k=mask.shape[-1] - num_random_cache, dim=-1, largest=False).indices
+                        
+                    #     mask = mask.scatter(dim=-1, index=remove_cache_ids, value=-100)
+                    #     mask = mask.masked_fill(mask>=0, 1)
+                    #     mask = mask.masked_fill(mask<0, 0)
+                    #     mask = mask.bool()
+                    
+                    mask = repeat_kv(mask, self.num_qh // self.num_kh)
                     
                     unselected_key_cache = repeat_kv(self.unselected_key_cache[layer_idx], self.num_qh // self.num_kh)
                     
@@ -131,9 +149,9 @@ class SimCache(Cache):
                     
                     attn_unselected = torch.matmul(query_states, unselected_key_cache.transpose(2,3)) / math.sqrt(self.head_dim)
                     attn_unselected = attn_unselected.masked_fill(~mask, -torch.inf)
-                    
+                    attn_unselected = attn_unselected.float()
                     attn_selected = torch.matmul(query_states, selected_key_cache.transpose(2,3)) / math.sqrt(self.head_dim)
-                    
+                    attn_selected = attn_selected.float()
                     
                     
                     
@@ -144,10 +162,10 @@ class SimCache(Cache):
                     
                     norm_expand_k = expand_k / expand_k.norm(p=2, dim=-1, keepdim=True)
                     norm_expand_q = expand_q / expand_q.norm(p=2, dim=-1, keepdim=True)
-                    cos_simularity = torch.matmul(norm_expand_q, norm_expand_k.transpose(2,3))
+                    cos_similarity = torch.matmul(norm_expand_q, norm_expand_k.transpose(2,3)).float()
                     
                     
-                    theta = torch.arccos(cos_simularity)
+                    theta = torch.arccos(cos_similarity)
                     
                     weight = 1 - theta / torch.pi
                     weight = 1 - (1 - weight**self.K)**self.L

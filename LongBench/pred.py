@@ -13,7 +13,7 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 def parse_args(args=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default=None, choices=["llama2-7b-chat-4k", "longchat-v1.5-7b-32k", "xgen-7b-8k", "internlm-7b-8k", "chatglm2-6b", "chatglm2-6b-32k", "chatglm3-6b-32k", "vicuna-v1.5-7b-16k", "llama3-8b-instruct-8k", "llama2-7b-chat-4k-hash",
+    parser.add_argument('--model', type=str, default=None, choices=["llama2-7b-chat-4k", "longchat-v1.5-7b-32k", "xgen-7b-8k", "internlm-7b-8k", "chatglm2-6b", "chatglm2-6b-32k", "chatglm3-6b-32k", "vicuna-v1.5-7b-16k", "vicuna-7b-v1.5", "vicuna-7b-v1.5-hash", "llama3-8b-instruct-8k", "llama2-7b-chat-4k-hash",
                                                                     "lwm-text-chat-1m", "lwm-text-1m", "lwm-text-chat-1m-hash", "lwm-text-1m-hash"])
     parser.add_argument('--e', action='store_true', help="Evaluate on LongBench-E")
     parser.add_argument('--snap', type=float, default=0.1)
@@ -115,7 +115,7 @@ def load_model_and_tokenizer(path, model_name, device, args):
         tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True)
         model = AutoModelForCausalLM.from_pretrained(path, trust_remote_code=True, torch_dtype=torch.bfloat16).to(device)
     elif "hash" in model_name:
-        from llama_cross import LlamaForCausalLM
+        from llama_sim import LlamaForCausalLM
         tokenizer = AutoTokenizer.from_pretrained(path, use_fast=False)
         model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
         model.config.K = args.K
@@ -129,18 +129,8 @@ def load_model_and_tokenizer(path, model_name, device, args):
         
         model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
     elif "longchat" in model_name or "vicuna" in model_name:
-        from fastchat.model import load_model
-
-        model, _ = load_model(
-            path,
-            device='cpu',
-            num_gpus=0,
-            load_8bit=False,
-            cpu_offloading=False,
-            debug=False,
-        )
-        model = model.to(device)
-        model = model.bfloat16()
+        from transformers import LlamaForCausalLM
+        model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
         tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True, use_fast=False)
     model = model.eval()
     return model, tokenizer
@@ -174,7 +164,7 @@ if __name__ == '__main__':
         os.makedirs("pred_e")
     for dataset in datasets:
         if 'hash' in model_name:
-            model_name_x = model_name + "-snap-" + str(args.snap) + "-hash-" + str(args.hash)
+            model_name_x = model_name + "-K-" + str(args.K) + "-L-" + str(args.L)
         else:
             model_name_x = model_name
         if args.e:

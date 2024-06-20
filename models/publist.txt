@@ -1,0 +1,105 @@
+
+**HexGen: Generative Inference of Large Language Model over Heterogeneous Environment** Forty-first International Conference on Machine Learning  
+Jiang, Youhe; Yan, Ran; Yao, Xiaozhe; Zhou, Yang; Chen, Beidi; Yuan, Binhang; 
+
+**SpecExec: Massively Parallel Speculative Decoding for Interactive LLM Inference on Consumer Devices** arXiv preprint arXiv:2406.02532  
+Svirschevski, Ruslan; May, Avner; Chen, Zhuoming; Chen, Beidi; Jia, Zhihao; Ryabinin, Max; 
+
+**Q-Hitter: A Better Token Oracle for Efficient LLM Inference via Sparse-Quantized KV Cache** Proceedings of Machine Learning and Systems  
+Zhang, Zhenyu; Liu, Shiwei; Chen, Runjin; Kailkhura, Bhavya; Chen, Beidi; Wang, Atlas; 
+
+**Layer skip: Enabling early exit inference and self-speculative decoding** arXiv preprint arXiv:2404.16710  
+Elhoushi, Mostafa; Shrivastava, Akshat; Liskovich, Diana; Hosmer, Basil; Wasti, Bram; Lai, Liangzhen; Mahmoud, Anas; Acun, Bilge; Agarwal, Saurabh; Roman, Ahmed; 
+
+**Galore: Memory-efficient llm training by gradient low-rank projection** arXiv preprint arXiv:2403.03507  
+Zhao, Jiawei; Zhang, Zhenyu; Chen, Beidi; Wang, Zhangyang; Anandkumar, Anima; Tian, Yuandong; 
+
+**Get More with LESS: Synthesizing Recurrence with KV Cache Compression for Efficient LLM Inference** arXiv preprint arXiv:2402.09398  
+Dong, Harry; Yang, Xinyu; Zhang, Zhenyu; Wang, Zhangyang; Chi, Yuejie; Chen, Beidi; 
+
+**KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache** arXiv preprint arXiv:2402.02750  
+Liu, Zirui; Yuan, Jiayi; Jin, Hongye; Zhong, Shaochen; Xu, Zhaozhuo; Braverman, Vladimir; Chen, Beidi; Hu, Xia; 
+
+**Laughing hyena distillery: Extracting compact recurrences from convolutions** Advances in Neural Information Processing Systems  
+Massaroli, Stefano; Poli, Michael; Fu, Dan; Kumbong, Hermann; Parnichkun, Rom; Romero, David; Timalsina, Aman; McIntyre, Quinn; Chen, Beidi; Rudra, Atri; 
+
+**Joma: Demystifying multilayer transformers via joint dynamics of mlp and attention** arXiv preprint arXiv:2310.00535  
+Tian, Yuandong; Wang, Yiping; Zhang, Zhenyu; Chen, Beidi; Du, Simon; 
+
+**Efficient streaming language models with attention sinks** arXiv preprint arXiv:2309.17453  
+Xiao, Guangxuan; Tian, Yuandong; Chen, Beidi; Han, Song; Lewis, Mike; 
+
+**Fast Algorithms for a New Relaxation of Optimal Transport** The Thirty Sixth Annual Conference on Learning Theory  
+Charikar, Moses; Chen, Beidi; Ré, Christopher; Waingarten, Erik; 
+
+**CocktailSGD: Fine-tuning foundation models over 500Mbps networks** International Conference on Machine Learning  
+Wang, Jue; Lu, Yucheng; Yuan, Binhang; Chen, Beidi; Liang, Percy; De Sa, Christopher; Re, Christopher; Zhang, Ce; 
+
+**H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models** International Conference on Machine Learning  
+Zhang, Zhenyu; Sheng, Ying; Zhou, Tianyi; Chen, Tianlong; Zheng, Lianmin; Cai, Ruisi; Song, Zhao; Tian, Yuandong; Ré, Christopher; Barrett, Clark; 
+
+**Deja vu: Contextual sparsity for efficient llms at inference time** International Conference on Machine Learning  
+Liu, Zichang; Wang, Jue; Dao, Tri; Zhou, Tianyi; Yuan, Binhang; Song, Zhao; Shrivastava, Anshumali; Zhang, Ce; Tian, Yuandong; Re, Christopher; 
+
+**FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU** International Conference on Machine Learning  
+Sheng, Ying; Zheng, Lianmin; Yuan, Binhang; Li, Zhuohan; Ryabinin, Max; Chen, Beidi; Liang, Percy; Re, Christopher; Stoica, Ion; Zhang, Ce; 
+
+**Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer** International Conference on Machine Learning  
+Tian, Yuandong; Wang, Yiping; Chen, Beidi; Du, Simon; 
+
+**Compress, then prompt: Improving accuracy-efficiency trade-off of llm inference with transferable prompt** arXiv preprint arXiv:2305.11186  
+Xu, Zhaozhuo; Liu, Zirui; Chen, Beidi; Tang, Yuxin; Wang, Jue; Zhou, Kaixiong; Hu, Xia; Shrivastava, Anshumali; 
+
+**Decentralized training of foundation models in heterogeneous environments** Neural Information Processing Systems.  
+Yuan, Binhang; He, Yongjun; Davis, Jared Quincy; Zhang, Tianyi; Dao, Tri; Chen, Beidi; Liang, Percy; Re, Christopher; Zhang, Ce; 
+
+**Fine-tuning language models over slow networks using activation compression with guarantees** arXiv preprint arXiv:2206.01299  
+Wang, Jue; Yuan, Binhang; Rimanic, Luka; He, Yongjun; Dao, Tri; Chen, Beidi; Re, Christopher; Zhang, Ce; 
+
+**Halos: Hashing large output space for cheap inference** Proceedings of Machine Learning and Systems  
+Liu, Zichang; Xu, Zhaozhuo; Ji, Alan; Zhang, Junyan; Li, Jonathan; Chen, Beidi; Shrivastava, Anshumali; 
+
+**Monarch: Expressive structured matrices for efficient and accurate training** International Conference on Machine Learning  
+Dao, Tri; Chen, Beidi; Sohoni, Nimit S; Desai, Arjun; Poli, Michael; Grogan, Jessica; Liu, Alexander; Rao, Aniruddh; Rudra, Atri; Ré, Christopher; 
+
+**Pixelated butterfly: Simple and efficient sparse training for neural network models** International Conference on Learning Representations  
+Chen, Beidi; Dao, Tri; Liang, Kaizhao; Yang, Jiaming; Song, Zhao; Rudra, Atri; Re, Christopher; 
+
+**Satellite Images and Deep Learning to Identify Discrepancy in Mailing Addresses with Applications to Census 2020 in Houston** JSM Proceedings, Statistical Learning and Data Science Section. American Statistical Association.  
+Xu, Zhaozhuo; Ji, Alan Baonan; Woods, Andrew; Chen, Beidi; Shrivastava, Anshumali; 
+
+**Scatterbrain: Unifying sparse and low-rank attention** Advances in Neural Information Processing Systems  
+Chen, Beidi; Dao, Tri; Winsor, Eric; Song, Zhao; Rudra, Atri; Ré, Christopher; 
+
+**Locality sensitive teaching** Advances in Neural Information Processing Systems  
+Xu, Zhaozhuo; Chen, Beidi; Li, Chaojian; Liu, Weiyang; Song, Le; Lin, Yingyan; Shrivastava, Anshumali; 
+
+**A tale of two efficient and informative negative sampling distributions** International conference on machine learning  
+Daghaghi, Shabnam; Medini, Tharun; Meisburger, Nicholas; Chen, Beidi; Zhao, Mengnan; Shrivastava, Anshumali; 
+
+**MONGOOSE: A learnable LSH framework for efficient neural network training** International Conference on Learning Representations  
+Chen, Beidi; Liu, Zichang; Peng, Binghui; Xu, Zhaozhuo; Li, Jonathan Lingjie; Dao, Tri; Song, Zhao; Shrivastava, Anshumali; Re, Christopher; 
+
+**SOLAR: Sparse Orthogonal Learned and Random Embeddings** International Conference on Learning Representations  
+Medini, Tharun; Chen, Beidi; Shrivastava, Anshumali; 
+
+**Locality Sensitive Sampling for Extreme-Scale Optimization and Deep Learning** nan  
+Chen, Beidi; 
+
+**Fast and accurate stochastic gradient estimation** Advances in Neural Information Processing Systems  
+Chen, Beidi; Xu, Yingchen; Shrivastava, Anshumali; 
+
+**Angular visual hardness** International Conference on Machine Learning  
+Chen, Beidi; Liu, Weiyang; Yu, Zhiding; Kautz, Jan; Shrivastava, Anshumali; Garg, Animesh; Anandkumar, Animashree; 
+
+**SLIDE: In Defense of Smart Algorithms over Hardware Acceleration for Large-scale Deep Learning Systems** Proceedings of Machine Learning and System  
+Chen, Beidi; Medini, Tharun; Farwell, James; Gobriel, Sameh; Tai, Charlie; Shrivastava, Anshumali; 
+
+**Densified winner take all (WTA) hashing for sparse datasets** Uncertainty in artificial intelligence  
+Chen, Beidi; Shrivastava, Anshumali; 
+
+**Unique entity estimation with application to the Syrian conflict** The Annals of Applied Statistics  
+Chen, Beidi; Shrivastava, Anshumali; Steorts, Rebecca C; 
+
+**Analyzing log analysis: An empirical study of user log mining** 28th Large Installation System Administration Conference (LISA14)  
+Alspaugh, Sara; Chen, Beidi; Lin, Jessica; Ganapathi, Archana; Hearst, Marti; Katz, Randy; 
