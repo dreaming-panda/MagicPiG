@@ -1,6 +1,8 @@
 {
     "llama2-7b-chat-4k": "meta-llama/Llama-2-7b-chat-hf",
     "llama2-7b-chat-4k-hash": "meta-llama/Llama-2-7b-chat-hf",
+    "llama2-13b-chat-4k": "meta-llama/Llama-2-13b-chat-hf",
+    "llama2-13b-chat-4k-hash": "meta-llama/Llama-2-13b-chat-hf",
     "llama3-8b-instruct-8k": "meta-llama/Meta-Llama-3-8B-Instruct",
     "llama3-8b-instruct-8k-hash": "meta-llama/Meta-Llama-3-8B-Instruct",
     "longchat-v1.5-7b-32k": "lmsys/longchat-7b-v1.5-32k",
