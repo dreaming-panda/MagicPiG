@@ -162,5 +162,5 @@ cython_debug/
 #.idea/
 *.pdf
 *.pt
-LongBench/pred
-LongBench/pred_e
+LongBench/pred/*
+LongBench/pred_e/*
