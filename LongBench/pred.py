@@ -14,7 +14,7 @@ import torch.multiprocessing as mp
 def parse_args(args=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, default=None, choices=["llama2-7b-chat-4k", "longchat-v1.5-7b-32k", "xgen-7b-8k", "internlm-7b-8k", "chatglm2-6b", "chatglm2-6b-32k", "chatglm3-6b-32k", "vicuna-v1.5-7b-16k", "vicuna-7b-v1.5", "vicuna-7b-v1.5-hash", "llama3-8b-instruct-8k",  "llama3-8b-instruct-8k-hash", "llama2-7b-chat-4k-hash",
-                                                                    "lwm-text-chat-1m", "lwm-text-1m", "lwm-text-chat-1m-hash", "lwm-text-1m-hash", "llama2-13b-chat-4k", "llama2-13b-chat-4k-hash"])
+                                                                    "lwm-text-chat-1m", "lwm-text-1m", "lwm-text-chat-1m-hash", "lwm-text-1m-hash", "llama2-13b-chat-4k", "llama2-13b-chat-4k-hash", "code-llama-7b-16k", "code-llama-7b-16k-hash"])
     parser.add_argument('--e', action='store_true', help="Evaluate on LongBench-E")
     parser.add_argument('--snap', type=float, default=0.1)
     parser.add_argument('--hash', type=float, default=0.2)
@@ -150,8 +150,10 @@ if __name__ == '__main__':
     # define your model
     max_length = model2maxlen[model_name]
     if args.e:
+        #datasets = ["lcc", "repobench-p"]
         datasets = ["qasper", "multifieldqa_en", "hotpotqa", "2wikimqa", "gov_report", "multi_news", \
             "trec", "triviaqa", "samsum", "passage_count", "passage_retrieval_en", "lcc", "repobench-p"]
+
     else:
         datasets = ["narrativeqa", "qasper", "multifieldqa_en", "multifieldqa_zh", "hotpotqa", "2wikimqa", "musique", \
                     "dureader", "gov_report", "qmsum", "multi_news", "vcsum", "trec", "triviaqa", "samsum", "lsht", \

@@ -1,6 +1,8 @@
 {
     "llama2-7b-chat-4k": "meta-llama/Llama-2-7b-chat-hf",
     "llama2-7b-chat-4k-hash": "meta-llama/Llama-2-7b-chat-hf",
+    "code-llama-7b-16k": "meta-llama/CodeLlama-7b-hf",
+    "code-llama-7b-16k-hash": "meta-llama/CodeLlama-7b-hf",
     "llama2-13b-chat-4k": "meta-llama/Llama-2-13b-chat-hf",
     "llama2-13b-chat-4k-hash": "meta-llama/Llama-2-13b-chat-hf",
     "llama3-8b-instruct-8k": "meta-llama/Meta-Llama-3-8B-Instruct",
