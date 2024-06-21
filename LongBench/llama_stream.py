@@ -15,7 +15,7 @@ from typing import List, Optional, Tuple, Union
 import torch.nn as nn
 import torch
 from transformers.cache_utils import Cache, SinkCache
-from simcache import SimCache
+from simcache import StreamCache
 import torch.nn.functional as F
 from transformers.modeling_outputs import (
     BaseModelOutputWithPast,
@@ -125,7 +125,7 @@ class LlamaAttention(nn.Module):
         hidden_states: torch.Tensor,
         attention_mask: Optional[torch.Tensor] = None,
         position_ids: Optional[torch.LongTensor] = None,
-        past_key_value: Optional[SimCache] = None,
+        past_key_value: Optional[StreamCache] = None,
         output_attentions: bool = False,
         use_cache: bool = False,
         **kwargs,
@@ -151,7 +151,6 @@ class LlamaAttention(nn.Module):
             decode = False
         
         if not decode:
-            
             
             kv_seq_len += past_key_value.get_usable_length(kv_seq_len, self.layer_idx)
             cos, sin = self.rotary_emb(value_states, seq_len=kv_seq_len)
@@ -201,31 +200,11 @@ class LlamaAttention(nn.Module):
             query_states = query_states.transpose(1, 2)
             key_states = key_states.transpose(1, 2)
             value_states = value_states.transpose(1, 2)
-            # key_states = repeat_kv(key_states, self.num_key_value_groups)
-            # value_states = repeat_kv(value_states, self.num_key_value_groups)
 
-            # attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
-
-            # if attention_mask is not None:
-            #     attn_weights = attn_weights + attention_mask
-            #     attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-            
-            # assert bsz == 1
-            # self.prefill_len = q_len
-            # self.dec_len = 0
-            
-            
-                
-                
-                
-            
-            #attn_output = torch.matmul(attn_weights, value_states)
             attn_output = self._flash_attention_forward(
             query_states, key_states, value_states, attention_mask, q_len, dropout=0.0
             )
 
-            #attn_output = attn_output.transpose(1, 2).contiguous()
-            #attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
             attn_output = attn_output.reshape(bsz, q_len, self.hidden_size).contiguous()
             attn_output = self.o_proj(attn_output)
 
@@ -425,7 +404,7 @@ class LlamaModel(LlamaPreTrainedModel):
         if use_cache:
             use_legacy_cache = not isinstance(past_key_values, Cache)
             if use_legacy_cache:
-                past_key_values = SimCache(K=self.config.K, 
+                past_key_values = StreamCache(K=self.config.K, 
                                            L=self.config.L,
                                            window=self.config.window)
             past_key_values_length = past_key_values.get_usable_length(seq_length)

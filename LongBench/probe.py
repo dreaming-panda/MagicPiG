@@ -58,7 +58,8 @@ def get_pred(rank, world_size, data, max_length, max_gen, prompt_format, dataset
     
     device = torch.device(f'cuda:{rank}')
     model, tokenizer = load_model_and_tokenizer(model2path[model_name], model_name, device, args)
-    for json_obj in tqdm(data):
+    
+    for json_obj in tqdm(data[:20]):
         prompt = prompt_format.format(**json_obj)
         # truncate to fit max_length (we suggest truncate in the middle, since the left and right side may contain crucial instructions)
         tokenized_prompt = tokenizer(prompt, truncation=False, return_tensors="pt").input_ids[0]
@@ -98,9 +99,11 @@ def get_pred(rank, world_size, data, max_length, max_gen, prompt_format, dataset
             )[0]
         pred = tokenizer.decode(output[context_length:], skip_special_tokens=True)
         pred = post_process(pred, model_name)
+        
         with open(out_path, "a", encoding="utf-8") as f:
             json.dump({"pred": pred, "answers": json_obj["answers"], "all_classes": json_obj["all_classes"], "length": json_obj["length"]}, f, ensure_ascii=False)
             f.write('\n')
+    model.draw()
     #dist.destroy_process_group()
 
 def seed_everything(seed):
@@ -150,8 +153,7 @@ if __name__ == '__main__':
     # define your model
     max_length = model2maxlen[model_name]
     if args.e:
-
-        datasets = ["gov_report", "repobench-p", "lcc"]
+        datasets = ["repobench-p"]
 
     else:
         datasets = ["narrativeqa", "qasper", "multifieldqa_en", "multifieldqa_zh", "hotpotqa", "2wikimqa", "musique", \
@@ -185,10 +187,13 @@ if __name__ == '__main__':
         data_all = [data_sample for data_sample in data]
         data_subsets = [data_all[i::world_size] for i in range(world_size)]
         processes = []
-        for rank in range(world_size):
-            p = mp.Process(target=get_pred, args=(rank, world_size, data_subsets[rank], max_length, \
-                        max_gen, prompt_format, dataset, device, model_name, model2path, out_path, args))
-            p.start()
-            processes.append(p)
-        for p in processes:
-            p.join()
+        get_pred(0, world_size, data_subsets[0], max_length, \
+            max_gen, prompt_format, dataset, device, model_name, model2path, out_path, args)
+        
+        # for rank in range(world_size):
+        #     p = mp.Process(target=get_pred, args=(rank, world_size, data_subsets[rank], max_length, \
+        #                 max_gen, prompt_format, dataset, device, model_name, model2path, out_path, args))
+        #     p.start()
+        #     processes.append(p)
+        # for p in processes:
+        #     p.join()
