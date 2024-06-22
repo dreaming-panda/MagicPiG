@@ -424,7 +424,8 @@ class StreamCache(Cache):
                     mask = mask.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
                     
                     mask = mask.sum(dim=2) > 0
-                        
+                    
+                    
                     mask = repeat_kv(mask, self.num_qh // self.num_kh)
                     
                     unselected_key_cache = repeat_kv(self.unselected_key_cache[layer_idx], self.num_qh // self.num_kh)
@@ -435,7 +436,21 @@ class StreamCache(Cache):
                     
                     
                     attn_unselected = torch.matmul(query_states, unselected_key_cache.transpose(2,3))  / math.sqrt(self.head_dim)
+                    # hidden_attention = attn_unselected.masked_fill(mask, 0).float()
+                    # hidden_attention = hidden_attention.sum(dim=-1, keepdim=True)
+                    # hidden_tokens = (~mask).long().sum(dim=-1, keepdim=True)
+                    
+                    # hidden_tokens[hidden_tokens < 1] = 1
+
+                    # avg_hidden_attention = hidden_attention / (hidden_tokens)
+                    # print(hidden_attention)
+                    # print(hidden_tokens)
+                    
+                    # avg_hidden_attention = avg_hidden_attention.repeat(1, 1, 1, attn_unselected.shape[-1])
+                    # avg_hidden_attention = avg_hidden_attention.masked_fill(mask, 0).to(query_states.dtype)
+                    
                     attn_unselected = attn_unselected.masked_fill(~mask, -torch.inf)
+                   # attn_unselected = attn_unselected + avg_hidden_attention
                     attn_unselected = attn_unselected.float()
                     attn_selected = torch.matmul(query_states, selected_key_cache.transpose(2,3)) / math.sqrt(self.head_dim)
                     attn_selected = attn_selected.float()
@@ -457,8 +472,14 @@ class StreamCache(Cache):
                     weight = 1 - theta / torch.pi
                     weight = 1 - (1 - weight**self.K)**self.L
                     
-                    weight = mask.float().mean()
+                    weight = weight.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
+                    weight = 1 - weight
                     
+                    weight = weight.cumprod(dim=2)[...,-1,:,:]
+                    weight = 1 - weight
+                    
+                    #weight = mask.float().mean()
+                    weight = repeat_kv(weight, self.num_qh // self.num_kh)
                     attn_unselected = attn_unselected - torch.log(weight + 1e-4)
                     #attn_unselected = attn_unselected / math.sqrt(self.head_dim)
                     attn_weights = torch.cat([attn_selected, attn_unselected], dim=-1)
