@@ -117,7 +117,7 @@ def load_model_and_tokenizer(path, model_name, device, args):
         tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True)
         model = AutoModelForCausalLM.from_pretrained(path, trust_remote_code=True, torch_dtype=torch.bfloat16).to(device)
     elif "hash" in model_name:
-        from llama_stream import LlamaForCausalLM
+        from llama_sim import LlamaForCausalLM
         tokenizer = AutoTokenizer.from_pretrained(path, use_fast=False)
         model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
         model.config.K = args.K

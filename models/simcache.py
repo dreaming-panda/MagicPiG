@@ -171,6 +171,14 @@ class SimCache(Cache):
                     weight = 1 - (1 - weight**self.K)**self.L
                     
                     
+                    weight = weight.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
+                    weight = 1 - weight
+                    
+                    weight = weight.cumprod(dim=2)[...,-1,:,:]
+                    weight = 1 - weight
+                    
+                    
+                    weight = repeat_kv(weight, self.num_qh // self.num_kh)
                     attn_unselected = attn_unselected - torch.log(weight + 1e-4)
                     attn_weights = torch.cat([attn_selected, attn_unselected], dim=-1)
                     
