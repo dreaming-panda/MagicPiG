@@ -149,9 +149,9 @@ class SimCache(Cache):
                     
                     attn_unselected = torch.matmul(query_states, unselected_key_cache.transpose(2,3)) / math.sqrt(self.head_dim)
                     attn_unselected = attn_unselected.masked_fill(~mask, -torch.inf)
-                    attn_unselected = attn_unselected.float()
+                    attn_unselected = attn_unselected.to(torch.float32)
                     attn_selected = torch.matmul(query_states, selected_key_cache.transpose(2,3)) / math.sqrt(self.head_dim)
-                    attn_selected = attn_selected.float()
+                    attn_selected = attn_selected.to(torch.float32)
                     
                     
                     
@@ -162,7 +162,7 @@ class SimCache(Cache):
                     
                     norm_expand_k = expand_k / expand_k.norm(p=2, dim=-1, keepdim=True)
                     norm_expand_q = expand_q / expand_q.norm(p=2, dim=-1, keepdim=True)
-                    cos_similarity = torch.matmul(norm_expand_q, norm_expand_k.transpose(2,3)).float()
+                    cos_similarity = torch.matmul(norm_expand_q, norm_expand_k.transpose(2,3)).to(torch.float32)
                     
                     
                     theta = torch.arccos(cos_similarity)
