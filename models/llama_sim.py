@@ -166,7 +166,7 @@ class LlamaAttention(nn.Module):
             
             if num_activate_tokens > 0 and num_activate_tokens < (q_len - self.window_size) :
                 attn_weights_sum = attn_weights[:, :, -self.window_size:, : -self.window_size].sum(dim = -2)
-                attn_cache = F.avg_pool1d(attn_weights_sum, kernel_size = self.kernel_size, padding=self.kernel_size//2, stride=1)
+                attn_cache = F.max_pool1d(attn_weights_sum, kernel_size = self.kernel_size, padding=self.kernel_size//2, stride=1)
                 attn_cache = attn_cache.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len - self.window_size)
                 attn_cache = attn_cache.sum(dim=-2)
                 sorted_attn_cache_indices = attn_cache.sort(dim=-1, descending=True).indices

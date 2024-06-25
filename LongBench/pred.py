@@ -35,7 +35,7 @@ def build_chat(tokenizer, prompt, model_name):
         conv.append_message(conv.roles[0], prompt)
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
-    elif "llama" in model_name or "lwm" in model_name:
+    elif "llama2" in model_name or "lwm" in model_name:
         prompt = f"[INST]{prompt}[/INST]"
     elif "xgen" in model_name:
         header = (
@@ -119,7 +119,10 @@ def load_model_and_tokenizer(path, model_name, device, args):
     elif "hash" in model_name:
         from llama_sim import LlamaForCausalLM
         tokenizer = AutoTokenizer.from_pretrained(path, use_fast=False)
-        model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
+        if "llama3" in model_name:
+            model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16).to(device)
+        else:
+            model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16).to(device)
         model.config.K = args.K
         model.config.L = args.L
         model.config.window = args.W
@@ -128,8 +131,10 @@ def load_model_and_tokenizer(path, model_name, device, args):
     elif "llama" in model_name or "lwm" in model_name:
         from transformers import LlamaForCausalLM
         tokenizer = AutoTokenizer.from_pretrained(path, use_fast=False)
-        
-        model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
+        if "llama3" in model_name:
+            model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16, use_flash_attention_2=True).to(device)
+        else:
+            model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
     elif "longchat" in model_name or "vicuna" in model_name:
         from transformers import LlamaForCausalLM
         model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.float16, _attn_implementation = "eager").to(device)
