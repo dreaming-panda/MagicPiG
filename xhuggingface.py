@@ -478,6 +478,7 @@ class XHFLM(TemplateLM):
         random = False,
         random_es = False,
         oracle_es=False,
+        quest=False,
         trust_remote_code: Optional[bool] = False,
         parallelize: Optional[bool] = False,
         device_map_option: Optional[str] = "auto",
@@ -662,6 +663,22 @@ class XHFLM(TemplateLM):
             self._model.eval()
             self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
             return None
+        
+        elif quest:
+            from models.llama_quest import LlamaForCausalLM
+            self._model = LlamaForCausalLM.from_pretrained(
+                pretrained,
+            torch_dtype=get_dtype(dtype),
+            device_map=str(self.device),
+            _attn_implementation = "eager"
+            )
+            self._model.config.K = K
+            self._model.config.L = L
+            self._model.config.cache_mode = "anns_es"
+            self._model.config.window = 16
+            self._model.eval()
+            return None
+        
         else:
             from transformers import LlamaForCausalLM
             self._model = LlamaForCausalLM.from_pretrained(
