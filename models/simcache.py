@@ -123,9 +123,10 @@ class SimCache(Cache):
 
                     
                     mask = mask.unsqueeze(-2)
-                    mask = mask.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
                     
-                    mask = mask.sum(dim=2) > 0
+                    #mask = mask.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
+                    
+                    #mask = mask.sum(dim=2) > 0
                     
                     # if self.num_qh // self.num_kh > 1:
                     #     mask = mask.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
@@ -138,7 +139,7 @@ class SimCache(Cache):
                     #     mask = mask.masked_fill(mask<0, 0)
                     #     mask = mask.bool()
                     
-                    mask = repeat_kv(mask, self.num_qh // self.num_kh)
+                    #mask = repeat_kv(mask, self.num_qh // self.num_kh)
                     
                     unselected_key_cache = repeat_kv(self.unselected_key_cache[layer_idx], self.num_qh // self.num_kh)
                     
@@ -171,15 +172,15 @@ class SimCache(Cache):
                     weight = 1 - (1 - weight**self.K)**self.L
                     
                     
-                    weight = weight.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
-                    weight = 1 - weight
+                    # weight = weight.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
+                    # weight = 1 - weight
                     
-                    weight = weight.cumprod(dim=2)[...,-1,:,:]
-                    weight = 1 - weight
+                    # weight = weight.cumprod(dim=2)[...,-1,:,:]
+                    # weight = 1 - weight
                     
                     
-                    weight = repeat_kv(weight, self.num_qh // self.num_kh)
-                    attn_unselected = attn_unselected - torch.log(weight + 1e-4)
+                    # weight = repeat_kv(weight, self.num_qh // self.num_kh)
+                    #attn_unselected = attn_unselected - torch.log(weight + 1e-4)
                     attn_weights = torch.cat([attn_selected, attn_unselected], dim=-1)
                     
                     attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
