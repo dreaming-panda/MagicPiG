@@ -180,7 +180,7 @@ class SimCache(Cache):
                     
                     
                     # weight = repeat_kv(weight, self.num_qh // self.num_kh)
-                    #attn_unselected = attn_unselected - torch.log(weight + 1e-4)
+                    attn_unselected = attn_unselected - torch.log(weight + 1e-4)
                     attn_weights = torch.cat([attn_selected, attn_unselected], dim=-1)
                     
                     attn_weights = F.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
