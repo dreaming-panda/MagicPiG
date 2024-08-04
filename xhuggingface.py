@@ -615,7 +615,7 @@ class XHFLM(TemplateLM):
             self._model.set_sparse_attn(sparse=sparse, window_size=window_size, kernel_size=kernel_size, **kwargs)
             return None
         elif sim:
-            from models.llama_sim import LlamaForCausalLM
+            from models.llama_sim_new import LlamaForCausalLM
             self.search = True
             self._model = LlamaForCausalLM.from_pretrained(
                 pretrained,

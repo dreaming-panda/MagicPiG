@@ -58,7 +58,7 @@ apply_rotary_pos_emb,
 rotate_half,
 repeat_kv,
 LlamaMLP)
-from .simcache import SimCache
+from .simcache_new import SimCache
 logger = logging.get_logger(__name__)
 
 _CONFIG_FOR_DOC = "LlamaConfig"
@@ -177,8 +177,9 @@ class LlamaAttention(nn.Module):
             
             if num_activate_tokens > 0 and num_activate_tokens < (q_len - self.window_size) :
                 attn_weights_sum = attn_weights[:, :, -self.window_size:, : -self.window_size].sum(dim = -2)
-                attn_cache = F.max_pool1d(attn_weights_sum, kernel_size = self.kernel_size, padding=self.kernel_size//2, stride=1)
-                attn_cache = attn_cache.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len - self.window_size)
+                #attn_cache = F.max_pool1d(attn_weights_sum, kernel_size = self.kernel_size, padding=self.kernel_size//2, stride=1)
+                #attn_cache = attn_cache.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len - self.window_size)
+                attn_cache = attn_weights_sum.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len - self.window_size)
                 attn_cache = attn_cache.sum(dim=-2)
                 sorted_attn_cache_indices = attn_cache.sort(dim=-1, descending=True).indices
                 past_key_value.select_kv_cache(num_activate_tokens=num_activate_tokens,
@@ -722,7 +723,7 @@ class LlamaModel(LlamaPreTrainedModel):
 
         return_legacy_cache = False
         if (
-            use_cache and isinstance(past_key_values, DynamicCache)
+            use_cache and (isinstance(past_key_values, DynamicCache) or past_key_values is None)
         ):  # kept for BC (non `Cache` `past_key_values` inputs)
             past_key_values = SimCache(K=self.config.K, 
                                            L=self.config.L,

@@ -21,7 +21,6 @@ class SimCache(Cache):
         self.unselected_value_cache: List[torch.Tensor] = []
         self.prefill_tokens = 0
         self.sampling_prob: torch.Tensor = None
-        self.seen_tokens = 0  # Used in `generate` to keep tally of how many tokens the cache has seen
         self.kernel_size = 5
         self.interleave = 8
         self.hash_matrix = None
@@ -88,10 +87,7 @@ class SimCache(Cache):
         Return:
             A tuple containing the updated key and value states.
         """
-        # Update the number of seen tokens
-        attention_mask = None
-        if layer_idx == 0:
-            self.seen_tokens += key_states.shape[-2]
+        
 
         # Update the cache
         if len(self.key_cache) <= layer_idx:
@@ -247,6 +243,7 @@ class SimCache(Cache):
         return cache
 
     def select_kv_cache(self, num_activate_tokens:int, sorted_indices: torch.LongTensor, layer_idx: int, window_size: int, head_dim: int):
+        
         k_cache = self.key_cache[layer_idx]
         v_cache = self.value_cache[layer_idx]
         
@@ -259,10 +256,14 @@ class SimCache(Cache):
         select_k_cache = torch.cat([select_k_cache, k_cache[...,-window_size:,:]], dim = -2)
         select_v_cache = torch.cat([select_v_cache, v_cache[...,-window_size:,:]], dim = -2)
         
-        
+        #select_k_cache = torch.cat([k_cache[...,:window_size,:], k_cache[...,-num_activate_tokens:,:]], dim = -2)
+        #select_v_cache = torch.cat([v_cache[...,:window_size,:], v_cache[...,-num_activate_tokens:,:]], dim = -2)
+
         unselect_k_cache = k_cache.gather(dim=-2, index=unselect_indices)
         unselect_v_cache = v_cache.gather(dim=-2, index=unselect_indices)
         
+        # unselect_k_cache = k_cache[...,window_size:-num_activate_tokens,:]
+        # unselect_v_cache = v_cache[...,window_size:-num_activate_tokens,:]
         self.selected_key_cache.append(select_k_cache)
         self.selected_value_cache.append(select_v_cache)
         

@@ -112,7 +112,7 @@ class SimCache(Cache):
             self.selected_key_cache[layer_idx] = torch.cat([self.selected_key_cache[layer_idx], key_states], dim=-2)
             self.selected_value_cache[layer_idx] = torch.cat([self.selected_value_cache[layer_idx], value_states], dim=-2)
             num_random_cache = int(random_sparse * (self.prefill_tokens - self.window))
-            if layer_idx >= 2:
+            if layer_idx >= 1:
                 
                 if num_random_cache > 0:
                     return_value = torch.cat([self.selected_value_cache[layer_idx], self.unselected_value_cache[layer_idx]], dim=-2)
