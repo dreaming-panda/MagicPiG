@@ -486,7 +486,7 @@ class LlamaModel(LlamaPreTrainedModel):
             if output_attentions:
                 all_self_attns += (layer_outputs[1],)
 
-        hidden_states = self.norm(hidden_states)
+        hidden_states = self.norm(hidden_states[:,-1:,:])
 
         # add hidden states from the last decoder layer
         if output_hidden_states:
