@@ -7,6 +7,8 @@
     "llama2-13b-chat-4k-hash": "meta-llama/Llama-2-13b-chat-hf",
     "llama3-8b-instruct-8k": "meta-llama/Meta-Llama-3-8B-Instruct",
     "llama3-8b-instruct-8k-hash": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "llama3-8b-instruct-262k": "gradientai/Llama-3-8B-Instruct-Gradient-1048k",
+    "llama3-8b-instruct-262k-hash": "gradientai/Llama-3-8B-Instruct-Gradient-1048k",
     "longchat-v1.5-7b-32k": "lmsys/longchat-7b-v1.5-32k",
     "xgen-7b-8k": "Salesforce/xgen-7b-8k-inst",
     "internlm-7b-8k": "internlm/internlm-chat-7b-8k",
