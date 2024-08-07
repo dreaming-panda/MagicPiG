@@ -177,9 +177,9 @@ class LlamaAttention(nn.Module):
             
             if num_activate_tokens > 0 and num_activate_tokens < (q_len - self.window_size) :
                 attn_weights_sum = attn_weights[:, :, -self.window_size:, : -self.window_size].sum(dim = -2)
-                #attn_cache = F.max_pool1d(attn_weights_sum, kernel_size = self.kernel_size, padding=self.kernel_size//2, stride=1)
-                #attn_cache = attn_cache.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len - self.window_size)
-                attn_cache = attn_weights_sum.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len - self.window_size)
+                attn_cache = F.max_pool1d(attn_weights_sum, kernel_size = self.kernel_size, padding=self.kernel_size//2, stride=1)
+                attn_cache = attn_cache.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len - self.window_size)
+                #attn_cache = attn_weights_sum.reshape(bsz, self.num_key_value_heads, self.num_key_value_groups, q_len - self.window_size)
                 attn_cache = attn_cache.sum(dim=-2)
                 sorted_attn_cache_indices = attn_cache.sort(dim=-1, descending=True).indices
                 past_key_value.select_kv_cache(num_activate_tokens=num_activate_tokens,
@@ -728,7 +728,10 @@ class LlamaModel(LlamaPreTrainedModel):
             past_key_values = SimCache(K=self.config.K, 
                                            L=self.config.L,
                                            mode=self.config.cache_mode,
-                                           window=self.config.window)
+                                           window=self.config.window,
+                                           num_qh=self.config.num_attention_heads,
+                                           num_kh=self.config.num_key_value_heads,
+                                           dtype=self.dtype)
 
         if cache_position is None:
             past_seen_tokens = past_key_values.get_seq_length() if past_key_values is not None else 0

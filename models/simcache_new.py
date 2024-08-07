@@ -12,7 +12,7 @@ class SimCache(Cache):
     `[batch_size, num_heads, seq_len, head_dim]`.
     """
 
-    def __init__(self, K, L, mode = "anns", window = 64) -> None:
+    def __init__(self, K, L, mode = "anns", window = 64, num_qh = 32, num_kh = 8, head_dim = 128, device = "cuda", dtype=torch.bfloat16) -> None:
         self.key_cache: List[torch.Tensor] = []
         self.value_cache: List[torch.Tensor] = []
         self.selected_key_cache: List[torch.Tensor] = []
@@ -37,6 +37,14 @@ class SimCache(Cache):
         self.window = window
         self.hash_matrices: List[torch.Tensor] = []
         self.preserve_layer = 2
+        
+        self.num_qh = num_qh
+        self.num_kh = num_kh
+        self.head_dim = head_dim
+        self.device = device
+        self.dtype = dtype
+        self.chunk_size = 8
+        self.hash_matrix = [torch.randn((1, self.num_qh, self.head_dim + 1, self.K * self.L), device=self.device, dtype=self.dtype) for i in range(2)]
     def __getitem__(self, layer_idx: int) -> List[Tuple[torch.Tensor]]:
         """
         Support for backwards-compatible `past_key_value` indexing, e.g. `past_key_value[0][0].shape[2]` to get the
@@ -90,17 +98,17 @@ class SimCache(Cache):
         
 
         # Update the cache
-        if len(self.key_cache) <= layer_idx:
-            self.key_cache.append(key_states)
-            self.value_cache.append(value_states)
-            self.prefill_tokens = key_states.shape[2]
-            if self.hash_matrix is None:
-                self.num_qh = query_states.shape[1]
-                self.num_kh = key_states.shape[1]
-                self.head_dim = key_states.shape[-1]
-                self.hash_matrix = torch.rand((1, self.num_qh, self.head_dim + 1, self.K * self.L), device=key_states.device, dtype=key_states.dtype) - 0.5
-                self.hash_matrix = self.hash_matrix / self.hash_matrix.norm(p=2, dim=-1, keepdim=True)
-            return self.key_cache[layer_idx], self.value_cache[layer_idx]
+        if key_states.shape[2] > 1:
+            if len(self.key_cache) <= layer_idx:
+                self.key_cache.append(key_states)
+                self.value_cache.append(value_states)
+                self.prefill_tokens += key_states.shape[2]
+                return self.key_cache[layer_idx], self.value_cache[layer_idx]
+            else:
+                self.key_cache[layer_idx] = torch.cat([self.key_cache[layer_idx], key_states], dim=-2)
+                self.value_cache[layer_idx] = torch.cat([self.value_cache[layer_idx], value_states], dim=-2)
+                self.prefill_tokens += key_states.shape[2]
+                return self.key_cache[layer_idx], self.value_cache[layer_idx]
         else:
             
             self.key_cache[layer_idx] = torch.cat([self.key_cache[layer_idx], key_states], dim=-2)
@@ -108,21 +116,34 @@ class SimCache(Cache):
             self.selected_key_cache[layer_idx] = torch.cat([self.selected_key_cache[layer_idx], key_states], dim=-2)
             self.selected_value_cache[layer_idx] = torch.cat([self.selected_value_cache[layer_idx], value_states], dim=-2)
             num_random_cache = int(random_sparse * (self.prefill_tokens - self.window))
-            if layer_idx >= 1:
+            if layer_idx >= 2:
                 
                 if num_random_cache > 0:
                     return_value = torch.cat([self.selected_value_cache[layer_idx], self.unselected_value_cache[layer_idx]], dim=-2)
                     q = query_states / query_states.norm(p=2, dim=-1, keepdim=True)
-                    q_hashcode = torch.matmul(q, self.hash_matrix[...,:-1,:]).reshape(1, self.num_qh, query_states.shape[2], self.L, self.K).gt(0)
-                    k_hashcode = self.key_hashcode[layer_idx]
-                    mask = ((q_hashcode == k_hashcode).long().sum(dim=-1) == self.K).long().sum(dim=-1) > 0
+                    #q = q.reshape(1, self.num_kh, self.num_qh // self.num_kh, self.head_dim)
+                    
+                    q_hashcode = torch.matmul(q, self.hash_matrix[layer_idx // 16][...,:-1,:].to(q.device)).reshape(1, self.num_qh, query_states.shape[2], self.L, self.K).gt(0)
 
                     
+                    #k_hashcode = self.key_hashcode[layer_idx].repeat(1, self.num_qh//self.num_kh, 1, 1, 1)
+                    k_hashcode = self.key_hashcode[layer_idx]
+                    
+                    mask = ((q_hashcode == k_hashcode).int().sum(dim=-1) == self.K).int().sum(dim=-1) >= 2
+
+                    
+                    
                     mask = mask.unsqueeze(-2)
+                    # num_chunk = (mask.shape[-1] // self.chunk_size - 1) if (mask.shape[-1] % self.chunk_size) else (mask.shape[-1] // self.chunk_size ) 
+                    # chunked_len = self.chunk_size * num_chunk
+                    # chunked_mask = mask[...,:chunked_len]
+                    # chunked_mask = chunked_mask.reshape(1, self.num_qh, 1, num_chunk, self.chunk_size).int().sum(dim=-1, keepdim=True) >= 2
+                    # chunked_mask = chunked_mask.expand(-1, -1, -1, -1, self.chunk_size).reshape(1, self.num_qh, 1, chunked_len)
+                    # mask = torch.cat([chunked_mask, mask[...,chunked_len:]], dim=-1)
                     
-                    #mask = mask.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
+                    # mask = mask.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
                     
-                    #mask = mask.sum(dim=2) > 0
+                    # mask = mask.sum(dim=2) > 0
                     
                     # if self.num_qh // self.num_kh > 1:
                     #     mask = mask.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
@@ -152,20 +173,22 @@ class SimCache(Cache):
                     
                     
                     
-                    
+                    #q = q.reshape(1, self.num_qh, 1, self.head_dim)
                     expand_k = self.expand_key[layer_idx]
-                    
+                    #expand_k = repeat_kv(expand_k, self.num_qh//self.num_kh)
                     expand_q = F.pad(q, (0,1), "constant", 0.0)
                     
                     norm_expand_k = expand_k / expand_k.norm(p=2, dim=-1, keepdim=True)
                     norm_expand_q = expand_q / expand_q.norm(p=2, dim=-1, keepdim=True)
+
+                    
                     cos_similarity = torch.matmul(norm_expand_q, norm_expand_k.transpose(2,3)).to(torch.float32)
                     
                     
                     theta = torch.arccos(cos_similarity)
                     
                     weight = 1 - theta / torch.pi
-                    weight = 1 - (1 - weight**self.K)**self.L
+                    weight = 1 - (1 - weight**self.K)**self.L - self.L * ((1 - weight**self.K)**(self.L - 1)) * (weight**self.K)
                     
                     
                     # weight = weight.reshape(1, self.num_kh, self.num_qh // self.num_kh, 1, -1)
@@ -176,6 +199,7 @@ class SimCache(Cache):
                     
                     
                     # weight = repeat_kv(weight, self.num_qh // self.num_kh)
+                    #weight.masked_fill_(weight<0.1, 1.0)
                     attn_unselected = attn_unselected - torch.log(weight + 1e-4)
                     attn_weights = torch.cat([attn_selected, attn_unselected], dim=-1)
                     
@@ -256,28 +280,17 @@ class SimCache(Cache):
         select_k_cache = torch.cat([select_k_cache, k_cache[...,-window_size:,:]], dim = -2)
         select_v_cache = torch.cat([select_v_cache, v_cache[...,-window_size:,:]], dim = -2)
         
-        #select_k_cache = torch.cat([k_cache[...,:window_size,:], k_cache[...,-num_activate_tokens:,:]], dim = -2)
-        #select_v_cache = torch.cat([v_cache[...,:window_size,:], v_cache[...,-num_activate_tokens:,:]], dim = -2)
-
+        
         unselect_k_cache = k_cache.gather(dim=-2, index=unselect_indices)
         unselect_v_cache = v_cache.gather(dim=-2, index=unselect_indices)
         
-        # unselect_k_cache = k_cache[...,window_size:-num_activate_tokens,:]
-        # unselect_v_cache = v_cache[...,window_size:-num_activate_tokens,:]
+        
         self.selected_key_cache.append(select_k_cache)
         self.selected_value_cache.append(select_v_cache)
         
         self.unselected_key_cache.append(unselect_k_cache)
         self.unselected_value_cache.append(unselect_v_cache)
         
-        
-        #feature_matrix = unselect_k_cache.squeeze().reshape(-1, unselect_k_cache.shape[-1])
-        # feature_matrix = unselect_k_cache
-        
-        # _,_,feature_matrix = torch.pca_lowrank(feature_matrix.float(), q=self.L * self.K)
-        
-        # feature_matrix = feature_matrix.to(unselect_k_cache.dtype)
-        # feature_matrix = repeat_kv(feature_matrix, self.num_qh // self.num_kh)
         expand_k = repeat_kv(unselect_k_cache, self.num_qh // self.num_kh)
         
         expand_k = expand_k - expand_k.mean(dim=-2, keepdim=True)
@@ -293,15 +306,10 @@ class SimCache(Cache):
         expand_k = torch.cat([expand_k, cat_tensor], dim=-1)
         
         self.expand_key.append(expand_k)
-        # expand_k = expand_k / expand_k.norm(p=2, dim=-1, keepdim=True)
-        hash_code = torch.matmul(expand_k, self.hash_matrix).reshape(1, self.num_qh, expand_k.shape[2], self.L, self.K)
         
-        #self.hash_matrices.append(feature_matrix)     
-        hash_code = hash_code.gt(0)
+        hash_code = torch.matmul(expand_k, self.hash_matrix[layer_idx // 16].to(expand_k.device)).reshape(1, self.num_qh, expand_k.shape[2], self.L, self.K)
+     
+        hash_code.gt_(0)
         
         self.key_hashcode.append(hash_code)
         
-        
-        if self.sampling_prob is None:
-            self.sampling_prob = torch.ones((self.num_kh, unselect_k_cache.shape[2]), device=unselect_k_cache.device, dtype=unselect_k_cache.dtype)
-            self.attention_mask = torch.zeros((1, self.num_kh, 1, 8192), device=unselect_k_cache.device, dtype=unselect_k_cache.dtype)

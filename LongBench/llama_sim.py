@@ -177,23 +177,7 @@ class LlamaAttention(nn.Module):
                                                layer_idx=self.layer_idx,
                                                window_size=self.window_size,
                                                head_dim=self.head_dim)
-                if self.draw:
-                    select_indices = sorted_attn_cache_indices[...,:num_activate_tokens]
-                    select_indices = select_indices.squeeze(0)
-                    total_len = sorted_attn_cache_indices.shape[-1]
-
-                    self.selected_kv_buffer = self.selected_kv_buffer.scatter(dim=-1, index=select_indices, value=1)
-                    kv_buffer = self.selected_kv_buffer[:,:total_len]
-
-                    chunk_size = total_len // 100
-                    
-                    buffer = kv_buffer[:,:chunk_size * 100].reshape(self.num_key_value_heads, 100, chunk_size).sum(-1)
-                    if 100 * chunk_size < total_len:
-                        buffer[:,-1] += kv_buffer[:,chunk_size * 100:].sum(-1)
-                    
-                    self.selected_kv += buffer
-                    
-                    self.selected_kv_buffer.zero_()
+                
                 
                 
             
@@ -201,31 +185,12 @@ class LlamaAttention(nn.Module):
             query_states = query_states.transpose(1, 2)
             key_states = key_states.transpose(1, 2)
             value_states = value_states.transpose(1, 2)
-            # key_states = repeat_kv(key_states, self.num_key_value_groups)
-            # value_states = repeat_kv(value_states, self.num_key_value_groups)
-
-            # attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
-
-            # if attention_mask is not None:
-            #     attn_weights = attn_weights + attention_mask
-            #     attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
             
-            # assert bsz == 1
-            # self.prefill_len = q_len
-            # self.dec_len = 0
-            
-            
-                
-                
-                
-            
-            #attn_output = torch.matmul(attn_weights, value_states)
             attn_output = self._flash_attention_forward(
             query_states, key_states, value_states, attention_mask, q_len, dropout=0.0
             )
 
-            #attn_output = attn_output.transpose(1, 2).contiguous()
-            #attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
+            
             attn_output = attn_output.reshape(bsz, q_len, self.hidden_size).contiguous()
             attn_output = self.o_proj(attn_output)
 

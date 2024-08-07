@@ -122,6 +122,7 @@ class CrossPolyCache(Cache):
                     k_hashcode = self.key_hashcode[layer_idx]
                         
                     hash_hit = (q_hashcode == k_hashcode).long().sum(dim=-1)
+                    
                     hash_hit = hash_hit.reshape(1, self.num_kh, self.num_qh // self.num_kh, -1)
                         
                     hash_hit = hash_hit.sum(dim=-2, keepdim=True)
