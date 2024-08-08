@@ -34,6 +34,7 @@ class SimCache(Cache):
         self.mode = mode
         self.key_hashcode: List[torch.Tensor] = []
         self.expand_key: List[torch.Tensor] = []
+        self.expand_key_norm: List[torch.Tensor] = []
         self.window = window
         self.hash_matrices: List[torch.Tensor] = []
         self.preserve_layer = 2
@@ -299,7 +300,7 @@ class SimCache(Cache):
         expand_k_norm = expand_k.norm(p=2, dim=-1)
         
         expand_k_norm_max = expand_k_norm.max(dim=-1, keepdim=True).values + 1e-5
-        
+        self.expand_key_norm.append(expand_k_norm_max)
         cat_tensor = torch.sqrt(expand_k_norm_max.pow(2) - expand_k_norm.pow(2))
         
         cat_tensor = cat_tensor.unsqueeze(-1)
